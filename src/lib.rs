@@ -1,5 +1,3 @@
-extern crate core;
-
 pub mod app;
 pub mod config;
 pub mod cursor;
@@ -23,4 +21,4 @@ pub mod big_tests;
 #[cfg(test)]
 mod mocks;
 #[cfg(test)]
-pub use mocks::*;
+pub(crate) use mocks::*;
