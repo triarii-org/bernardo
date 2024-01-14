@@ -1,7 +1,7 @@
 use std::marker::PhantomData;
 
 use crate::io::output::Metadata;
-use crate::widget::widget::Widget;
+
 use crate::widgets::with_scroll::with_scroll::WithScroll;
 
 use crate::*;

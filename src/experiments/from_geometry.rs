@@ -12,7 +12,8 @@ use crate::io::buffer::Buffer;
 use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
-use crate::widget::widget::WID;
+
+use crate::*;
 
 fn fill(b: &mut Buffer<WID>, wid: WID, rect: &Rect) {
     for x in rect.min_x()..u16::min(rect.max_x(), b.size().x) {
@@ -174,7 +175,8 @@ mod tests {
     use crate::experiments::from_geometry::{from_geometry, get_full_size};
     use crate::primitives::rect::Rect;
     use crate::primitives::xy::XY;
-    use crate::widget::widget::WID;
+
+    use super::*;
 
     #[test]
     fn full_size_test() {

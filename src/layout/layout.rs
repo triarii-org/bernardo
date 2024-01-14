@@ -1,7 +1,8 @@
 use crate::experiments::screenspace::Screenspace;
 use crate::layout::widget_with_rect::WidgetWithRect;
 use crate::primitives::xy::XY;
-use crate::widget::widget::Widget;
+
+use crate::*;
 
 pub type WidgetGetter<T> = Box<dyn Fn(&'_ T) -> &'_ dyn Widget>;
 pub type WidgetGetterMut<T> = Box<dyn Fn(&'_ mut T) -> &'_ mut dyn Widget>;

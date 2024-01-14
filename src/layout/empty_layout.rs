@@ -3,7 +3,8 @@ use log::error;
 use crate::experiments::screenspace::Screenspace;
 use crate::layout::layout::{Layout, LayoutResult};
 use crate::primitives::xy::XY;
-use crate::widget::widget::Widget;
+
+use crate::*;
 
 // This layout exists only to "fill"
 

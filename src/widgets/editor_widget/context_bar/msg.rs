@@ -1,5 +1,5 @@
 use crate::primitives::common_edit_msgs::CommonEditMsg;
-use crate::widget::any_msg::AnyMsg;
+use crate::*;
 
 #[derive(Clone, Debug)]
 pub enum ContextBarWidgetMsg {

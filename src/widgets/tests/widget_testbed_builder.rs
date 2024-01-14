@@ -14,7 +14,7 @@ use crate::tsw::lang_id::LangId;
 use crate::tsw::language_set::LanguageSet;
 use crate::tsw::tree_sitter_wrapper::TreeSitterWrapper;
 use crate::w7e::buffer_state_shared_ref::BufferSharedRef;
-use crate::widget::widget::Widget;
+
 use crate::widgets::editor_view::editor_view::EditorView;
 use crate::widgets::editor_widget::label::labels_provider::LabelsProviderRef;
 use crate::widgets::main_view::main_view::DocumentIdentifier;

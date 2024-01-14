@@ -1,6 +1,6 @@
 use crate::io::buffer_output::buffer_output::BufferOutput;
 use crate::io::output::Metadata;
-use crate::widget::widget::Widget;
+
 use crate::widgets::code_results_view::code_results_widget::CodeResultsView;
 use crate::widgets::editor_view::editor_view::EditorView;
 use crate::widgets::fuzzy_search::fuzzy_search::FuzzySearchWidget;

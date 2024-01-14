@@ -6,7 +6,7 @@ use crate::io::input_event::InputEvent;
 use crate::io::output::FinalOutput;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
-use crate::widget::widget::Widget;
+
 use crate::widgets::editor_view::editor_view::EditorView;
 
 use crate::*;

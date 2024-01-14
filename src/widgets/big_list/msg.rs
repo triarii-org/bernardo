@@ -1,5 +1,6 @@
 use crate::primitives::scroll_enum::ScrollEnum;
-use crate::widget::any_msg::AnyMsg;
+
+use crate::*;
 
 #[derive(Clone, Debug)]
 pub enum BigListWidgetMsg {

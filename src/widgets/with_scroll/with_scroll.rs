@@ -12,9 +12,6 @@ use crate::primitives::rect::Rect;
 use crate::primitives::scroll::{Scroll, ScrollDirection};
 use crate::primitives::xy::XY;
 use crate::unpack_or;
-use crate::widget::any_msg::AnyMsg;
-use crate::widget::fill_policy::{DeterminedBy, SizePolicy};
-use crate::widget::widget::{get_new_widget_id, Widget, WID};
 
 use crate::*;
 

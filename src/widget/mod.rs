@@ -1,11 +1,20 @@
-pub mod any_msg;
-pub mod stupid_tree;
+mod any_msg;
+pub use any_msg::{AnyMsg, AsAny};
 
-pub mod action_trigger;
-pub mod complex_widget;
-pub mod fill_policy;
-pub mod mock_file_list;
-pub mod widget;
+mod stupid_tree;
+pub use stupid_tree::{get_stupid_tree, StupidTree};
 
-// #[cfg(test)]
-// pub mod tests;
+mod action_trigger;
+pub use action_trigger::ActionTrigger;
+
+mod complex_widget;
+pub use complex_widget::{ComplexWidget, DisplayState};
+
+mod fill_policy;
+pub use fill_policy::{DeterminedBy, SizePolicy};
+
+mod mock_file_list;
+pub use mock_file_list::{get_mock_file_list, MockFile};
+
+mod widget;
+pub use widget::{get_new_widget_id, Widget, WidgetAction, WidgetActionParam, WID};

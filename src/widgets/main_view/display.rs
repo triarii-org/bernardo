@@ -1,6 +1,6 @@
-use crate::widget::widget::Widget;
 use crate::widgets::code_results_view::code_results_widget::CodeResultsView;
 use crate::widgets::editor_view::editor_view::EditorView;
+use crate::*;
 
 pub enum MainViewDisplay {
     Editor(EditorView),

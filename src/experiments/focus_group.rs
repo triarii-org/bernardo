@@ -4,7 +4,7 @@ use std::fmt::Debug;
 use log::error;
 use serde::{Deserialize, Serialize};
 
-use crate::widget::widget::WID;
+use crate::*;
 
 #[derive(Copy, Clone, Debug, Eq, Hash, PartialEq, Serialize, Deserialize)]
 pub enum FocusUpdate {

@@ -1,7 +1,8 @@
 use crate::experiments::subwidget_pointer::SubwidgetPointer;
 use crate::primitives::rect::Rect;
 use crate::primitives::xy::XY;
-use crate::widget::widget::Widget;
+
+use crate::*;
 
 pub struct WidgetWithRect<W: Widget> {
     widget: SubwidgetPointer<W>,

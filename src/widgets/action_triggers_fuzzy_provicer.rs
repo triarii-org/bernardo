@@ -1,8 +1,7 @@
 use std::rc::Rc;
 
-use crate::widget::action_trigger::ActionTrigger;
-use crate::widget::widget::Widget;
 use crate::widgets::fuzzy_search::item_provider::{Item, ItemsProvider};
+use crate::*;
 
 pub struct Actions<W: Widget> {
     vec: Vec<ActionTrigger<W>>,

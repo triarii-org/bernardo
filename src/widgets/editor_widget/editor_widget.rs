@@ -35,9 +35,9 @@ use crate::text::text_buffer::TextBuffer;
 use crate::w7e::buffer_state_shared_ref::BufferSharedRef;
 use crate::w7e::handler::NavCompRef;
 use crate::w7e::navcomp_provider::CompletionAction;
-use crate::widget::any_msg::{AnyMsg, AsAny};
-use crate::widget::fill_policy::SizePolicy;
-use crate::widget::widget::{get_new_widget_id, Widget, WID};
+
+
+
 use crate::widgets::code_results_view::promise_provider::WrappedSymbolUsagesPromise;
 use crate::widgets::editor_widget::completion::completion_widget::CompletionWidget;
 use crate::widgets::editor_widget::context_bar::widget::ContextBarWidget;

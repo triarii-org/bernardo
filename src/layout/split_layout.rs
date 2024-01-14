@@ -7,7 +7,8 @@ use crate::layout::layout::{Layout, LayoutResult};
 use crate::layout::widget_with_rect::WidgetWithRect;
 use crate::primitives::rect::Rect;
 use crate::primitives::xy::XY;
-use crate::widget::widget::Widget;
+
+use crate::*;
 
 /* TODO
 One of many issues this file have is it's readability, starting with the fact that it seems that

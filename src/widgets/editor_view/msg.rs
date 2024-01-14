@@ -1,6 +1,7 @@
 use crate::experiments::focus_group::FocusUpdate;
 use crate::fs::path::SPath;
-use crate::widget::any_msg::AnyMsg;
+
+use crate::*;
 
 #[derive(Clone, Debug)]
 pub enum EditorViewMsg {

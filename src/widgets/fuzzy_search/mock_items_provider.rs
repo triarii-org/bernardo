@@ -4,10 +4,11 @@ pub mod mock {
     use std::rc::Rc;
 
     use crate::primitives::alphabet::mock::ALPHABET;
-    use crate::widget::any_msg::AnyMsg;
+
     use crate::widgets::fuzzy_search::helpers::is_subsequence;
     use crate::widgets::fuzzy_search::item_provider::{Item, ItemsProvider};
     use crate::widgets::main_view::msg::MainViewMsg;
+    use crate::*;
 
     pub struct MockItemProvider {
         num_items: usize,

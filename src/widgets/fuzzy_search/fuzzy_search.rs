@@ -15,8 +15,8 @@ use crate::primitives::common_edit_msgs::key_to_edit_msg;
 use crate::primitives::rect::Rect;
 use crate::primitives::xy::XY;
 use crate::unpack_or_e;
-use crate::widget::any_msg::AnyMsg;
-use crate::widget::widget::{get_new_widget_id, Widget, WidgetAction, WID};
+
+
 use crate::widgets::edit_box::{EditBoxWidget, EditBoxWidgetMsg};
 use crate::widgets::fuzzy_search::item_provider::{Item, ItemsProvider};
 use crate::widgets::fuzzy_search::msg::{FuzzySearchMsg, Navigation};

@@ -3,7 +3,7 @@
 
 use std::rc::Rc;
 
-use crate::widget::any_msg::AnyMsg;
+use crate::*;
 
 pub trait Item {
     fn display_name(&self) -> Rc<String>;

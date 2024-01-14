@@ -17,8 +17,8 @@ use crate::w7e::handler_load_error::HandlerLoadError;
 use crate::w7e::inspector::{inspect_workspace, InspectError};
 use crate::w7e::workspace::WORKSPACE_FILE_NAME;
 use crate::w7e::workspace::{LoadError, ScopeLoadErrors, Workspace};
-use crate::widget::widget::Widget;
 use crate::widgets::main_view::main_view::MainView;
+use crate::*;
 
 pub fn run_gladius<I: Input, O: FinalOutput>(providers: Providers, input: I, mut output: O, files: Vec<PathBuf>) {
     // Loading / Building workspace file

@@ -15,7 +15,6 @@ use bernardo::io::keys::Keycode;
 use bernardo::io::output::{FinalOutput, Output};
 use bernardo::primitives::rect::Rect;
 use bernardo::primitives::sized_xy::SizedXY;
-use bernardo::widget::widget::Widget;
 
 use bernardo::*;
 

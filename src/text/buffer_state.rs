@@ -25,7 +25,7 @@ use crate::tsw::lang_id::LangId;
 use crate::tsw::tree_sitter_wrapper::{HighlightItem, TreeSitterWrapper};
 use crate::w7e::buffer_state_shared_ref::BufferSharedRef;
 use crate::w7e::navcomp_provider::StupidSubstituteMessage;
-use crate::widget::widget::WID;
+
 use crate::widgets::main_view::main_view::DocumentIdentifier;
 use crate::{unpack_or, unpack_or_e};
 

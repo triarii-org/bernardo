@@ -1,8 +1,8 @@
 use std::rc::Rc;
 
-use crate::widget::any_msg::{AnyMsg, AsAny};
 use crate::widgets::fuzzy_search::item_provider::{Item, ItemsProvider};
 use crate::widgets::main_view::msg::MainViewMsg;
+use crate::*;
 
 pub struct DisplayItem {
     idx: usize,

@@ -8,6 +8,7 @@ mod cursor;
 pub use cursor::*;
 
 pub mod experiments;
+
 pub mod fs;
 pub mod gladius;
 pub mod io;
@@ -18,7 +19,10 @@ pub mod promise;
 pub mod text;
 pub mod tsw;
 pub mod w7e;
-pub mod widget;
+
+mod widget;
+pub use widget::*;
+
 pub mod widgets;
 
 #[cfg(test)]

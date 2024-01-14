@@ -1,5 +1,5 @@
 use crate::w7e::navcomp_provider::CompletionAction;
-use crate::widget::any_msg::AnyMsg;
+use crate::*;
 
 #[derive(Clone, Debug)]
 pub enum CompletionWidgetMsg {

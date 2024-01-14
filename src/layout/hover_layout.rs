@@ -9,7 +9,8 @@ use crate::layout::layout::{Layout, LayoutResult};
 use crate::layout::widget_with_rect::WidgetWithRect;
 use crate::primitives::rect::Rect;
 use crate::primitives::xy::XY;
-use crate::widget::widget::Widget;
+
+use crate::*;
 
 pub type ChildRectFunc = Box<dyn Fn(Screenspace) -> Option<Rect>>;
 

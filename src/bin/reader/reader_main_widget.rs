@@ -6,8 +6,6 @@ use bernardo::io::input_event::InputEvent;
 use bernardo::io::output::Output;
 use bernardo::primitives::scroll::ScrollDirection;
 use bernardo::primitives::xy::XY;
-use bernardo::widget::any_msg::AnyMsg;
-use bernardo::widget::widget::{get_new_widget_id, Widget, WID};
 use bernardo::widgets::dump_visualizer_widget::DumpVisualizerWidget;
 use bernardo::widgets::with_scroll::with_scroll::WithScroll;
 
