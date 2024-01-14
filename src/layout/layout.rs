@@ -1,5 +1,5 @@
 use crate::*;
-use crate::layout::widget_with_rect::WidgetWithRect;
+use crate::*;
 use crate::primitives::xy::XY;
 
 use crate::*;

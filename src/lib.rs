@@ -16,7 +16,9 @@ pub mod gladius;
 mod io;
 pub use io::*;
 
-pub mod layout;
+mod layout;
+pub use layout::*;
+
 pub mod lsp_client;
 pub mod primitives;
 pub mod promise;
