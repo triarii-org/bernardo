@@ -11,7 +11,6 @@ pub trait Clipboard: Sync + Send {
     fn set(&self, s: String) -> bool;
 }
 
-// TODO: deadecode?
 pub fn get_me_some_clipboard() -> ClipboardRef {
     match DefaultClipboard::new() {
         Some(dc) => Arc::new(Box::new(dc)),

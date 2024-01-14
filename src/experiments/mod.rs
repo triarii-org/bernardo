@@ -5,7 +5,7 @@ mod buffer_register;
 pub use buffer_register::{BufferRegister, BufferRegisterRef, OpenResult};
 
 mod clipboard;
-pub use clipboard::{get_me_fake_clipboard, Clipboard, ClipboardRef};
+pub use clipboard::{get_me_fake_clipboard, get_me_some_clipboard, Clipboard, ClipboardRef};
 
 mod filename_to_language;
 pub use filename_to_language::filename_to_language;
