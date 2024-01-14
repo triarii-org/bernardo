@@ -17,7 +17,7 @@ arboard = "3.1.1"
 cargo_toml = "0.15.1" # we need to go deeper.
 clap = { version = "4.1.4", features = ["derive"] }
 clap-verbosity-flag = "2.0.0"
-crossterm = "0.26.0"
+crossterm = "0.27.0"
 crossbeam-channel = "0.5.1"
 dirs = "4.0.0"
 either = "1.8.1"
