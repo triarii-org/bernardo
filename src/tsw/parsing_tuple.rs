@@ -24,4 +24,3 @@ impl Debug for ParsingTuple {
         write!(f, "lang_id {:?}", self.lang_id)
     }
 }
-

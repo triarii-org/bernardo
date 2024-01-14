@@ -16,7 +16,10 @@ use crate::primitives::stupid_cursor::StupidCursor;
 use crate::promise::promise::Promise;
 use crate::unpack_or_e;
 use crate::w7e::navcomp_group::NavCompTickSender;
-use crate::w7e::navcomp_provider::{Completion, CompletionAction, CompletionsPromise, FormattingPromise, NavCompProvider, NavCompSymbol, StupidSubstituteMessage, SymbolContextActionsPromise, SymbolPromise, SymbolType, SymbolUsage, SymbolUsagesPromise};
+use crate::w7e::navcomp_provider::{
+    Completion, CompletionAction, CompletionsPromise, FormattingPromise, NavCompProvider, NavCompSymbol, StupidSubstituteMessage,
+    SymbolContextActionsPromise, SymbolPromise, SymbolType, SymbolUsage, SymbolUsagesPromise,
+};
 
 /*
 TODO I am silently ignoring errors here. I guess that if NavComp fails it should get re-started.
@@ -50,26 +53,19 @@ pub struct NavCompProviderLsp {
 
 impl NavCompProviderLsp {
     // TODO add errors
-    pub fn new(
-        lsp_path: PathBuf,
-        workspace_root: PathBuf,
-        tick_sender: NavCompTickSender,
-    ) -> Option<Self> {
+    pub fn new(lsp_path: PathBuf, workspace_root: PathBuf, tick_sender: NavCompTickSender) -> Option<Self> {
         let error_channel = crossbeam_channel::unbounded::<LspReadError>();
 
-        if let Some(mut lsp) = LspWrapper::new(lsp_path,
-                                               workspace_root, tick_sender.clone(), error_channel.0.clone()) {
+        if let Some(mut lsp) = LspWrapper::new(lsp_path, workspace_root, tick_sender.clone(), error_channel.0.clone()) {
             if lsp.initialize().is_ok() {
-                Some(
-                    NavCompProviderLsp {
-                        lsp: RwLock::new(lsp),
-                        todo_tick_sender: tick_sender,
-                        // TODO this will get lang specific
-                        triggers: vec![".".to_string(), "::".to_string()],
-                        read_error_channel: error_channel,
-                        crashed: RwLock::new(false),
-                    }
-                )
+                Some(NavCompProviderLsp {
+                    lsp: RwLock::new(lsp),
+                    todo_tick_sender: tick_sender,
+                    // TODO this will get lang specific
+                    triggers: vec![".".to_string(), "::".to_string()],
+                    read_error_channel: error_channel,
+                    crashed: RwLock::new(false),
+                })
             } else {
                 error!("swallowed lsp init error");
                 None
@@ -86,7 +82,6 @@ impl NavCompProviderLsp {
         });
     }
 }
-
 
 impl NavCompProvider for NavCompProviderLsp {
     fn file_open_for_edition(&self, path: &SPath, file_contents: ropey::Rope) {
@@ -107,16 +102,14 @@ impl NavCompProvider for NavCompProviderLsp {
         let url = unpack_or_e!(path.to_url().ok(), None, "failed to convert spath [{}] to url", path);
         let mut lock = unpack_or_e!(self.lsp.try_write().ok(), None, "failed acquiring lock");
 
-        match lock.text_document_completion(url, cursor, true /*TODO*/, None /*TODO*/) {
+        match lock.text_document_completion(url, cursor, true /* TODO */, None /* TODO */) {
             Ok(resp) => {
                 let new_promise = resp.map(|cop| {
                     match cop {
                         None => vec![],
                         Some(comps) => {
                             match comps {
-                                CompletionResponse::Array(arr) => {
-                                    arr.into_iter().map(translate_completion_item).collect()
-                                }
+                                CompletionResponse::Array(arr) => arr.into_iter().map(translate_completion_item).collect(),
                                 CompletionResponse::List(list) => {
                                     // TODO is complete ignored
                                     list.items.into_iter().map(translate_completion_item).collect()
@@ -144,8 +137,9 @@ impl NavCompProvider for NavCompProviderLsp {
     }
 
     // fn todo_get_symbol_at(&self, path: &SPath, cursor: StupidCursor) -> Option<SymbolPromise> {
-    //     let url = unpack_or_e!(path.to_url().ok(), None, "failed to convert spath [{}] to url", path);
-    //     let mut lock = unpack_or_e!(self.lsp.try_write().ok(), None, "failed acquiring lock");
+    //     let url = unpack_or_e!(path.to_url().ok(), None, "failed to convert spath [{}] to url",
+    // path);     let mut lock = unpack_or_e!(self.lsp.try_write().ok(), None, "failed acquiring
+    // lock");
     //
     //     match lock.text_document_document_symbol(url) {
     //         Ok(resp) => {
@@ -158,8 +152,8 @@ impl NavCompProvider for NavCompProviderLsp {
     //                                 symbol_op = Some(NavCompSymbol {
     //                                     symbol_type: f.kind.into(),
     //                                     // range: f.location.range,
-    //                                     stupid_range: (f.location.range.start.into(), f.location.range.end.into()),
-    //                                 })
+    //                                     stupid_range: (f.location.range.start.into(),
+    // f.location.range.end.into()),                                 })
     //                             });
     //                         }
     //                         DocumentSymbolResponse::Nested(v) => {
@@ -190,24 +184,24 @@ impl NavCompProvider for NavCompProviderLsp {
 
         match lock.text_document_references(url, cursor) {
             Ok(resp) => {
-                let new_promise = resp.map(|response| {
-                    match response {
-                        None => Vec::new(),
-                        Some(items) => {
-                            items.into_iter().map(|loc| {
-                                SymbolUsage {
-                                    path: loc.uri.to_string(),
-                                    stupid_range: (StupidCursor {
-                                        char_idx_0b: loc.range.start.character,
-                                        line_0b: loc.range.start.line,
-                                    }, StupidCursor {
-                                        char_idx_0b: loc.range.end.character,
-                                        line_0b: loc.range.end.line,
-                                    }),
-                                }
-                            }).collect()
-                        }
-                    }
+                let new_promise = resp.map(|response| match response {
+                    None => Vec::new(),
+                    Some(items) => items
+                        .into_iter()
+                        .map(|loc| SymbolUsage {
+                            path: loc.uri.to_string(),
+                            stupid_range: (
+                                StupidCursor {
+                                    char_idx_0b: loc.range.start.character,
+                                    line_0b: loc.range.start.line,
+                                },
+                                StupidCursor {
+                                    char_idx_0b: loc.range.end.character,
+                                    line_0b: loc.range.end.line,
+                                },
+                            ),
+                        })
+                        .collect(),
                 });
 
                 Some(Box::new(new_promise))
@@ -225,27 +219,27 @@ impl NavCompProvider for NavCompProviderLsp {
 
         match lock.text_document_formatting(url) {
             Ok(resp) => {
-                let new_promise = resp.map(|response| {
-                    match response {
-                        None => {
-                            None
-                        }
-                        Some(vte) => {
-                            let stupid_edits: Vec<StupidSubstituteMessage> = vte.into_iter().map(|te| {
-                                StupidSubstituteMessage {
-                                    substitute: te.new_text,
-                                    stupid_range: (StupidCursor {
+                let new_promise = resp.map(|response| match response {
+                    None => None,
+                    Some(vte) => {
+                        let stupid_edits: Vec<StupidSubstituteMessage> = vte
+                            .into_iter()
+                            .map(|te| StupidSubstituteMessage {
+                                substitute: te.new_text,
+                                stupid_range: (
+                                    StupidCursor {
                                         char_idx_0b: te.range.start.character,
                                         line_0b: te.range.start.line,
-                                    }, StupidCursor {
+                                    },
+                                    StupidCursor {
                                         char_idx_0b: te.range.end.character,
                                         line_0b: te.range.end.line,
-                                    }),
-                                }
-                            }).collect();
+                                    },
+                                ),
+                            })
+                            .collect();
 
-                            Some(stupid_edits)
-                        }
+                        Some(stupid_edits)
                     }
                 });
 
@@ -287,16 +281,14 @@ fn translate_completion_item(i: lsp_types::CompletionItem) -> Completion {
     Completion {
         key: i.label,
         desc: i.detail,
-        action: CompletionAction::Insert(i.text_edit.map(|c|
-            match c {
-                CompletionTextEdit::Edit(e) => {
-                    e.new_text
-                }
-                CompletionTextEdit::InsertAndReplace(e) => {
-                    e.new_text
-                }
-            }
-        ).unwrap_or("".to_string())),
+        action: CompletionAction::Insert(
+            i.text_edit
+                .map(|c| match c {
+                    CompletionTextEdit::Edit(e) => e.new_text,
+                    CompletionTextEdit::InsertAndReplace(e) => e.new_text,
+                })
+                .unwrap_or("".to_string()),
+        ),
     }
 }
 

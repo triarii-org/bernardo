@@ -21,11 +21,7 @@ pub fn get_next_filename(dir: &Path, prefix: &str, suffix: &str) -> Option<PathB
         }
         Ok(contents) => {
             let all_files = contents
-                .map(|r| r.ok().map(|de| {
-                    de.path()
-                        .file_name()
-                        .map(|c| c.to_string_lossy().to_string())
-                }))
+                .map(|r| r.ok().map(|de| de.path().file_name().map(|c| c.to_string_lossy().to_string())))
                 .flatten()
                 .flatten()
                 .collect::<HashSet<String>>();
@@ -43,11 +39,7 @@ pub fn get_next_filename(dir: &Path, prefix: &str, suffix: &str) -> Option<PathB
 }
 
 pub fn fill_output(color: Color, output: &mut dyn Output) {
-    let style = TextStyle::new(
-        Color::new(0, 0, 0),
-        color,
-        Effect::None,
-    );
+    let style = TextStyle::new(Color::new(0, 0, 0), color, Effect::None);
 
     let mut rect = output.visible_rect();
     // let mut rect = Rect::from_zero(output.size());
@@ -67,11 +59,7 @@ pub fn fill_output(color: Color, output: &mut dyn Output) {
 
     for x in rect.upper_left().x..rect.lower_right().x {
         for y in rect.upper_left().y..rect.lower_right().y {
-            output.print_at(
-                XY::new(x, y),
-                style,
-                " ",
-            )
+            output.print_at(XY::new(x, y), style, " ")
         }
     }
 }
@@ -137,7 +125,10 @@ mod tests {
         assert_eq!(copy_first_n_columns(sentence, 5, false), Some("Quel ".to_string()));
         assert_eq!(copy_first_n_columns(sentence, 100, false), None);
         assert_eq!(copy_first_n_columns(sentence, 100, true), Some(sentence.to_string()));
-        assert_eq!(copy_first_n_columns(sentence, 25, true), Some("Quel est votre film préfé".to_string()));
+        assert_eq!(
+            copy_first_n_columns(sentence, 25, true),
+            Some("Quel est votre film préfé".to_string())
+        );
     }
 
     #[test]

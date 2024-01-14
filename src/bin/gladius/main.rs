@@ -42,21 +42,15 @@ fn main() {
     let fsf = RealFS::new(start_dir).to_fsf();
 
     // Initializing Bernardo TUI
-    App::init().with_alt_screen_mode().run_with(move |input, output| {
+    App::init()
+        .with_alt_screen_mode()
+        .run_with(move |input, output| {
+            let tree_sitter = Arc::new(TreeSitterWrapper::new(LanguageSet::full()));
+            let navcomp_loader = Arc::new(Box::new(RealNavCompLoader::new()) as Box<dyn NavCompLoader>);
 
-        let tree_sitter = Arc::new(TreeSitterWrapper::new(LanguageSet::full()));
-        let navcomp_loader = Arc::new(Box::new(RealNavCompLoader::new()) as Box<dyn NavCompLoader>);
+            let providers = Providers::new(config_ref, fsf, clipboard, theme, tree_sitter, navcomp_loader, vec![]);
 
-        let providers = Providers::new(
-            config_ref,
-            fsf,
-            clipboard,
-            theme,
-            tree_sitter,
-            navcomp_loader,
-            vec![],
-        );
-
-        run_gladius(providers, input, output, files);
-    }).expect("Expected the app to work")
+            run_gladius(providers, input, output, files);
+        })
+        .expect("Expected the app to work")
 }

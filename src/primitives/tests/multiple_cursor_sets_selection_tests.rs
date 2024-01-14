@@ -5,10 +5,12 @@ use ropey::Rope;
 use crate::cursor::cursor::Cursor;
 use crate::cursor::cursor::Selection;
 use crate::cursor::cursor_set::CursorSet;
-use crate::cursor::tests::cursor_tests_common::{common_assert_pair_makes_sense, common_buffer_cursors_sel_to_text, common_text_to_buffer_cursors_with_selections};
+use crate::cursor::tests::cursor_tests_common::{
+    common_assert_pair_makes_sense, common_buffer_cursors_sel_to_text, common_text_to_buffer_cursors_with_selections,
+};
 use crate::experiments::clipboard::{Clipboard, ClipboardRef};
 use crate::mocks::mock_clipboard::MockClipboard;
-use crate::primitives::common_edit_msgs::{_apply_cem, CommonEditMsg};
+use crate::primitives::common_edit_msgs::{CommonEditMsg, _apply_cem};
 use crate::primitives::has_invariant::HasInvariant;
 use crate::primitives::printable::Printable;
 use crate::text::text_buffer::TextBuffer;
@@ -21,9 +23,10 @@ fn texts_to_texts(texts: &Vec<&str>, selected: usize, cem: CommonEditMsg, clipbo
     assert!(texts.len() > 1);
     assert!(selected < texts.len());
 
-    let mut buffer_cs_pair = texts.iter().map(|text| {
-        common_text_to_buffer_cursors_with_selections(text)
-    }).collect::<Vec<_>>();
+    let mut buffer_cs_pair = texts
+        .iter()
+        .map(|text| common_text_to_buffer_cursors_with_selections(text))
+        .collect::<Vec<_>>();
 
     for i in 1..buffer_cs_pair.len() {
         assert_eq!(buffer_cs_pair[0].0, buffer_cs_pair[i].0)
@@ -64,10 +67,7 @@ fn texts_to_texts(texts: &Vec<&str>, selected: usize, cem: CommonEditMsg, clipbo
 
 #[test]
 fn multiple_cursor_test_1_1() {
-    let texts: Vec<&str> = vec![
-        "fir.stte#st",
-        "fir#stte.st",
-    ];
+    let texts: Vec<&str> = vec!["fir.stte#st", "fir#stte.st"];
 
     // Backspace
     let new_texts = texts_to_texts(&texts, 0, CommonEditMsg::Backspace, None);
@@ -78,10 +78,7 @@ fn multiple_cursor_test_1_1() {
 
 #[test]
 fn multiple_cursor_test_1_2() {
-    let texts: Vec<&str> = vec![
-        "fir.stte#st",
-        "fir#stte.st",
-    ];
+    let texts: Vec<&str> = vec!["fir.stte#st", "fir#stte.st"];
 
     let new_texts = texts_to_texts(&texts, 1, CommonEditMsg::Backspace, None);
 
@@ -91,10 +88,7 @@ fn multiple_cursor_test_1_2() {
 
 #[test]
 fn multiple_cursor_test_2_1() {
-    let texts: Vec<&str> = vec![
-        "fir.stte#st",
-        "fir#stte.st",
-    ];
+    let texts: Vec<&str> = vec!["fir.stte#st", "fir#stte.st"];
     // Delete
     let new_texts = texts_to_texts(&texts, 0, CommonEditMsg::Delete, None);
 
@@ -104,10 +98,7 @@ fn multiple_cursor_test_2_1() {
 
 #[test]
 fn multiple_cursor_test_2_2() {
-    let texts: Vec<&str> = vec![
-        "fir.stte#st",
-        "fir#stte.st",
-    ];
+    let texts: Vec<&str> = vec!["fir.stte#st", "fir#stte.st"];
 
     let new_texts = texts_to_texts(&texts, 1, CommonEditMsg::Delete, None);
 
@@ -117,12 +108,7 @@ fn multiple_cursor_test_2_2() {
 
 #[test]
 fn multiple_cursor_test_3_1() {
-    let texts: Vec<&str> = vec![
-        "fir[st.te)s.t",
-        "fir.st.te.s#t",
-        "fir.st#te#s.t",
-    ];
-
+    let texts: Vec<&str> = vec!["fir[st.te)s.t", "fir.st.te.s#t", "fir.st#te#s.t"];
 
     let new_texts = texts_to_texts(&texts, 0, CommonEditMsg::Backspace, None);
 
@@ -133,12 +119,7 @@ fn multiple_cursor_test_3_1() {
 
 #[test]
 fn multiple_cursor_test_3_2() {
-    let texts: Vec<&str> = vec![
-        "fir[st.te)s.t",
-        "fir.st.te.s#t",
-        "fir.st#te#s.t",
-    ];
-
+    let texts: Vec<&str> = vec!["fir[st.te)s.t", "fir.st.te.s#t", "fir.st#te#s.t"];
 
     let new_texts = texts_to_texts(&texts, 1, CommonEditMsg::Backspace, None);
 
@@ -149,12 +130,7 @@ fn multiple_cursor_test_3_2() {
 
 #[test]
 fn multiple_cursor_test_3_3() {
-    let texts: Vec<&str> = vec![
-        "fir[st.te)s.t",
-        "fir.st.te.s#t",
-        "fir.st#te#s.t",
-    ];
-
+    let texts: Vec<&str> = vec!["fir[st.te)s.t", "fir.st.te.s#t", "fir.st#te#s.t"];
 
     let new_texts = texts_to_texts(&texts, 2, CommonEditMsg::Backspace, None);
 
@@ -165,12 +141,7 @@ fn multiple_cursor_test_3_3() {
 
 #[test]
 fn multiple_cursor_test_3_4() {
-    let texts: Vec<&str> = vec![
-        "fir[st.te)s.t",
-        "fir.st.te.s#t",
-        "fir.st#te#s.t",
-    ];
-
+    let texts: Vec<&str> = vec!["fir[st.te)s.t", "fir.st.te.s#t", "fir.st#te#s.t"];
 
     let new_texts = texts_to_texts(&texts, 0, CommonEditMsg::Delete, None);
 
@@ -181,12 +152,7 @@ fn multiple_cursor_test_3_4() {
 
 #[test]
 fn multiple_cursor_test_3_5() {
-    let texts: Vec<&str> = vec![
-        "fir[st.te)s.t",
-        "fir.st.te.s#t",
-        "fir.st#te#s.t",
-    ];
-
+    let texts: Vec<&str> = vec!["fir[st.te)s.t", "fir.st.te.s#t", "fir.st#te#s.t"];
 
     let new_texts = texts_to_texts(&texts, 1, CommonEditMsg::Delete, None);
 
@@ -197,12 +163,7 @@ fn multiple_cursor_test_3_5() {
 
 #[test]
 fn multiple_cursor_test_3_6() {
-    let texts: Vec<&str> = vec![
-        "fir[st.te)s.t",
-        "fir.st.te.s#t",
-        "fir.st#te#s.t",
-    ];
-
+    let texts: Vec<&str> = vec!["fir[st.te)s.t", "fir.st.te.s#t", "fir.st#te#s.t"];
 
     let new_texts = texts_to_texts(&texts, 2, CommonEditMsg::Delete, None);
 
@@ -213,10 +174,7 @@ fn multiple_cursor_test_3_6() {
 
 #[test]
 fn multiple_cursor_test_4_1() {
-    let texts: Vec<&str> = vec![
-        "fir[stte)st",
-        "fir#stte#st",
-    ];
+    let texts: Vec<&str> = vec!["fir[stte)st", "fir#stte#st"];
 
     let new_texts = texts_to_texts(&texts, 0, CommonEditMsg::Backspace, None);
 
@@ -226,10 +184,7 @@ fn multiple_cursor_test_4_1() {
 
 #[test]
 fn multiple_cursor_test_4_2() {
-    let texts: Vec<&str> = vec![
-        "fir[stte)st",
-        "fir#stte#st",
-    ];
+    let texts: Vec<&str> = vec!["fir[stte)st", "fir#stte#st"];
 
     let new_texts = texts_to_texts(&texts, 1, CommonEditMsg::Backspace, None);
 
@@ -239,10 +194,7 @@ fn multiple_cursor_test_4_2() {
 
 #[test]
 fn multiple_cursor_test_4_3() {
-    let texts: Vec<&str> = vec![
-        "fir[stte)st",
-        "fir#stte#st",
-    ];
+    let texts: Vec<&str> = vec!["fir[stte)st", "fir#stte#st"];
 
     let new_texts = texts_to_texts(&texts, 0, CommonEditMsg::Delete, None);
 
@@ -252,10 +204,7 @@ fn multiple_cursor_test_4_3() {
 
 #[test]
 fn multiple_cursor_test_4_4() {
-    let texts: Vec<&str> = vec![
-        "fir[stte)st",
-        "fir#stte#st",
-    ];
+    let texts: Vec<&str> = vec!["fir[stte)st", "fir#stte#st"];
 
     let new_texts = texts_to_texts(&texts, 1, CommonEditMsg::Delete, None);
 
@@ -263,13 +212,9 @@ fn multiple_cursor_test_4_4() {
     assert_eq!(new_texts[1].as_str(), "fir#tte#t");
 }
 
-
 #[test]
 fn multiple_cursor_test_5_1() {
-    let texts: Vec<&str> = vec![
-        "fir[stte)st",
-        "fir#stte#st",
-    ];
+    let texts: Vec<&str> = vec!["fir[stte)st", "fir#stte#st"];
 
     let new_texts = texts_to_texts(&texts, 0, CommonEditMsg::Char('a'), None);
 
@@ -280,10 +225,7 @@ fn multiple_cursor_test_5_1() {
 
 #[test]
 fn multiple_cursor_test_5_2() {
-    let texts: Vec<&str> = vec![
-        "fir[stte)st",
-        "fir#stte#st",
-    ];
+    let texts: Vec<&str> = vec!["fir[stte)st", "fir#stte#st"];
 
     let new_texts = texts_to_texts(&texts, 1, CommonEditMsg::Char('a'), None);
 
@@ -293,10 +235,7 @@ fn multiple_cursor_test_5_2() {
 
 #[test]
 fn multiple_cursor_test_6_1() {
-    let texts: Vec<&str> = vec![
-        "fir[stte)st",
-        "fir#stte#st",
-    ];
+    let texts: Vec<&str> = vec!["fir[stte)st", "fir#stte#st"];
 
     let mut clipboard = MockClipboard::default();
     clipboard.set("xxx".to_string());
@@ -309,10 +248,7 @@ fn multiple_cursor_test_6_1() {
 
 #[test]
 fn multiple_cursor_test_6_2() {
-    let texts: Vec<&str> = vec![
-        "fir[stte)st",
-        "fir#stte#st",
-    ];
+    let texts: Vec<&str> = vec!["fir[stte)st", "fir#stte#st"];
 
     let mut clipboard = MockClipboard::default();
     clipboard.set("xxx".to_string());

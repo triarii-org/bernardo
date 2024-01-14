@@ -10,11 +10,10 @@ use crate::widgets::editor_widget::label::label::{Label, LabelPos, LabelStyle};
 use crate::widgets::editor_widget::label::labels_provider::LabelsProvider;
 
 /*
- TODO this is a very incomplete implementation.
- - it does not handle errors
- - it does not use settings at all, so no way to fine tune the display behavior
- */
-
+TODO this is a very incomplete implementation.
+- it does not handle errors
+- it does not use settings at all, so no way to fine tune the display behavior
+*/
 
 /*
 Generated with chat-gpt:
@@ -27,7 +26,8 @@ Generated with chat-gpt:
 const warning_pattern_str: &'static str = r"warning:.+[\r\n]+\s+-->\s+([^:]+?):([0-9]+):([0-9]+)[\r\n]+";
 const error_pattern_str: &'static str = r"error[^:]*:[^:]*[\r\n]+\s+-->\s+([^:]+?):([0-9]+):([0-9]+)[\r\n]+";
 
-// TODO I actually think this should be written in Python in a separate program, first of "plugins", to test out the idea.
+// TODO I actually think this should be written in Python in a separate program, first of "plugins",
+// to test out the idea.
 pub struct RustcOutputParserLabelProvider {
     warning_regex: Regex,
     error_regex: Regex,
@@ -47,11 +47,11 @@ impl RustcOutputParserLabelProvider {
         }
     }
 
-    pub fn errors_iter(&self) -> impl Iterator<Item=&Label> {
+    pub fn errors_iter(&self) -> impl Iterator<Item = &Label> {
         self.labels.iter().filter(|label| label.style == LabelStyle::Error)
     }
 
-    pub fn warnings_iter(&self) -> impl Iterator<Item=&Label> {
+    pub fn warnings_iter(&self) -> impl Iterator<Item = &Label> {
         self.labels.iter().filter(|label| label.style == LabelStyle::Warning)
     }
 
@@ -145,8 +145,8 @@ impl RustcOutputParserLabelProvider {
 }
 
 // impl LabelsProvider for RustcOutputParserLabelProvider {
-//     fn query_for(&self, path_op: Option<SPath>, buffer: &dyn TextBuffer, char_range: Range<usize>) -> Box<dyn Iterator<Item=&'_ Label> + '_> {
-//         todo!()
+//     fn query_for(&self, path_op: Option<SPath>, buffer: &dyn TextBuffer, char_range:
+// Range<usize>) -> Box<dyn Iterator<Item=&'_ Label> + '_> {         todo!()
 //     }
 // }
 

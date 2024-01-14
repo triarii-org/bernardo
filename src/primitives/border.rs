@@ -37,55 +37,34 @@ impl BorderStyle {
     }
 }
 
-
 fn draw_full_rect(style: TextStyle, border_style: &BorderStyle, output: &mut dyn Output) {
     let size = output.size();
     if size > XY::new(1, 1) {
-        output.print_at(XY::ZERO,
-                        style,
-                        border_style.upper_left);
-        output.print_at(XY::new(0, size.y - 1),
-                        style,
-                        border_style.bottom_left);
-        output.print_at(XY::new(size.x - 1, 0),
-                        style,
-                        border_style.upper_right);
-        output.print_at(XY::new(size.x - 1, size.y - 1),
-                        style,
-                        border_style.bottom_right);
+        output.print_at(XY::ZERO, style, border_style.upper_left);
+        output.print_at(XY::new(0, size.y - 1), style, border_style.bottom_left);
+        output.print_at(XY::new(size.x - 1, 0), style, border_style.upper_right);
+        output.print_at(XY::new(size.x - 1, size.y - 1), style, border_style.bottom_right);
 
         for x in 1..size.x - 1 {
-            output.print_at(XY::new(x, 0),
-                            style,
-                            border_style.horizontal_line);
-            output.print_at(XY::new(x, size.y - 1),
-                            style,
-                            border_style.horizontal_line);
+            output.print_at(XY::new(x, 0), style, border_style.horizontal_line);
+            output.print_at(XY::new(x, size.y - 1), style, border_style.horizontal_line);
         }
 
         for y in 1..size.y - 1 {
-            output.print_at(XY::new(0, y),
-                            style,
-                            border_style.vertical_line);
-            output.print_at(XY::new(size.x - 1, y),
-                            style,
-                            border_style.vertical_line);
+            output.print_at(XY::new(0, y), style, border_style.vertical_line);
+            output.print_at(XY::new(size.x - 1, y), style, border_style.vertical_line);
         }
     } else {
         for x in 0..size.x {
             for y in 0..size.y {
-                output.print_at(
-                    XY::new(x, y),
-                    style,
-                    "╳",
-                );
+                output.print_at(XY::new(x, y), style, "╳");
             }
         }
     }
 }
 //
-// pub fn draw_some(wirs: &Vec<WidgetIdRect>, text_style: TextStyle, border_style: &BorderStyle, output: &mut Output) {
-//     if output.size() > XY::new(2, 2) {
+// pub fn draw_some(wirs: &Vec<WidgetIdRect>, text_style: TextStyle, border_style: &BorderStyle,
+// output: &mut Output) {     if output.size() > XY::new(2, 2) {
 //         let mut corner_neighbours = HashSet::<XY>::new();
 //         let mut corners = HashSet::<XY>::new();
 //

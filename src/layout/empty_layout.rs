@@ -13,16 +13,11 @@ pub struct EmptyLayout {
 
 impl EmptyLayout {
     pub fn new() -> Self {
-        Self {
-            size: None,
-        }
+        Self { size: None }
     }
 
     pub fn with_size(self, size: XY) -> Self {
-        Self {
-            size: Some(size),
-            ..self
-        }
+        Self { size: Some(size), ..self }
     }
 }
 

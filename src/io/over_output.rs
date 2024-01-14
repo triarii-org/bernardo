@@ -5,12 +5,12 @@ use log::warn;
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::{unpack_or, unpack_or_e};
 use crate::io::output::{Metadata, Output};
 use crate::io::style::TextStyle;
 use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
+use crate::{unpack_or, unpack_or_e};
 
 // Over output is an output that is bigger than original,
 // physical or in-memory display. All write operations targeting lines/columns beyond it's borders
@@ -24,13 +24,14 @@ pub struct OverOutput<'a> {
 }
 
 impl<'a> OverOutput<'a> {
-    pub fn new(
-        output: &'a mut dyn Output,
-        faked_size: XY,
-        local_to_parent: XY,
-    ) -> Self {
+    pub fn new(output: &'a mut dyn Output, faked_size: XY, local_to_parent: XY) -> Self {
         if faked_size + local_to_parent < output.size() {
-            warn!("seemingly unnecessary OverOutput, which fits entirely within parent output: faked_size: {}, offset: {}, source output: {}", faked_size, local_to_parent, output.size());
+            warn!(
+                "seemingly unnecessary OverOutput, which fits entirely within parent output: faked_size: {}, offset: {}, source output: {}",
+                faked_size,
+                local_to_parent,
+                output.size()
+            );
         }
 
         let res = OverOutput {
@@ -113,8 +114,9 @@ impl Output for OverOutput<'_> {
         let my_rect = my_rect.capped_at(self.size()).unwrap();
 
         // debug_assert!(my_rect.lower_right() <= self.size());
-        // debug_assert!(my_rect.shifted(self.local_to_parent).lower_right() <= parent_vis_rect.lower_right());
-        // debug_assert!(parent_vis_rect.contains_rect(my_rect.shifted(self.local_to_parent)));
+        // debug_assert!(my_rect.shifted(self.local_to_parent).lower_right() <=
+        // parent_vis_rect.lower_right()); debug_assert!(parent_vis_rect.contains_rect(my_rect.
+        // shifted(self.local_to_parent)));
 
         my_rect
     }
@@ -131,13 +133,22 @@ impl Output for OverOutput<'_> {
 
             self.output.emit_metadata(meta);
         } else {
-            debug!("discarding metadata, because i is no intersection: meta.typename {} meta.rect {}, visible_rect {}", meta.typename, meta.rect, self.visible_rect());
+            debug!(
+                "discarding metadata, because i is no intersection: meta.typename {} meta.rect {}, visible_rect {}",
+                meta.typename,
+                meta.rect,
+                self.visible_rect()
+            );
         }
     }
 }
 
 impl<'a> Debug for OverOutput<'a> {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "( OverOutput size {} offset {:?} over {:?} )", self.faked_size, self.local_to_parent, self.output)
+        write!(
+            f,
+            "( OverOutput size {} offset {:?} over {:?} )",
+            self.faked_size, self.local_to_parent, self.output
+        )
     }
 }

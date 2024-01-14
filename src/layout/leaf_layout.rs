@@ -72,10 +72,9 @@ impl<W: Widget> Layout<W> for LeafLayout<W> {
         // let widget_full_size = widget.full_size();
         //
         // if !(widget_full_size <= output_size) {
-        //     error!("can't fit widget {}, required {} scaled to {} and got max {}", &widget_desc, widget_full_size, widget_output_size, output_size);
-        //     return LayoutResult::new(vec![], widget_output_size);
-        // }
-
+        //     error!("can't fit widget {}, required {} scaled to {} and got max {}", &widget_desc,
+        // widget_full_size, widget_output_size, output_size);     return LayoutResult::new(vec![],
+        // widget_output_size); }
 
         if let Some(widget_visible_rect) = screenspace.visible_rect().capped_at(widget_output_size) {
             widget.layout(Screenspace::new(widget_output_size, widget_visible_rect));
@@ -88,14 +87,12 @@ impl<W: Widget> Layout<W> for LeafLayout<W> {
                     Rect::new(XY::ZERO, widget_output_size),
                     true,
                 )],
-                widget_output_size)
+                widget_output_size,
+            )
         } else {
             debug!("leaf layout for {} CULLED, returning {}", &widget_desc, widget_output_size);
 
-            LayoutResult::new(
-                vec![],
-                widget_output_size)
+            LayoutResult::new(vec![], widget_output_size)
         }
     }
 }
-

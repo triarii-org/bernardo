@@ -1,5 +1,5 @@
-use crate::io::crossterm_output::CrosstermOutput;
 use crate::io::crossterm_input::CrosstermInput;
+use crate::io::crossterm_output::CrosstermOutput;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
 use crossterm::terminal;
@@ -7,7 +7,8 @@ use std::io::{stdout, Error, ErrorKind, Stdout};
 
 pub type AppError = Box<dyn std::error::Error>;
 
-/// App is an application wrapper that ensures a bernardo app is correctly initialized and deinitialized.
+/// App is an application wrapper that ensures a bernardo app is correctly initialized and
+/// deinitialized.
 #[derive(Default)]
 pub struct App {
     /// Applications that use alt-screen mode will be rendered in a full window view, similarly to
@@ -58,10 +59,7 @@ impl App {
         let output = CrosstermOutput::new(stdout());
 
         if output.size() == XY::ZERO {
-            return Err(Box::new(Error::new(
-                ErrorKind::Other,
-                "it seems like the screen has zero size",
-            )));
+            return Err(Box::new(Error::new(ErrorKind::Other, "it seems like the screen has zero size")));
         }
 
         f(input, output);

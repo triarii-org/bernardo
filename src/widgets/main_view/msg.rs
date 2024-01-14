@@ -42,4 +42,3 @@ pub enum MainViewMsg {
 }
 
 impl AnyMsg for MainViewMsg {}
-

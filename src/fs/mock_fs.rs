@@ -30,9 +30,7 @@ impl Record {
         } else {
             let first = PathBuf::new().join(path[0]);
             match self {
-                Record::File(_) => {
-                    None
-                }
+                Record::File(_) => None,
                 Record::Dir(ref mut items) => {
                     if items.contains_key(&first) {
                         return items.get_mut(&first).unwrap().get_mut(&path[1..], creating);
@@ -55,12 +53,8 @@ impl Record {
         } else {
             let first = PathBuf::new().join(path[0]);
             match self {
-                Record::File(_) => {
-                    None
-                }
-                Record::Dir(ref items) => {
-                    items.get(&first).map(|r| r.get(&path[1..])).flatten()
-                }
+                Record::File(_) => None,
+                Record::Dir(ref items) => items.get(&first).map(|r| r.get(&path[1..])).flatten(),
             }
         }
     }
@@ -115,21 +109,21 @@ impl Record {
             return false;
         }
 
-        self.get_mut(&components, true).map(|maybe_last| {
-            if maybe_last.is_empty_dir() {
-                *maybe_last = Record::File(contents);
-                true
-            } else {
-                false
-            }
-        }).unwrap_or(false)
+        self.get_mut(&components, true)
+            .map(|maybe_last| {
+                if maybe_last.is_empty_dir() {
+                    *maybe_last = Record::File(contents);
+                    true
+                } else {
+                    false
+                }
+            })
+            .unwrap_or(false)
     }
 
     fn list(&self) -> Option<Vec<PathBuf>> {
         match self {
-            Record::File(_) => {
-                None
-            }
+            Record::File(_) => None,
             Record::Dir(e) => {
                 let files: Vec<_> = e.keys().map(|c| c.clone()).collect();
                 Some(files)
@@ -181,23 +175,31 @@ impl MockFS {
     }
 
     pub fn with_file<P: AsRef<Path>, B: Into<Vec<u8>>>(mut self, path: P, bytes: B) -> Self {
-        self.add_file(path.as_ref(), bytes.into()).unwrap_or_else(
-            |_| error!("failed creating file in mockfs"));
+        self.add_file(path.as_ref(), bytes.into())
+            .unwrap_or_else(|_| error!("failed creating file in mockfs"));
         self
     }
 
     pub fn with_dir<P: AsRef<Path>>(self, path: P) -> Self {
-        self.add_dir(path.as_ref()).unwrap_or_else(
-            |_| error!("failed creating dir in mockfs"));
+        self.add_dir(path.as_ref())
+            .unwrap_or_else(|_| error!("failed creating dir in mockfs"));
         self
     }
 
     pub fn add_dir(&self, path: &Path) -> Result<(), ()> {
-        if self.root_dir.try_write().unwrap().create_dir(path) { Ok(()) } else { Err(()) }
+        if self.root_dir.try_write().unwrap().create_dir(path) {
+            Ok(())
+        } else {
+            Err(())
+        }
     }
 
     pub fn add_file(&mut self, path: &Path, bytes: Vec<u8>) -> Result<(), ()> {
-        if self.root_dir.try_write().unwrap().create_file(path, bytes) { Ok(()) } else { Err(()) }
+        if self.root_dir.try_write().unwrap().create_file(path, bytes) {
+            Ok(())
+        } else {
+            Err(())
+        }
     }
 
     pub fn blocking_overwrite_with_bytes(&self, path: &Path, bytes: &[u8], must_exist: bool) -> Result<usize, WriteError> {
@@ -242,7 +244,6 @@ impl Debug for MockFS {
     }
 }
 
-
 impl FilesystemFront for MockFS {
     fn root_path(&self) -> &PathBuf {
         &self.root_path
@@ -253,7 +254,7 @@ impl FilesystemFront for MockFS {
         if let Some(rec) = self.root_dir.read().unwrap().get(&comp) {
             match rec {
                 Record::File(contents) => Ok(contents.clone()),
-                Record::Dir(_) => Err(ReadError::NotAFilePath)
+                Record::Dir(_) => Err(ReadError::NotAFilePath),
             }
         } else {
             Err(ReadError::FileNotFound)
@@ -292,7 +293,7 @@ impl FilesystemFront for MockFS {
                     error!("this test was redundant and still failed!");
                     return Err(ListError::PathNotFound);
                 }
-                Some(dir) => dir.list()
+                Some(dir) => dir.list(),
             }
         };
 
@@ -313,12 +314,17 @@ impl FilesystemFront for MockFS {
         self.root_dir.read().unwrap().get(&comp).is_some()
     }
 
-    fn blocking_overwrite_with_stream(&self, path: &Path, stream: &mut dyn StreamingIterator<Item=[u8]>, must_exist: bool) -> Result<usize, WriteError> {
+    fn blocking_overwrite_with_stream(
+        &self,
+        path: &Path,
+        stream: &mut dyn StreamingIterator<Item = [u8]>,
+        must_exist: bool,
+    ) -> Result<usize, WriteError> {
         debug!("writing to [{:?}]", path);
         let mut bytes = Vec::<u8>::new();
         while let Some(chunk) = stream.next() {
             bytes.append(&mut Vec::from(chunk));
-        };
+        }
 
         self.blocking_overwrite_with_bytes(path, &bytes, must_exist)
     }
@@ -359,7 +365,6 @@ mod tests {
             .with_file("folder1/file1.txt", "some text")
             .with_file("folder2/file2.txt", "some text2");
 
-
         assert_eq!(mockfs.is_dir(&Path::new("folder1")), true);
         assert_eq!(mockfs.is_dir(&Path::new("folder2")), true);
         assert_eq!(mockfs.is_dir(&Path::new("folder3")), false);
@@ -374,10 +379,22 @@ mod tests {
         assert_eq!(mockfs.blocking_list(&Path::new("")).unwrap(), vec![de!("folder1"), de!("folder2")]);
 
         assert_eq!(mockfs.blocking_read_entire_file(&Path::new("")), Err(ReadError::NotAFilePath));
-        assert_eq!(mockfs.blocking_read_entire_file(&Path::new("/folder3")), Err(ReadError::FileNotFound));
-        assert_eq!(mockfs.blocking_read_entire_file(&Path::new("folder2")), Err(ReadError::NotAFilePath));
-        assert_eq!(mockfs.blocking_read_entire_file(&Path::new("folder1/file1.txt")), Ok("some text".as_bytes().to_vec()));
-        assert_eq!(mockfs.blocking_read_entire_file(&Path::new("folder1/file3.txt")), Err(ReadError::FileNotFound));
+        assert_eq!(
+            mockfs.blocking_read_entire_file(&Path::new("/folder3")),
+            Err(ReadError::FileNotFound)
+        );
+        assert_eq!(
+            mockfs.blocking_read_entire_file(&Path::new("folder2")),
+            Err(ReadError::NotAFilePath)
+        );
+        assert_eq!(
+            mockfs.blocking_read_entire_file(&Path::new("folder1/file1.txt")),
+            Ok("some text".as_bytes().to_vec())
+        );
+        assert_eq!(
+            mockfs.blocking_read_entire_file(&Path::new("folder1/file3.txt")),
+            Err(ReadError::FileNotFound)
+        );
     }
 
     #[test]

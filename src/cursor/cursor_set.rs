@@ -4,23 +4,24 @@ use std::slice::{Iter, IterMut};
 
 use log::{error, warn};
 
-use crate::cursor::cursor::{BackwardWordDeterminant, Cursor, CursorStatus, default_word_determinant, ForwardWordDeterminant, NEWLINE_WIDTH, ZERO_CURSOR};
+use crate::cursor::cursor::{
+    default_word_determinant, BackwardWordDeterminant, Cursor, CursorStatus, ForwardWordDeterminant, NEWLINE_WIDTH, ZERO_CURSOR,
+};
 use crate::primitives::has_invariant::HasInvariant;
 use crate::text::text_buffer::TextBuffer;
 
 // INVARIANTS:
-// - non-empty
-//      this is so I can use cursor for anchoring and call "supercursor" easily
+// - non-empty this is so I can use cursor for anchoring and call "supercursor" easily
 // - cursors are distinct
-// - cursors have their anchors either on begin or on end, and they all have the anchor on the same side
+// - cursors have their anchors either on begin or on end, and they all have the anchor on the same
+//   side
 // - cursors DO NOT OVERLAP
 // - cursors are SORTED by their anchor
 
 // TODO add invariants:
 // - sort cursors by anchor (they don't overlap, so it's easy)
-// - (maybe) add "supercursor", which is always the first or the last, depending on which direction they were moved.
-//      it would help with anchoring.
-
+// - (maybe) add "supercursor", which is always the first or the last, depending on which direction
+//   they were moved. it would help with anchoring.
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 #[cfg_attr(feature = "arbitrary", derive(arbitrary::Arbitrary))]
@@ -44,9 +45,7 @@ impl CursorSet {
     This is singleton in set theory sense, not "design pattern"
      */
     pub fn singleton(cursor: Cursor) -> Self {
-        CursorSet {
-            set: vec![cursor]
-        }
+        CursorSet { set: vec![cursor] }
     }
 
     pub fn set(&self) -> &Vec<Cursor> {
@@ -281,7 +280,8 @@ impl CursorSet {
 
             // This is actually right. Ropey counts '\n' as last character of current line.
             let last_char_in_new_line_idx = if new_line_idx == last_line_idx {
-                //this corresponds to a notion of "potential new character" beyond the buffer. It's a valid cursor position.
+                //this corresponds to a notion of "potential new character" beyond the buffer. It's a valid cursor
+                // position.
                 rope.len_chars()
             } else {
                 match rope.line_to_char(new_line_idx + 1) {
@@ -305,12 +305,8 @@ impl CursorSet {
             let new_line_num_chars = last_char_in_new_line_idx - new_line_begin;
 
             let preferred_target_column = match c.preferred_column {
-                Some(pc) => {
-                    pc
-                }
-                None => {
-                    current_col_idx
-                }
+                Some(pc) => pc,
+                None => current_col_idx,
             };
 
             let old_pos = c.a;
@@ -334,7 +330,12 @@ impl CursorSet {
                 res = true;
             }
 
-            debug_assert!(c.a <= rope.len_chars(), "somehow put the cursor {:?} too far out (len_chars = {})", c, rope.len_chars());
+            debug_assert!(
+                c.a <= rope.len_chars(),
+                "somehow put the cursor {:?} too far out (len_chars = {})",
+                c,
+                rope.len_chars()
+            );
         }
 
         if l < 0 {
@@ -384,7 +385,7 @@ impl CursorSet {
 
         for c in self.set.iter_mut() {
             res |= c.move_home(rope, selecting);
-        };
+        }
 
         self.reduce_left();
 
@@ -402,7 +403,7 @@ impl CursorSet {
 
         for c in self.set.iter_mut() {
             res |= c.move_end(rope, selecting);
-        };
+        }
 
         // reducing - we just pick ones that are furthest left
         self.reduce_right();
@@ -458,7 +459,9 @@ impl CursorSet {
 
         for c in self.set.iter() {
             match new_set.get(&c.a) {
-                None => { new_set.insert(c.a, c.clone()); }
+                None => {
+                    new_set.insert(c.a, c.clone());
+                }
                 Some(old_c) => {
                     // we replace only if old one has shorter selection than new one.
                     match (old_c.s, c.s) {
@@ -527,7 +530,9 @@ impl CursorSet {
 
         for c in self.set.iter().rev() {
             match new_set.get(&c.a) {
-                None => { new_set.insert(c.a, c.clone()); }
+                None => {
+                    new_set.insert(c.a, c.clone());
+                }
                 Some(old_c) => {
                     // we replace only if old one has shorter selection than new one.
                     match (old_c.s, c.s) {
@@ -599,19 +604,11 @@ impl CursorSet {
     }
 
     pub fn word_begin_default(&mut self, buffer: &dyn TextBuffer, selecting: bool) -> bool {
-        self.word_begin(
-            buffer,
-            selecting,
-            &default_word_determinant,
-        )
+        self.word_begin(buffer, selecting, &default_word_determinant)
     }
 
     pub fn word_end_default(&mut self, buffer: &dyn TextBuffer, selecting: bool) -> bool {
-        self.word_end(
-            buffer,
-            selecting,
-            &default_word_determinant,
-        )
+        self.word_end(buffer, selecting, &default_word_determinant)
     }
 
     /*
@@ -671,7 +668,8 @@ impl CursorSet {
     }
 
     pub fn supercursor(&self) -> &Cursor {
-        //TODO this should vary, depending on which direction cursors were moved last. Now it just points to first one.
+        //TODO this should vary, depending on which direction cursors were moved last. Now it just points
+        // to first one.
 
         // this succeeds, because of invariants
         self.set.first().unwrap_or_else(|| {
@@ -704,12 +702,17 @@ impl HasInvariant for CursorSet {
             }
         }
 
-
         // sorted, and anchors on the same side
         // TODO change to is_sorted once stabilized
         for idx in 1..self.set.len() {
             if self.set[idx - 1].cmp(&self.set[idx]) != Ordering::Less {
-                error!("cursor[{}] = {:?} >= {:?} = cursor[{}]", idx - 1, self.set[idx-1], self.set[idx], idx);
+                error!(
+                    "cursor[{}] = {:?} >= {:?} = cursor[{}]",
+                    idx - 1,
+                    self.set[idx - 1],
+                    self.set[idx],
+                    idx
+                );
                 return false;
             }
         }
@@ -725,10 +728,17 @@ impl HasInvariant for CursorSet {
             return false;
         }
 
-        // at this point I know they are sorted and anchor-aligned. All I need to do is to check if begin is after previous end.
+        // at this point I know they are sorted and anchor-aligned. All I need to do is to check if begin is
+        // after previous end.
         for idx in 1..self.set.len() {
             if self.set[idx - 1].get_end() > self.set[idx].get_begin() {
-                error!("cursor[{}].get_end() = {} > {} = cursor[{}].get_begin()", idx - 1, self.set[idx-1].get_end(), self.set[idx].get_begin(), idx);
+                error!(
+                    "cursor[{}].get_end() = {} > {} = cursor[{}].get_begin()",
+                    idx - 1,
+                    self.set[idx - 1].get_end(),
+                    self.set[idx].get_begin(),
+                    idx
+                );
                 return false;
             }
         }

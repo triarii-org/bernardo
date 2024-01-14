@@ -34,10 +34,7 @@ impl CodeResultsProvider for WrappedSymbolUsagesPromise {
         let update_result = self.promise.update();
         debug!("ticking result: {:?}", update_result);
         let new_state = self.loading_state();
-        PollResult {
-            old_state,
-            new_state,
-        }
+        PollResult { old_state, new_state }
     }
 
     fn loading_state(&self) -> LoadingState {
@@ -49,11 +46,9 @@ impl CodeResultsProvider for WrappedSymbolUsagesPromise {
     }
 
     // TODO this entire method is a stub. It should not copy, it should stream and stuff.
-    fn items(&self) -> Box<dyn Iterator<Item=SymbolUsage> + '_> {
+    fn items(&self) -> Box<dyn Iterator<Item = SymbolUsage> + '_> {
         match self.promise.read() {
-            None => {
-                Box::new(iter::empty()) as Box<dyn Iterator<Item=SymbolUsage>>
-            }
+            None => Box::new(iter::empty()) as Box<dyn Iterator<Item = SymbolUsage>>,
             Some(vec) => {
                 debug!("returning {} results", vec.len());
                 Box::new(vec.iter().map(|c| c.clone()))

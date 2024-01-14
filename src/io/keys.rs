@@ -1,13 +1,14 @@
 use std::fmt::Formatter;
 use std::str::FromStr;
 
-use serde::{de, Deserialize, Deserializer, Serialize, Serializer};
 use serde::de::Visitor;
+use serde::{de, Deserialize, Deserializer, Serialize, Serializer};
 
 use crate::experiments::focus_group::FocusUpdate;
 
-// TODO (hardening) here potentially impossible combinations, like ALT+LeftAlt are deserializable, should be fixed someday
-// TODO (hardening) also, for some reason console does not support combinations like shift+ctrl+s, I need to warn users to not try that
+// TODO (hardening) here potentially impossible combinations, like ALT+LeftAlt are deserializable,
+// should be fixed someday TODO (hardening) also, for some reason console does not support
+// combinations like shift+ctrl+s, I need to warn users to not try that
 const ALT_PLUS: &'static str = "ALT+";
 const CTRL_PLUS: &'static str = "CTRL+";
 const SHIFT_PLUS: &'static str = "SHIFT+";
@@ -61,11 +62,7 @@ impl Default for Modifiers {
 
 impl Modifiers {
     pub fn new(alt: bool, ctrl: bool, shift: bool) -> Modifiers {
-        Modifiers {
-            alt,
-            ctrl,
-            shift,
-        }
+        Modifiers { alt, ctrl, shift }
     }
 
     pub fn is_empty(&self) -> bool {
@@ -102,7 +99,7 @@ impl Key {
             Keycode::ArrowDown => Some(FocusUpdate::Down),
             Keycode::ArrowLeft => Some(FocusUpdate::Left),
             Keycode::ArrowRight => Some(FocusUpdate::Right),
-            _ => None
+            _ => None,
         };
     }
 
@@ -142,10 +139,7 @@ impl Key {
 
 impl Keycode {
     pub fn is_arrow(&self) -> bool {
-        return *self == Keycode::ArrowRight ||
-            *self == Keycode::ArrowLeft ||
-            *self == Keycode::ArrowUp ||
-            *self == Keycode::ArrowDown;
+        return *self == Keycode::ArrowRight || *self == Keycode::ArrowLeft || *self == Keycode::ArrowUp || *self == Keycode::ArrowDown;
     }
 
     pub fn to_key(self) -> Key {
@@ -194,30 +188,42 @@ impl FromStr for Keycode {
             other => {
                 if (other.starts_with("F") || other.starts_with("f")) && other.len() > 1 {
                     match u8::from_str(&other[1..]) {
-                        Ok(i) => if i < 16 {
-                            Ok(Keycode::F(i))
-                        } else { Err(()) },
-                        Err(_) => Err(())
+                        Ok(i) => {
+                            if i < 16 {
+                                Ok(Keycode::F(i))
+                            } else {
+                                Err(())
+                            }
+                        }
+                        Err(_) => Err(()),
                     }
                 } else if other.len() == 1 {
                     let x = other.chars().next().unwrap().to_lowercase().next().unwrap();
                     Ok(Keycode::Char(x))
-                } else { Err(()) }
+                } else {
+                    Err(())
+                }
             }
         }
     }
 }
 
 impl Serialize for Key {
-    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error> where S: Serializer {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
         let alt = if self.modifiers.alt { ALT_PLUS } else { "" };
         let ctrl = if self.modifiers.ctrl { CTRL_PLUS } else { "" };
         let shift = if self.modifiers.shift { SHIFT_PLUS } else { "" };
 
-        serializer.serialize_str(&format!("{}{}{}{}",
-                                          alt, ctrl, shift,
-                                          // keycode_unescaped,
-                                          self.keycode.to_string(),
+        serializer.serialize_str(&format!(
+            "{}{}{}{}",
+            alt,
+            ctrl,
+            shift,
+            // keycode_unescaped,
+            self.keycode.to_string(),
         ))
     }
 }
@@ -231,8 +237,12 @@ impl<'de> Visitor<'de> for KeyVisitor {
         formatter.write_str("a key description in \"{ALT+}?{CTRL+}?{SHIFT+}?KeyCode)\" format")
     }
 
-    fn visit_str<E>(self, v: &str) -> Result<Self::Value, E> where E: de::Error {
-        //TODO (cleanup) this is over tolerant, we allow multiple shifts, ctrls, different order, whitespaces etc
+    fn visit_str<E>(self, v: &str) -> Result<Self::Value, E>
+    where
+        E: de::Error,
+    {
+        //TODO (cleanup) this is over tolerant, we allow multiple shifts, ctrls, different order,
+        // whitespaces etc
 
         let cleaned: String = v.chars().filter(|c| !c.is_whitespace()).collect();
 
@@ -260,17 +270,17 @@ impl<'de> Visitor<'de> for KeyVisitor {
         }
 
         match keycode {
-            Some(keycode) => Ok(Key {
-                keycode,
-                modifiers: mods,
-            }),
-            None => Err(serde::de::Error::missing_field("keycode"))
+            Some(keycode) => Ok(Key { keycode, modifiers: mods }),
+            None => Err(serde::de::Error::missing_field("keycode")),
         }
     }
 }
 
 impl<'a> Deserialize<'a> for Key {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error> where D: Deserializer<'a> {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'a>,
+    {
         deserializer.deserialize_str(KeyVisitor)
     }
 }
@@ -299,69 +309,87 @@ mod tests {
 
     #[test]
     fn test_key_serialize() {
-        assert_eq!(ron::to_string(&Key {
-            keycode: Keycode::ArrowUp,
-            modifiers: Modifiers {
-                alt: false,
-                ctrl: true,
-                shift: false,
-            },
-        }), Ok((r#""CTRL+ArrowUp""#).to_string()));
-        assert_eq!(ron::to_string(&Key {
-            keycode: Keycode::Delete,
-            modifiers: Modifiers {
-                alt: true,
-                ctrl: true,
-                shift: false,
-            },
-        }), Ok(r#""ALT+CTRL+Delete""#.to_string()));
-        assert_eq!(ron::to_string(&Key {
-            keycode: Keycode::Char('x'),
-            modifiers: Modifiers {
-                alt: false,
-                ctrl: false,
-                shift: false,
-            },
-        }), Ok(r#""x""#.to_string()));
-        assert_eq!(ron::to_string(&Key {
-            keycode: Keycode::Char('x'),
-            modifiers: Modifiers {
-                alt: false,
-                ctrl: true,
-                shift: false,
-            },
-        }), Ok(r#""CTRL+x""#.to_string()));
-    }
-
-    #[test]
-    fn test_key_deserialize() {
-        assert_eq!(ron::from_str("\"CTRL+ArrowUp\""), Ok(
-            Key {
+        assert_eq!(
+            ron::to_string(&Key {
                 keycode: Keycode::ArrowUp,
                 modifiers: Modifiers {
                     alt: false,
                     ctrl: true,
                     shift: false,
                 },
-            }));
-        assert_eq!(ron::from_str("\"CTRL+q\""), Ok(
-            Key {
-                keycode: Keycode::Char('q'),
-                modifiers: Modifiers {
-                    alt: false,
-                    ctrl: true,
-                    shift: false,
-                },
-            }));
-        assert_eq!(ron::from_str("\"ALT+CTRL+Delete\""), Ok(
-            Key {
+            }),
+            Ok((r#""CTRL+ArrowUp""#).to_string())
+        );
+        assert_eq!(
+            ron::to_string(&Key {
                 keycode: Keycode::Delete,
                 modifiers: Modifiers {
                     alt: true,
                     ctrl: true,
                     shift: false,
                 },
-            }));
+            }),
+            Ok(r#""ALT+CTRL+Delete""#.to_string())
+        );
+        assert_eq!(
+            ron::to_string(&Key {
+                keycode: Keycode::Char('x'),
+                modifiers: Modifiers {
+                    alt: false,
+                    ctrl: false,
+                    shift: false,
+                },
+            }),
+            Ok(r#""x""#.to_string())
+        );
+        assert_eq!(
+            ron::to_string(&Key {
+                keycode: Keycode::Char('x'),
+                modifiers: Modifiers {
+                    alt: false,
+                    ctrl: true,
+                    shift: false,
+                },
+            }),
+            Ok(r#""CTRL+x""#.to_string())
+        );
+    }
+
+    #[test]
+    fn test_key_deserialize() {
+        assert_eq!(
+            ron::from_str("\"CTRL+ArrowUp\""),
+            Ok(Key {
+                keycode: Keycode::ArrowUp,
+                modifiers: Modifiers {
+                    alt: false,
+                    ctrl: true,
+                    shift: false,
+                },
+            })
+        );
+        assert_eq!(
+            ron::from_str("\"CTRL+q\""),
+            Ok(Key {
+                keycode: Keycode::Char('q'),
+                modifiers: Modifiers {
+                    alt: false,
+                    ctrl: true,
+                    shift: false,
+                },
+            })
+        );
+        assert_eq!(
+            ron::from_str("\"ALT+CTRL+Delete\""),
+            Ok(Key {
+                keycode: Keycode::Delete,
+                modifiers: Modifiers {
+                    alt: true,
+                    ctrl: true,
+                    shift: false,
+                },
+            })
+        );
     }
 
     #[test]

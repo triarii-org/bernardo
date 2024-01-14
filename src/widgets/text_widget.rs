@@ -9,7 +9,7 @@ use crate::primitives::printable::Printable;
 use crate::primitives::xy::XY;
 use crate::widget::any_msg::AnyMsg;
 use crate::widget::fill_policy::SizePolicy;
-use crate::widget::widget::{get_new_widget_id, WID, Widget};
+use crate::widget::widget::{get_new_widget_id, Widget, WID};
 
 pub struct TextWidget {
     wid: WID,
@@ -30,10 +30,7 @@ impl TextWidget {
     }
 
     pub fn with_size_policy(self, size_policy: SizePolicy) -> Self {
-        Self {
-            size_policy,
-            ..self
-        }
+        Self { size_policy, ..self }
     }
 
     pub fn text_size(&self) -> XY {
@@ -67,7 +64,12 @@ impl Widget for TextWidget {
     fn typename(&self) -> &'static str {
         Self::TYPENAME
     }
-    fn static_typename() -> &'static str where Self: Sized { Self::TYPENAME }
+    fn static_typename() -> &'static str
+    where
+        Self: Sized,
+    {
+        Self::TYPENAME
+    }
     fn size_policy(&self) -> SizePolicy {
         self.size_policy
     }

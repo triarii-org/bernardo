@@ -16,7 +16,6 @@ pub enum FocusUpdate {
     Prev,
 }
 
-
 #[derive(Clone, Debug)]
 pub struct FocusGraphNode<AdditionalData: Clone> {
     widget_id: WID,
@@ -43,12 +42,10 @@ pub struct FocusGraph<AdditionalData: Clone> {
 impl<AdditionalData: Clone> FocusGraph<AdditionalData> {
     pub fn new(nodes: HashMap<WID, FocusGraphNode<AdditionalData>>, selected: WID) -> Self {
         // TODO
-        // debug_assert!(nodes.keys().fold(false, |a, b| a || *b == selected), "selected node present TODO not sure if that is what that asertion does");
+        // debug_assert!(nodes.keys().fold(false, |a, b| a || *b == selected), "selected node present TODO
+        // not sure if that is what that asertion does");
 
-        Self {
-            nodes,
-            selected,
-        }
+        Self { nodes, selected }
     }
 
     pub fn add_edge(&mut self, source: WID, edge: FocusUpdate, target: WID) -> bool {

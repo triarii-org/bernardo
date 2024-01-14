@@ -4,7 +4,7 @@ use log::debug;
 use unicode_width::UnicodeWidthStr;
 
 use crate::io::output::{Metadata, Output};
-use crate::io::style::{TEXT_STYLE_WHITE_ON_BLACK, TextStyle};
+use crate::io::style::{TextStyle, TEXT_STYLE_WHITE_ON_BLACK};
 use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
@@ -16,10 +16,23 @@ pub struct SubOutput<'a> {
 
 impl<'a> SubOutput<'a> {
     pub fn new(output: &'a mut dyn Output, frame: Rect) -> Self {
-        debug_assert!(frame.lower_right() <= output.size(), "{} <?= {}", frame.lower_right(), output.size());
-        debug_assert!(output.visible_rect().intersect(frame).is_some(), "no intersection between output.visible_rect() {} and frame of sub-output {}", output.visible_rect(), frame);
+        debug_assert!(
+            frame.lower_right() <= output.size(),
+            "{} <?= {}",
+            frame.lower_right(),
+            output.size()
+        );
+        debug_assert!(
+            output.visible_rect().intersect(frame).is_some(),
+            "no intersection between output.visible_rect() {} and frame of sub-output {}",
+            output.visible_rect(),
+            frame
+        );
 
-        SubOutput { output, frame_in_parent_space: frame }
+        SubOutput {
+            output,
+            frame_in_parent_space: frame,
+        }
     }
 }
 
@@ -50,9 +63,9 @@ impl Output for SubOutput<'_> {
         //                   "drawing outside (below) the sub-output: ({} to {}) of {}",
         //                   pos, end_pos, self.frame_in_parent_space.size);
         // } else {
-        //     if !(end_pos.x <= self.frame_in_parent_space.size.x && end_pos.y < self.frame_in_parent_space.size.y) {
-        //         error!("drawing outside the sub-output: ({} to {}) of {}",
-        //             pos, end_pos, self.frame_in_parent_space.size);
+        //     if !(end_pos.x <= self.frame_in_parent_space.size.x && end_pos.y <
+        // self.frame_in_parent_space.size.y) {         error!("drawing outside the sub-output: ({}
+        // to {}) of {}",             pos, end_pos, self.frame_in_parent_space.size);
         //     }
         // }
 
@@ -67,8 +80,7 @@ impl Output for SubOutput<'_> {
 
         for x in 0..self.frame_in_parent_space.size.x {
             for y in 0..self.frame_in_parent_space.size.y {
-                self.output
-                    .print_at(self.frame_in_parent_space.pos + XY::new(x, y), style, " ")
+                self.output.print_at(self.frame_in_parent_space.pos + XY::new(x, y), style, " ")
             }
         }
         Ok(())
@@ -89,7 +101,6 @@ impl Output for SubOutput<'_> {
 
         res
     }
-
 
     // #[cfg(test)]
     // fn get_final_position(&self, local_pos: XY) -> Option<XY> {

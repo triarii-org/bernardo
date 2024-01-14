@@ -15,7 +15,7 @@ use crate::primitives::xy::XY;
 use crate::unpack_or;
 use crate::widget::any_msg::AnyMsg;
 use crate::widget::fill_policy::{DeterminedBy, SizePolicy};
-use crate::widget::widget::{get_new_widget_id, WID, Widget};
+use crate::widget::widget::{get_new_widget_id, Widget, WID};
 
 // const DEFAULT_MARGIN_WIDTH: u16 = 4;
 
@@ -59,15 +59,11 @@ impl<W: Widget> WithScroll<W> {
             line_no: false,
             fill_non_free_axis: true,
             layout_res: None,
-
         }
     }
 
     pub fn with_line_no(self) -> Self {
-        Self {
-            line_no: true,
-            ..self
-        }
+        Self { line_no: true, ..self }
     }
 
     pub fn scroll(&self) -> &Scroll {
@@ -104,17 +100,15 @@ impl<W: Widget> WithScroll<W> {
         debug_assert!(self.line_no);
         let start_idx = self.scroll.offset.y;
 
-        let style = if focused {
-            theme.ui.header
-        } else {
-            theme.ui.header.half()
-        }.with_background(theme.default_text(focused).background);
+        let style = if focused { theme.ui.header } else { theme.ui.header.half() }.with_background(theme.default_text(focused).background);
 
         for idx in output.visible_rect().pos.y..output.visible_rect().lower_right().y {
             let line_no_base_0 = start_idx + idx;
             let item = format!("{}", line_no_base_0 + 1);
             let num_digits = item.len() as u16;
-            let offset = if num_digits <= margin_width { margin_width - num_digits } else {
+            let offset = if num_digits <= margin_width {
+                margin_width - num_digits
+            } else {
                 error!("num_digits > margin_width, hardcoding safe fix");
                 0
             };
@@ -124,18 +118,10 @@ impl<W: Widget> WithScroll<W> {
             // } else { style };
 
             for px in 0..offset {
-                output.print_at(
-                    XY::new(px, idx),
-                    style,
-                    " ",
-                )
+                output.print_at(XY::new(px, idx), style, " ")
             }
 
-            output.print_at(
-                XY::new(offset, idx),
-                style,
-                &item,
-            );
+            output.print_at(XY::new(offset, idx), style, &item);
         }
     }
 
@@ -156,7 +142,10 @@ impl<W: Widget> WithScroll<W> {
         if self.scroll.direction.free_y() {
             // we have infinite y, let's see what child widget would like to do.
             if self.child_widget.size_policy().y == DeterminedBy::Widget {
-                debug!("y1 Widget decides height, it has infinite space. So it takes child_full_size.y = {}", child_full_size.y);
+                debug!(
+                    "y1 Widget decides height, it has infinite space. So it takes child_full_size.y = {}",
+                    child_full_size.y
+                );
                 internal_output_size.y = child_full_size.y;
             } else {
                 internal_output_size.y = max(child_full_size.y, output_size.y);
@@ -176,10 +165,16 @@ impl<W: Widget> WithScroll<W> {
         // now that we know height y, we can see what's our final width.
         let (margin_width, max_output_width) = if self.line_no {
             let margin_width = Self::get_margin_width_for_height(internal_output_size.y);
-            debug!("having {} lines to count, I need {} width for the numbers.", internal_output_size.y, margin_width);
+            debug!(
+                "having {} lines to count, I need {} width for the numbers.",
+                internal_output_size.y, margin_width
+            );
 
             if margin_width > output_size.x {
-                error!("margin_width = {} > {} = output_size.x, this is a TODO.", margin_width, output_size.x);
+                error!(
+                    "margin_width = {} > {} = output_size.x, this is a TODO.",
+                    margin_width, output_size.x
+                );
                 (0, output_size.x)
             } else {
                 (margin_width, output_size.x - margin_width)
@@ -191,7 +186,10 @@ impl<W: Widget> WithScroll<W> {
 
         if self.scroll.direction.free_x() {
             if self.child_widget.size_policy().x == DeterminedBy::Widget {
-                debug!("x1 Widget decides width, it has infinite space. So it takes child_full_size.x = {}", child_full_size.x);
+                debug!(
+                    "x1 Widget decides width, it has infinite space. So it takes child_full_size.x = {}",
+                    child_full_size.x
+                );
                 internal_output_size.x = child_full_size.x;
             } else {
                 internal_output_size.x = max(child_full_size.x, max_output_width);
@@ -219,7 +217,10 @@ impl<W: Widget> Widget for WithScroll<W> {
     fn id(&self) -> WID {
         self.id
     }
-    fn static_typename() -> &'static str where Self: Sized {
+    fn static_typename() -> &'static str
+    where
+        Self: Sized,
+    {
         Self::TYPENAME
     }
     fn typename(&self) -> &'static str {
@@ -252,29 +253,46 @@ impl<W: Widget> Widget for WithScroll<W> {
         let child_output = self.get_output_size_that_will_be_offered_to_child(screenspace.output_size());
 
         if child_output.child_size_in_its_output.x == 0 || child_output.child_size_in_its_output.y == 0 {
-            error!("child output is degenerated ({}), will not lay out further.", child_output.child_size_in_its_output);
+            error!(
+                "child output is degenerated ({}), will not lay out further.",
+                child_output.child_size_in_its_output
+            );
             return;
         }
 
         if child_output.margin_width > screenspace.output_size().x {
-            warn!("margin ({}) is wider than visible rect ({}), will not lay out further.", child_output.margin_width, screenspace.visible_rect().size.x);
+            warn!(
+                "margin ({}) is wider than visible rect ({}), will not lay out further.",
+                child_output.margin_width,
+                screenspace.visible_rect().size.x
+            );
             return;
         }
 
         let child_visible_rect_pos_in_parent_space = XY::new(child_output.margin_width, 0);
 
-        // this is the maximum space (constraint) that we *can offer* to the child, so the output of parent - the margin.
+        // this is the maximum space (constraint) that we *can offer* to the child, so the output of parent
+        // - the margin.
         let parent_space_maximum_child_output_rect = /* output part that can be offered to child*/ Rect::new(child_visible_rect_pos_in_parent_space, screenspace.output_size() - child_visible_rect_pos_in_parent_space);
 
-        // this is tricky part: I take "child_size_in_its_output" which is "how much space child will 'see' as in it's output", but we move it to parent space.
-        // This has no logical meaning other than I want it in parent space, to intersect the it with "parent_space_maximum_child_output_rect" to get the final constraint.
+        // this is tricky part: I take "child_size_in_its_output" which is "how much space child will 'see'
+        // as in it's output", but we move it to parent space. This has no logical meaning other
+        // than I want it in parent space, to intersect the it with "parent_space_maximum_child_output_rect"
+        // to get the final constraint.
         let parent_space_child_internal_size = Rect::new(child_visible_rect_pos_in_parent_space, child_output.child_size_in_its_output);
 
-        let parent_space_child_output_rect = parent_space_maximum_child_output_rect.intersect(parent_space_child_internal_size).unwrap(); //TODO prove this can't go wrong.
+        let parent_space_child_output_rect = parent_space_maximum_child_output_rect
+            .intersect(parent_space_child_internal_size)
+            .unwrap(); //TODO prove this can't go wrong.
 
         let child_visible_rect_in_parent_space: Rect = match screenspace.visible_rect().intersect(parent_space_child_output_rect) {
             Some(intersection) => {
-                debug!("in parent space, visible rect is {}, so with {} margin, child has {}", screenspace.visible_rect(), child_output.margin_width, intersection);
+                debug!(
+                    "in parent space, visible rect is {}, so with {} margin, child has {}",
+                    screenspace.visible_rect(),
+                    child_output.margin_width,
+                    intersection
+                );
                 intersection
             }
             None => {
@@ -283,13 +301,14 @@ impl<W: Widget> Widget for WithScroll<W> {
             }
         };
 
-        let child_visible_rect_in_child_space: Rect = match child_visible_rect_in_parent_space.minus_shift(child_visible_rect_pos_in_parent_space) {
-            Some(s) => s,
-            None => {
-                error!("impossible: failed to unwrap minus shift of some other shift.");
-                return;
-            }
-        };
+        let child_visible_rect_in_child_space: Rect =
+            match child_visible_rect_in_parent_space.minus_shift(child_visible_rect_pos_in_parent_space) {
+                Some(s) => s,
+                None => {
+                    error!("impossible: failed to unwrap minus shift of some other shift.");
+                    return;
+                }
+            };
         let child_screenspace = Screenspace::new(child_output.child_size_in_its_output, child_visible_rect_in_child_space);
         self.child_widget.layout(child_screenspace);
 
@@ -326,14 +345,12 @@ impl<W: Widget> Widget for WithScroll<W> {
     fn render(&self, theme: &Theme, focused: bool, output: &mut dyn Output) {
         #[cfg(test)]
         {
-            output.emit_metadata(
-                Metadata {
-                    id: self.id,
-                    typename: self.typename().to_string(),
-                    rect: Rect::from_zero(output.size()),
-                    focused,
-                }
-            );
+            output.emit_metadata(Metadata {
+                id: self.id,
+                typename: self.typename().to_string(),
+                rect: Rect::from_zero(output.size()),
+                focused,
+            });
         }
 
         let layout_res = unpack_or!(self.layout_res.as_ref(), (), "render before layout");
@@ -356,9 +373,7 @@ impl<W: Widget> Widget for WithScroll<W> {
 
         // This is removing one or both constraints to enable scrolling
         let mut over_output = match sub_output.as_mut() {
-            Some(sub_output) => OverOutput::new(sub_output,
-                                                layout_res.child_space_output_size,
-                                                self.scroll.offset),
+            Some(sub_output) => OverOutput::new(sub_output, layout_res.child_space_output_size, self.scroll.offset),
             None => OverOutput::new(output, layout_res.child_space_output_size, self.scroll.offset),
         };
 

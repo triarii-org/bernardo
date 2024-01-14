@@ -17,9 +17,7 @@ pub struct RealFS {
 
 impl RealFS {
     pub fn new(root_path: PathBuf) -> RealFS {
-        RealFS {
-            root_path
-        }
+        RealFS { root_path }
     }
 }
 
@@ -28,7 +26,6 @@ impl Debug for RealFS {
         write!(f, "Filesystem({})", self.root_path.to_string_lossy())
     }
 }
-
 
 impl FilesystemFront for RealFS {
     fn root_path(&self) -> &PathBuf {
@@ -60,16 +57,14 @@ impl FilesystemFront for RealFS {
         let mut items: Vec<DirEntry> = Vec::new();
         for item in readdir {
             match item {
-                Ok(dir_entry) => {
-                    match dir_entry.path().file_name() {
-                        Some(file_name) => {
-                            items.push(DirEntry::new(file_name));
-                        }
-                        None => {
-                            warn!("received dir_entry {:?} that does not have file_name, ignoring.", dir_entry);
-                        }
+                Ok(dir_entry) => match dir_entry.path().file_name() {
+                    Some(file_name) => {
+                        items.push(DirEntry::new(file_name));
                     }
-                }
+                    None => {
+                        warn!("received dir_entry {:?} that does not have file_name, ignoring.", dir_entry);
+                    }
+                },
                 Err(e) => {
                     error!("failed read dir because {}", e);
                     return Err(e.into());
@@ -83,7 +78,12 @@ impl FilesystemFront for RealFS {
         path.exists()
     }
 
-    fn blocking_overwrite_with_stream(&self, path: &Path, stream: &mut dyn StreamingIterator<Item=[u8]>, must_exist: bool) -> Result<usize, WriteError> {
+    fn blocking_overwrite_with_stream(
+        &self,
+        path: &Path,
+        stream: &mut dyn StreamingIterator<Item = [u8]>,
+        must_exist: bool,
+    ) -> Result<usize, WriteError> {
         if must_exist {
             if path.exists() {
                 return Err(WriteError::FileNotFound);

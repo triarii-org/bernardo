@@ -5,8 +5,8 @@ use std::sync::{Arc, RwLock};
 use std::thread::JoinHandle;
 use std::time::Duration;
 
-use crossbeam_channel::{Receiver, select, Sender};
-use log::{debug, error, LevelFilter, warn};
+use crossbeam_channel::{select, Receiver, Sender};
+use log::{debug, error, warn, LevelFilter};
 
 use crate::config::config::{Config, ConfigRef};
 use crate::config::theme::Theme;
@@ -57,34 +57,22 @@ impl FullSetupBuilder {
         }
     }
 
-    pub fn with_files<P: AsRef<OsStr>, I: IntoIterator<Item=P>>(self, items: I) -> Self {
+    pub fn with_files<P: AsRef<OsStr>, I: IntoIterator<Item = P>>(self, items: I) -> Self {
         let files: Vec<PathBuf> = items.into_iter().map(|p| PathBuf::from(p.as_ref())).collect();
 
-        FullSetupBuilder {
-            files,
-            ..self
-        }
+        FullSetupBuilder { files, ..self }
     }
 
     pub fn with_recording(self) -> Self {
-        Self {
-            recording: true,
-            ..self
-        }
+        Self { recording: true, ..self }
     }
 
     pub fn with_size(self, size: XY) -> Self {
-        Self {
-            size,
-            ..self
-        }
+        Self { size, ..self }
     }
 
     pub fn with_step_frame(self) -> Self {
-        Self {
-            step_frame: true,
-            ..self
-        }
+        Self { step_frame: true, ..self }
     }
 
     // Turn this on if you are debugging, and you don't want the default timeout to kick in.
@@ -134,20 +122,10 @@ impl FullSetupBuilder {
         let comp_matcher: Arc<RwLock<Vec<MockCompletionMatcher>>> = Arc::new(RwLock::new(Vec::new()));
         let symbol_matcher: Arc<RwLock<Vec<MockSymbolMatcher>>> = Arc::new(RwLock::new(Vec::new()));
 
-        let mock_navcomp_pilot = MockNavCompProviderPilot::new(
-            mock_navcomp_event_recvr,
-            comp_matcher.clone(),
-            symbol_matcher.clone(),
-        );
+        let mock_navcomp_pilot = MockNavCompProviderPilot::new(mock_navcomp_event_recvr, comp_matcher.clone(), symbol_matcher.clone());
 
-        let mock_navcomp_loader = Arc::new(Box::new(
-            MockNavcompLoader::new(
-                mock_navcomp_event_sender,
-                comp_matcher,
-                symbol_matcher,
-            )
-        ) as Box<dyn NavCompLoader>
-        );
+        let mock_navcomp_loader =
+            Arc::new(Box::new(MockNavcompLoader::new(mock_navcomp_event_sender, comp_matcher, symbol_matcher)) as Box<dyn NavCompLoader>);
 
         let providers = Providers::new(
             local_config,
@@ -161,13 +139,7 @@ impl FullSetupBuilder {
 
         let providers_clone = providers.clone();
 
-        let handle = std::thread::spawn(move || {
-            run_gladius(providers_clone,
-                        input,
-                        output,
-                        files,
-            )
-        });
+        let handle = std::thread::spawn(move || run_gladius(providers_clone, input, output, files));
 
         FullSetup {
             fsf,
@@ -258,7 +230,9 @@ impl FullSetup {
     // pub fn get_cursor_lines(&self) {}
 
     pub fn finish(self) -> FinishedFullSetupRun {
-        self.input_sender.send(InputEvent::KeyInput(self.config.keyboard_config.global.close)).unwrap();
+        self.input_sender
+            .send(InputEvent::KeyInput(self.config.keyboard_config.global.close))
+            .unwrap();
         self.gladius_thread_handle.join().unwrap();
 
         FinishedFullSetupRun {
@@ -269,24 +243,24 @@ impl FullSetup {
     }
 
     pub fn get_first_editor(&self) -> Option<EditorInterpreter<'_>> {
-        self.last_frame.as_ref().map(|frame| {
-            frame.get_editors().next()
-        }).flatten()
+        self.last_frame.as_ref().map(|frame| frame.get_editors().next()).flatten()
     }
 
     pub fn get_file_tree_view(&self) -> Option<TreeViewInterpreter<'_>> {
-        self.last_frame.as_ref().map(|frame| {
-            frame.get_meta_by_type(crate::mocks::full_setup::tree_view::tree_view::TYPENAME)
-                .filter(|meta| meta.rect.pos == XY::ZERO)
-                .next()
-                .map(|meta| TreeViewInterpreter::new(meta, frame))
-        }).flatten()
+        self.last_frame
+            .as_ref()
+            .map(|frame| {
+                frame
+                    .get_meta_by_type(crate::mocks::full_setup::tree_view::tree_view::TYPENAME)
+                    .filter(|meta| meta.rect.pos == XY::ZERO)
+                    .next()
+                    .map(|meta| TreeViewInterpreter::new(meta, frame))
+            })
+            .flatten()
     }
 
     pub fn get_code_results_view(&self) -> Option<CodeResultsViewInterpreter<'_>> {
-        self.last_frame.as_ref().map(|frame| {
-            frame.get_code_results_view()
-        }).flatten()
+        self.last_frame.as_ref().map(|frame| frame.get_code_results_view()).flatten()
     }
 
     pub fn get_fuzzy_search(&self) -> Option<FuzzySearchInterpreter> {

@@ -10,13 +10,10 @@ pub struct CompletionInterpreter<'a> {
 
 impl<'a> CompletionInterpreter<'a> {
     pub fn new(meta: &'a Metadata, output: &'a MetaOutputFrame) -> Self {
-        Self {
-            meta,
-            output,
-        }
+        Self { meta, output }
     }
 
-    pub fn items(&self) -> impl Iterator<Item=HorizontalIterItem> + '_ {
+    pub fn items(&self) -> impl Iterator<Item = HorizontalIterItem> + '_ {
         // for d in self.output.buffer.lines_iter().with_rect(self.meta.rect) {
         //     debug!("items: [{}]", d);
         // }
@@ -42,7 +39,17 @@ impl<'a> CompletionInterpreter<'a> {
         }
 
         idx.map(|idx| {
-            (idx, self.output.buffer.lines_iter().with_rect(self.meta.rect).skip(idx as usize).next().unwrap().text)
+            (
+                idx,
+                self.output
+                    .buffer
+                    .lines_iter()
+                    .with_rect(self.meta.rect)
+                    .skip(idx as usize)
+                    .next()
+                    .unwrap()
+                    .text,
+            )
         })
     }
 }

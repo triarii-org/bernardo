@@ -9,5 +9,4 @@ pub enum CodeResultsMsg {
     Hit,
 }
 
-
 impl AnyMsg for CodeResultsMsg {}

@@ -14,10 +14,7 @@ pub struct BufferOutputCellsIter<'a> {
 
 impl<'a> BufferOutputCellsIter<'a> {
     pub fn new(buffer: &'a BufferOutput) -> Self {
-        BufferOutputCellsIter {
-            buffer,
-            pos: XY::ZERO,
-        }
+        BufferOutputCellsIter { buffer, pos: XY::ZERO }
     }
 }
 
@@ -70,7 +67,6 @@ mod tests {
         buffer[XY::new(0, 1)].set(&a);
         buffer[XY::new(1, 0)].set(&a);
         buffer[XY::new(1, 1)].set(&b);
-
 
         /*
          01234567890
@@ -221,7 +217,8 @@ mod tests {
         3
          */
 
-        let mut iter = buffer.lines_iter()
+        let mut iter = buffer
+            .lines_iter()
             .with_rect(Rect::new(XY::new(3, 0), XY::new(4, 3)))
             .with_style(*a.style().unwrap());
 
