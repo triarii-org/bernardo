@@ -8,7 +8,7 @@ use log::{debug, error, warn};
 use lsp_types::request::Request;
 use serde_json::Value;
 
-use crate::lsp_client::lsp_read_error::LspReadError;
+use crate::*;
 use crate::promise::promise::{Promise, PromiseState, UpdateResult};
 
 pub struct LSPPromise<R: Request> {

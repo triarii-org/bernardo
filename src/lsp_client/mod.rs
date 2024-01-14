@@ -1,12 +1,32 @@
 mod debug_helpers;
-pub mod helpers;
-pub mod lsp_client;
-pub mod lsp_io_error;
+pub(crate) use debug_helpers::{format_or_noop, lsp_debug_save};
+
 mod lsp_notification;
+pub(crate) use lsp_notification::{parse_notification, LspNotificationParsingError, LspServerNotification};
+
 mod lsp_read;
-pub mod lsp_read_error;
-pub mod lsp_response;
+pub(crate) use lsp_read::{get_len_from_headers, read_lsp};
+
 mod lsp_write;
-pub mod lsp_write_error;
-pub mod promise;
-pub mod unprocessed_msgs;
+pub(crate) use lsp_write::{internal_send_notification, internal_send_notification_no_params, internal_send_request};
+
+mod lsp_client;
+pub use lsp_client::{CallInfo, IdToCallInfo, LspWrapper};
+
+mod lsp_io_error;
+pub use lsp_io_error::LspIOError;
+
+mod lsp_read_error;
+pub use lsp_read_error::LspReadError;
+
+mod lsp_response;
+pub use lsp_response::LspResponse;
+
+mod lsp_write_error;
+pub use lsp_write_error::LspWriteError;
+
+mod promise;
+pub use promise::LSPPromise;
+
+// TODO(XXX): remove
+mod unprocessed_msgs;

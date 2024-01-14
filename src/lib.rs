@@ -19,7 +19,9 @@ pub use io::*;
 mod layout;
 pub use layout::*;
 
-pub mod lsp_client;
+mod lsp_client;
+pub use lsp_client::*;
+
 pub mod primitives;
 pub mod promise;
 pub mod text;

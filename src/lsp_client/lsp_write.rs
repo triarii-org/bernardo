@@ -2,7 +2,7 @@ use std::io::Write;
 
 use log::debug;
 
-use crate::lsp_client::lsp_write_error::LspWriteError;
+use crate::*;
 
 pub fn internal_send_request<R: lsp_types::request::Request, W: Write>(
     stdin: &mut W,

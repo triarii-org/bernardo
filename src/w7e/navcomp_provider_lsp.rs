@@ -8,10 +8,10 @@ use log::{debug, error};
 use lsp_types::{CompletionResponse, CompletionTextEdit, DocumentSymbolResponse, Position, SymbolKind};
 
 use crate::fs::path::SPath;
-use crate::lsp_client::lsp_client::LspWrapper;
-use crate::lsp_client::lsp_io_error::LspIOError;
-use crate::lsp_client::lsp_read_error::LspReadError;
-use crate::lsp_client::lsp_write_error::LspWriteError;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::primitives::stupid_cursor::StupidCursor;
 use crate::promise::promise::Promise;
 use crate::unpack_or_e;
