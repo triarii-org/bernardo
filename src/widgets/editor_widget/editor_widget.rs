@@ -7,7 +7,6 @@ use matches::debug_assert_matches;
 use streaming_iterator::StreamingIterator;
 use unicode_width::UnicodeWidthStr;
 
-use crate::gladius::providers::Providers;
 use crate::*;
 use crate::{unpack_or, unpack_or_e};
 

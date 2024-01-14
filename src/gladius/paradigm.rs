@@ -1,7 +1,6 @@
 use log::debug;
 
 use crate::*;
-use crate::*;
 
 // returns (consumed, message_to_parent)
 pub fn recursive_treat_views(view: &mut dyn Widget, ie: InputEvent) -> (bool, Option<Box<dyn AnyMsg>>) {

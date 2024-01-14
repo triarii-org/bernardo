@@ -4,7 +4,6 @@ use std::sync::{Arc, RwLock, TryLockResult};
 use log::debug;
 use serde::{Deserialize, Serialize};
 
-use crate::gladius::providers::Providers;
 use crate::*;
 
 /*

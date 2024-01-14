@@ -4,8 +4,6 @@ use std::path::PathBuf;
 use crossbeam_channel::select;
 use log::{debug, error};
 
-use crate::gladius::paradigm::recursive_treat_views;
-use crate::gladius::providers::Providers;
 use crate::*;
 
 pub fn run_gladius<I: Input, O: FinalOutput>(providers: Providers, input: I, mut output: O, files: Vec<PathBuf>) {

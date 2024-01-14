@@ -2,7 +2,6 @@ use std::rc::Rc;
 
 use test_log::test;
 
-use crate::gladius::paradigm::recursive_treat_views;
 use crate::*;
 
 impl ListWidgetItem for Rc<String> {

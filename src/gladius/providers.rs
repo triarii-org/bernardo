@@ -5,13 +5,6 @@ of key components like EditorView or CodeResultsView
 
 use std::sync::{Arc, RwLock};
 
-use crate::gladius::navcomp_loader::NavCompLoader;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
 use crate::*;
 
 // do not share via Arc, we want to be able to "overload" providers in tests or exotic cases

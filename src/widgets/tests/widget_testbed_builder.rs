@@ -2,7 +2,6 @@ use std::sync::{Arc, RwLock};
 
 use crossbeam_channel::{Receiver, Sender};
 
-use crate::gladius::providers::Providers;
 use crate::*;
 
 pub struct SideChannels {

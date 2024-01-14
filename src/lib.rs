@@ -1,4 +1,4 @@
-pub mod gladius;
+mod gladius;
 pub use gladius::*;
 
 mod app;

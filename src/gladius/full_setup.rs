@@ -8,10 +8,6 @@ use std::time::Duration;
 use crossbeam_channel::{select, Receiver, Sender};
 use log::{debug, error, warn, LevelFilter};
 
-use crate::gladius::logger_setup::logger_setup;
-use crate::gladius::navcomp_loader::NavCompLoader;
-use crate::gladius::providers::Providers;
-use crate::gladius::run_gladius::run_gladius;
 use crate::*;
 
 pub struct FullSetupBuilder {

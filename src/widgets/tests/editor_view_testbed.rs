@@ -1,4 +1,3 @@
-use crate::gladius::paradigm::recursive_treat_views;
 use crate::*;
 
 pub struct EditorViewTestbed {

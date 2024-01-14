@@ -1,6 +1,5 @@
 use log::warn;
 
-use crate::gladius::navcomp_loader::NavCompLoader;
 use crate::*;
 
 pub struct RealNavCompLoader {}
