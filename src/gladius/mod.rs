@@ -1,4 +1,3 @@
-pub mod args;
 pub mod constants;
 pub mod load_config;
 pub mod logger_setup;
