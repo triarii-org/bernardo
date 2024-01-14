@@ -1,7 +1,5 @@
 use log::debug;
 
-use crate::spath;
-
 use crate::*;
 
 fn common_start() -> FullSetup {

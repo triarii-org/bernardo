@@ -16,6 +16,7 @@ use crate::fs::fsf_iter::RecursiveFsIter;
 use crate::fs::fsf_ref::FsfRef;
 use crate::fs::read_error::{ListError, ReadError};
 use crate::fs::write_error::{WriteError, WriteOrSerError};
+use crate::*;
 
 // TODO add some invariants.
 
@@ -389,7 +390,8 @@ mod tests {
 
     use crate::fs::filesystem_front::FilesystemFront;
     use crate::fs::mock_fs::MockFS;
-    use crate::spath;
+
+    use super::*;
 
     #[test]
     fn eq() {

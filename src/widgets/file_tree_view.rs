@@ -39,7 +39,7 @@ mod tests {
     use crate::fs::filesystem_front::FilesystemFront;
     use crate::fs::mock_fs::MockFS;
     use crate::fs::path::SPath;
-    use crate::spath;
+
     use crate::*;
     use crate::*;
 

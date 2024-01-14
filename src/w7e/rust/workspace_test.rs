@@ -2,7 +2,7 @@ use std::path::{Path, PathBuf};
 
 use crate::fs::filesystem_front::FilesystemFront;
 use crate::fs::mock_fs::MockFS;
-use crate::spath;
+
 use crate::*;
 
 #[test]
