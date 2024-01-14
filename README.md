@@ -1,3 +1,8 @@
+# Bernardo
+
+[![ci_status](https://github.com/triarii-org/bernardo/actions/workflows/ci.yml/badge.svg)](https://github.com/triarii-org/bernardo/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/triarii-org/bernardo/graph/badge.svg)](https://codecov.io/gh/triarii-org/bernardo)
+
 If you see this on github, then it's a manual sync mirror that I often forget to push to.
 The up-to-date version is at https://gitlab.com/njskalski/bernardo
 
