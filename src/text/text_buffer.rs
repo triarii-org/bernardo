@@ -6,7 +6,7 @@ use log::error;
 use ropey::iter::{Chars, Chunks};
 use streaming_iterator::StreamingIterator;
 
-use crate::primitives::xy::XY;
+use crate::*;
 use crate::tsw::lang_id::LangId;
 use crate::unpack_or;
 

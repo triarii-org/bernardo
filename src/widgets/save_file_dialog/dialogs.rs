@@ -1,5 +1,5 @@
-use crate::primitives::border::SINGLE_BORDER_STYLE;
-use crate::primitives::printable::Printable;
+use crate::*;
+use crate::*;
 
 use crate::widgets::button::ButtonWidget;
 use crate::widgets::generic_dialog::generic_dialog::GenericDialog;

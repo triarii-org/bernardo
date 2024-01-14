@@ -5,8 +5,8 @@ use log::error;
 use serde::de::DeserializeOwned;
 use serde::{Deserialize, Serialize};
 
-use crate::primitives::sized_xy::SizedXY;
-use crate::primitives::xy::XY;
+use crate::*;
+use crate::*;
 
 #[derive(Clone, Serialize, Deserialize)]
 pub struct Buffer<T: Default + Clone> {
@@ -96,7 +96,7 @@ where
 #[cfg(test)]
 mod test {
     use crate::*;
-    use crate::primitives::xy::XY;
+    use crate::*;
 
     #[test]
     fn ser_de() {

@@ -2,9 +2,9 @@ use std::fmt::Debug;
 
 use serde::{Deserialize, Serialize};
 
-use crate::primitives::rect::Rect;
-use crate::primitives::sized_xy::SizedXY;
-use crate::primitives::xy::XY;
+use crate::*;
+use crate::*;
+use crate::*;
 
 use crate::*;
 

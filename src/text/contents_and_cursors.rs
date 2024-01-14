@@ -4,15 +4,10 @@ use log::{debug, error, warn};
 use ropey::Rope;
 use unicode_segmentation::UnicodeSegmentation;
 
-use crate::*;
-use crate::*;
-use crate::primitives::search_pattern::SearchPattern;
 use crate::tsw::lang_id::LangId;
 use crate::tsw::parsing_tuple::ParsingTuple;
 use crate::tsw::tree_sitter_wrapper::TreeSitterWrapper;
 use crate::unpack_or_e;
-
-
 use crate::*;
 
 /*
@@ -111,7 +106,7 @@ impl ContentsAndCursors {
                 }
             }
 
-            debug_assert!(tail.graphemes(true).count() == what_char_len);
+            debug_assert!(tail.as_str().graphemes(true).count() == what_char_len);
 
             what == &tail
         }

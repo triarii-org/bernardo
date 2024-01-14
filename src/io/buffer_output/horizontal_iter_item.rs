@@ -2,7 +2,7 @@
 This describes a continous horizontal piece of buffer output, containing "text" and perhaps having a
 consistent style.
  */
-use crate::primitives::xy::XY;
+use crate::*;
 
 use crate::*;
 

@@ -5,7 +5,7 @@ use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
 use crate::*;
-use crate::primitives::printable::Printable;
+use crate::*;
 
 pub trait StyledPrintable {
     fn styled_graphemes(&self) -> Box<dyn Iterator<Item = (&TextStyle, &str)> + '_>;

@@ -7,7 +7,7 @@ Also, if there is no limit on dimension (scrolling) widget will fall back to "co
 
 use log::debug;
 
-use crate::primitives::xy::XY;
+use crate::*;
 
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
 pub enum DeterminedBy {

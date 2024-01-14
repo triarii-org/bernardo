@@ -4,7 +4,7 @@ use std::sync::Arc;
 use log::debug;
 
 use crate::*;
-use crate::primitives::printable::Printable;
+use crate::*;
 use crate::promise::promise::{PromiseState, UpdateResult};
 use crate::w7e::navcomp_provider::{SymbolUsage, SymbolUsagesPromise};
 use crate::widgets::code_results_view::code_results_provider::{CodeResultsProvider, PollResult};

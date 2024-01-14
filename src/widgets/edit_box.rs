@@ -2,15 +2,15 @@ use log::{debug, warn};
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::*;
-use crate::*;
-use crate::primitives::common_edit_msgs::{key_to_edit_msg, CommonEditMsg};
-use crate::primitives::helpers;
-use crate::primitives::rect::Rect;
-use crate::primitives::xy::XY;
 use crate::text::buffer_state::BufferState;
 use crate::text::text_buffer::TextBuffer;
 use crate::unpack_or_e;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::*;
 use crate::*;
 use crate::*;
@@ -275,12 +275,12 @@ impl Widget for EditBoxWidget {
         });
 
         let primary_style = theme.highlighted(focused);
-        helpers::fill_output(primary_style.background, output);
+        fill_output(primary_style.background, output);
 
         let cursor_set_copy = unpack_or_e!(self.buffer.text().get_cursor_set(self.id), (), "failed to get cursor_set").clone();
 
         let mut x: usize = 0;
-        for (char_idx, g) in self.buffer.to_string().graphemes(true).enumerate() {
+        for (char_idx, g) in self.buffer.to_string().graphemes().enumerate() {
             if x + g.width() > size.x as usize {
                 // not drawing beyond x
                 break;

@@ -1,5 +1,5 @@
 use crate::*;
-use crate::primitives::printable::Printable;
+use crate::*;
 use crate::w7e::navcomp_provider::SymbolUsage;
 
 pub struct PollResult {

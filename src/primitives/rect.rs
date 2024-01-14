@@ -4,7 +4,7 @@ use std::ops::Add;
 
 use serde::{Deserialize, Serialize};
 
-use crate::primitives::xy::XY;
+use crate::*;
 
 #[derive(Clone, Copy, Debug, Eq, Hash, PartialEq, Serialize, Deserialize)]
 pub struct Rect {
@@ -265,8 +265,8 @@ impl fmt::Display for Rect {
 
 #[cfg(test)]
 pub mod tests {
-    use crate::primitives::rect::Rect;
-    use crate::primitives::xy::XY;
+    use crate::*;
+    use crate::*;
 
     #[test]
     fn rect_intersect_test() {

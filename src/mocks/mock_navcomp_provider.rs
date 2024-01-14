@@ -7,7 +7,7 @@ use crossbeam_channel::{select, Receiver, Sender};
 use log::{debug, error};
 
 use crate::fs::path::SPath;
-use crate::primitives::stupid_cursor::StupidCursor;
+use crate::*;
 use crate::promise::promise::Promise;
 use crate::w7e::navcomp_group::{NavCompTick, NavCompTickSender};
 use crate::w7e::navcomp_provider::{

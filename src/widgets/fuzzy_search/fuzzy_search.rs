@@ -4,19 +4,7 @@ use log::{debug, error, warn};
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::primitives::common_edit_msgs::key_to_edit_msg;
-use crate::primitives::rect::Rect;
-use crate::primitives::xy::XY;
 use crate::unpack_or_e;
-
-
 use crate::widgets::edit_box::{EditBoxWidget, EditBoxWidgetMsg};
 use crate::widgets::fuzzy_search::item_provider::{Item, ItemsProvider};
 use crate::widgets::fuzzy_search::msg::{FuzzySearchMsg, Navigation};
@@ -88,7 +76,7 @@ impl FuzzySearchWidget {
 
         // TODO add common prefixes bla bla bla
         for (idx, c) in contexts.iter().enumerate() {
-            context_shortcuts[idx] += c.context_name().graphemes(true).next().unwrap_or("");
+            context_shortcuts[idx] += c.context_name().as_str().graphemes(true).next().unwrap_or("");
         }
 
         Self {
@@ -322,7 +310,7 @@ impl Widget for FuzzySearchWidget {
         let mut y = 1 as u16;
 
         for (item_idx, item) in self.items().enumerate() {
-            let mut query_it = query.graphemes(true).peekable();
+            let mut query_it = query.as_str().graphemes(true).peekable();
             let mut x = 0 as u16;
 
             let selected_line = item_idx == self.highlighted;
@@ -333,7 +321,7 @@ impl Widget for FuzzySearchWidget {
                 theme.default_text(focused)
             };
 
-            for g in item.display_name().as_ref().graphemes(true) {
+            for g in item.display_name().as_str().graphemes(true) {
                 let selected_grapheme = query_it.peek().map(|f| *f == g).unwrap_or(false);
                 let grapheme_style = if selected_grapheme {
                     theme
@@ -364,7 +352,7 @@ impl Widget for FuzzySearchWidget {
             if self.draw_comment == DrawComment::All || (self.draw_comment == DrawComment::Highlighted && selected_line) {
                 if let Some(comment) = item.comment() {
                     let mut x = 0 as u16;
-                    for g in comment.as_ref().graphemes(true) {
+                    for g in comment.as_ref().as_str().graphemes(true) {
                         output.print_at(XY::new(x, y + 1), style, g);
                         x += g.width() as u16; //TODO overflow
                     }

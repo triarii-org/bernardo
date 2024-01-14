@@ -19,7 +19,7 @@ use crate::gladius::providers::Providers;
 use crate::gladius::run_gladius::run_gladius;
 use crate::*;
 use crate::*;
-use crate::primitives::xy::XY;
+use crate::*;
 use crate::tsw::language_set::LanguageSet;
 use crate::tsw::tree_sitter_wrapper::TreeSitterWrapper;
 use crate::widgets::code_results_view::code_results_widget::CodeResultsView;

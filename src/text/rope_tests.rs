@@ -1,7 +1,7 @@
 // This file exists for two reasons. First, so I am sure I understand rope. Second, that the
 // contracts will not change silently on some update.
 
-use crate::primitives::printable::Printable;
+use crate::*;
 use crate::text::text_buffer::TextBuffer;
 
 #[test]

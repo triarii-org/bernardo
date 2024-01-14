@@ -8,7 +8,7 @@ use crate::fs::fsf_ref::FsfRef;
 use crate::fs::mock_fs::MockFS;
 use crate::gladius::providers::Providers;
 use crate::*;
-use crate::primitives::xy::XY;
+use crate::*;
 use crate::text::buffer_state::BufferState;
 use crate::tsw::lang_id::LangId;
 use crate::tsw::language_set::LanguageSet;

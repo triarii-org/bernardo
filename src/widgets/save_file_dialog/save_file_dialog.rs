@@ -23,10 +23,10 @@ use crate::*;
 use crate::*;
 use crate::*;
 use crate::*;
-use crate::primitives::border::SINGLE_BORDER_STYLE;
-use crate::primitives::rect::Rect;
-use crate::primitives::scroll::ScrollDirection;
-use crate::primitives::xy::XY;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::text::text_buffer::TextBuffer;
 
 

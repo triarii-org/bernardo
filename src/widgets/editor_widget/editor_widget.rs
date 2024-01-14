@@ -7,36 +7,31 @@ use matches::debug_assert_matches;
 use streaming_iterator::StreamingIterator;
 use unicode_width::UnicodeWidthStr;
 
-
-
-
-use crate::*;
-use crate::*;
-use crate::*;
 use crate::gladius::providers::Providers;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::primitives::arrow::Arrow;
-use crate::primitives::color::Color;
-use crate::primitives::common_edit_msgs::{_apply_cem, cme_to_direction, key_to_edit_msg, CommonEditMsg};
-use crate::primitives::has_invariant::HasInvariant;
-use crate::primitives::helpers;
-use crate::primitives::printable::Printable;
-use crate::primitives::rect::Rect;
-use crate::primitives::stupid_cursor::StupidCursor;
-use crate::primitives::styled_printable::StyledPrintable;
-use crate::primitives::xy::XY;
 use crate::promise::promise::{Promise, PromiseState};
 use crate::text::buffer_state::BufferState;
 use crate::text::text_buffer::TextBuffer;
 use crate::w7e::buffer_state_shared_ref::BufferSharedRef;
 use crate::w7e::handler::NavCompRef;
 use crate::w7e::navcomp_provider::CompletionAction;
-
-
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 
 use crate::widgets::code_results_view::promise_provider::WrappedSymbolUsagesPromise;
 use crate::widgets::editor_widget::completion::completion_widget::CompletionWidget;
@@ -603,7 +598,7 @@ impl EditorWidget {
             EditorState::DroppingCursor { .. } => theme.default_text(focused).with_background(theme.ui.mode_2_background),
         };
 
-        helpers::fill_output(default.background, output);
+        fill_output(default.background, output);
 
         let buffer = unpack_or!(self.buffer.lock(), (), "failed to lock buffer for rendering");
         let cursor_set_copy = match buffer.cursors(self.wid) {

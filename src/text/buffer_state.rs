@@ -11,20 +11,20 @@ use tree_sitter::Point;
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::*;
-use crate::*;
-use crate::*;
 use crate::fs::path::SPath;
-use crate::*;
-use crate::primitives::common_edit_msgs::{CommonEditMsg, _apply_cem};
-use crate::primitives::has_invariant::HasInvariant;
-use crate::primitives::xy::XY;
 use crate::text::contents_and_cursors::ContentsAndCursors;
 use crate::text::text_buffer::{LinesIter, TextBuffer};
 use crate::tsw::lang_id::LangId;
 use crate::tsw::tree_sitter_wrapper::{HighlightItem, TreeSitterWrapper};
 use crate::w7e::buffer_state_shared_ref::BufferSharedRef;
 use crate::w7e::navcomp_provider::StupidSubstituteMessage;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 
 use crate::widgets::main_view::main_view::DocumentIdentifier;
 use crate::{unpack_or, unpack_or_e};
@@ -228,7 +228,7 @@ impl BufferState {
 
         if !stupid_message.substitute.is_empty() {
             let what = stupid_message.substitute.clone();
-            let char_len = what.graphemes(true).count();
+            let char_len = what.as_str().graphemes(true).count();
             if self.apply_cem(
                 // TODO unnecessary clone
                 CommonEditMsg::InsertBlock { char_pos: begin.a, what },

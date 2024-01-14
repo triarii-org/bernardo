@@ -5,9 +5,9 @@ use log::warn;
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::primitives::rect::Rect;
-use crate::primitives::sized_xy::SizedXY;
-use crate::primitives::xy::XY;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::*;
 use crate::{unpack_or, unpack_or_e};
 

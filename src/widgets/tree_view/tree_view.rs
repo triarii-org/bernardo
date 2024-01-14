@@ -6,17 +6,15 @@ use log::{debug, error, warn};
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::primitives::arrow::Arrow;
-use crate::primitives::helpers;
-use crate::primitives::rect::Rect;
-use crate::primitives::xy::XY;
 use crate::unpack_or_e;
-
-
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 
 use crate::widgets::tree_view::tree_it::TreeIt;
 use crate::widgets::tree_view::tree_view_node::{TreeItFilter, TreeViewNode};
@@ -334,7 +332,7 @@ impl<K: Hash + Eq + Debug + Clone + 'static, I: TreeViewNode<K> + 'static> Widge
         let visible_rect = output.visible_rect();
 
         let primary_style = theme.default_text(focused);
-        helpers::fill_output(primary_style.background, output);
+        fill_output(primary_style.background, output);
         let cursor_style = theme.highlighted(focused);
 
         for (item_idx, (depth, node)) in self
@@ -378,7 +376,7 @@ impl<K: Hash + Eq + Debug + Clone + 'static, I: TreeViewNode<K> + 'static> Widge
             let highlighted_idx: usize = 0;
 
             let mut x_offset: usize = 0;
-            for (grapheme_idx, g) in text.graphemes(true).into_iter().enumerate() {
+            for (grapheme_idx, g) in text.as_str().graphemes(true).into_iter().enumerate() {
                 let desired_pos_x: usize = depth as usize * 2 + x_offset;
                 if desired_pos_x > u16::MAX as usize {
                     error!("skipping drawing beyond x = u16::MAX");

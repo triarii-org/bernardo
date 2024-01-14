@@ -26,7 +26,7 @@ use std::slice::{Iter, IterMut};
 
 use log::{error, warn};
 
-use crate::primitives::has_invariant::HasInvariant;
+use crate::*;
 use crate::text::text_buffer::TextBuffer;
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]

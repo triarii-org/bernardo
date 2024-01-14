@@ -7,8 +7,8 @@ use serde::{Deserialize, Serialize};
 
 
 use crate::*;
-use crate::primitives::color::Color;
-use crate::primitives::tmtheme::TmTheme;
+use crate::*;
+use crate::*;
 
 use crate::*;
 

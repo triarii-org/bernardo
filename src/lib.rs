@@ -22,7 +22,9 @@ pub use layout::*;
 mod lsp_client;
 pub use lsp_client::*;
 
-pub mod primitives;
+mod primitives;
+pub use primitives::*;
+
 pub mod promise;
 pub mod text;
 pub mod tsw;

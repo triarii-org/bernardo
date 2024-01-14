@@ -4,8 +4,8 @@ use unicode_width::UnicodeWidthStr;
 use crate::*;
 use crate::*;
 use crate::*;
-use crate::primitives::printable::Printable;
-use crate::primitives::xy::XY;
+use crate::*;
+use crate::*;
 
 
 

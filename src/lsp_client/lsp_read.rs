@@ -156,8 +156,8 @@ fn internal_send_to_promise(
     } else {
         debug!("not waiting for call with id {:?}", &id);
         Err(LspReadError::UnmatchedId {
-            id: id.to_string(),
-            method: method.map(|m| m.to_string()).unwrap_or("<unset>".to_string()),
+            id: id.to_owned(),
+            method: method.map(|m| m.to_owned()).unwrap_or("<unset>".to_string()),
         })
     }
 }
@@ -165,7 +165,7 @@ fn internal_send_to_promise(
 static CONTENT_LENGTH_HEADER: &'static str = "Content-Length:";
 
 pub fn get_len_from_headers(headers: &String) -> Option<usize> {
-    for line in headers.lines() {
+    for line in headers.as_str().lines() {
         if line.trim().starts_with(&CONTENT_LENGTH_HEADER) {
             let bytes_num_str = &line[CONTENT_LENGTH_HEADER.len() + 1..];
             let bytes_num = bytes_num_str.parse::<usize>().ok();

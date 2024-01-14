@@ -1,8 +1,8 @@
 use unicode_segmentation::UnicodeSegmentation;
 
-use crate::*;
-use crate::primitives::xy::XY;
 use crate::widgets::tree_view::tree_view;
+use crate::*;
+use crate::*;
 
 use crate::*;
 
@@ -40,7 +40,7 @@ impl<'a> TreeViewInterpreter<'a> {
 
             let line_no_sham = line.text.replace("▼", " ").replace("▶", " ");
             let mut first_non_blank: u16 = 0;
-            for c in line_no_sham.graphemes(true) {
+            for c in line_no_sham.graphemes() {
                 if c == " " {
                     first_non_blank += 1;
                 } else {

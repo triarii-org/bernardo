@@ -1,4 +1,4 @@
-use crate::primitives::common_edit_msgs::CommonEditMsg;
+use crate::*;
 use crate::*;
 
 #[derive(Clone, Debug)]

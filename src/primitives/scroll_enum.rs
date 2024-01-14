@@ -1,5 +1,4 @@
 use crate::*;
-use crate::primitives::arrow::Arrow;
 
 #[derive(Clone, Copy, Debug)]
 pub enum ScrollEnum {

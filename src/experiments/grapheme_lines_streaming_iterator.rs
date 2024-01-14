@@ -54,7 +54,7 @@ mod tests {
     use streaming_iterator::StreamingIterator;
 
     use crate::*;
-    use crate::primitives::printable::Printable;
+    use crate::*;
 
     #[test]
     fn test_1_line() {

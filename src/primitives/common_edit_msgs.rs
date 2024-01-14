@@ -5,11 +5,6 @@ use log::{error, warn};
 use streaming_iterator::StreamingIterator;
 use unicode_segmentation::UnicodeSegmentation;
 
-use crate::*;
-use crate::*;
-use crate::primitives::arrow::Arrow;
-use crate::primitives::has_invariant::HasInvariant;
-use crate::primitives::printable::Printable;
 use crate::text::text_buffer::TextBuffer;
 
 use crate::*;

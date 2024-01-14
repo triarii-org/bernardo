@@ -2,7 +2,7 @@
 // use unicode_segmentation::UnicodeSegmentation;
 // use unicode_width::UnicodeWidthStr;
 // use std::slice::Iter;
-// use crate::primitives::xy::XY;
+// use crate::*;
 // use std::alloc::handle_alloc_error;
 //
 // pub struct StyledSubString {
@@ -94,9 +94,9 @@
 //
 // #[cfg(test)]
 // mod tests {
-//     use crate::primitives::styled_string::StyledString;
 //     use crate::*;
-//     use crate::primitives::xy::XY;
+//     use crate::*;
+//     use crate::*;
 //
 //     fn simple_styled_string(text : &str) -> StyledString {
 //         StyledString::empty().with(

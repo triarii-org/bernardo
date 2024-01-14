@@ -150,7 +150,7 @@ macro_rules! subwidget_op {
 #[cfg(test)]
 mod tests {
     #![allow(dead_code)]
-    use crate::primitives::xy::XY;
+    use crate::*;
 
     use super::*;
 

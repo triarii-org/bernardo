@@ -2,9 +2,9 @@ use log::warn;
 use unicode_width::UnicodeWidthStr;
 
 use crate::*;
-use crate::primitives::printable::Printable;
-use crate::primitives::rect::Rect;
-use crate::primitives::xy::XY;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::unpack_or;
 
 use crate::*;

@@ -8,9 +8,9 @@ use unicode_width::UnicodeWidthStr;
 
 use crate::*;
 use crate::*;
-use crate::primitives::color::Color;
-use crate::primitives::rect::Rect;
-use crate::primitives::xy::XY;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::unpack_or;
 
 pub fn get_next_filename(dir: &Path, prefix: &str, suffix: &str) -> Option<PathBuf> {

@@ -1,6 +1,6 @@
 use crate::*;
-use crate::primitives::printable::Printable;
-use crate::primitives::stupid_cursor::StupidCursor;
+use crate::*;
+use crate::*;
 use crate::widgets::editor_widget::label::label::{Label, LabelPos, LabelStyle};
 use crate::widgets::editor_widget::label::labels_provider::LabelsProvider;
 use crate::widgets::tests::editor_view_testbed::EditorViewTestbed;

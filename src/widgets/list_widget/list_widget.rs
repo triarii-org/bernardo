@@ -6,20 +6,7 @@ use log::{debug, error, warn};
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::primitives::arrow::Arrow;
-use crate::primitives::common_query::CommonQuery;
-use crate::primitives::helpers;
-use crate::primitives::helpers::copy_first_n_columns;
-use crate::primitives::rect::Rect;
-use crate::primitives::xy::XY;
 use crate::unpack_or_e;
-
-
-
 use crate::widgets::list_widget::list_widget_item::ListWidgetItem;
 use crate::widgets::list_widget::provider::ListItemProvider;
 
@@ -397,7 +384,7 @@ impl<Item: ListWidgetItem + 'static> Widget for ListWidget<Item> {
         };
 
         let primary_style = theme.default_text(focused);
-        helpers::fill_output(primary_style.background, output);
+        fill_output(primary_style.background, output);
         let cursor_style = theme.highlighted(focused);
         let header_style = theme.header(focused);
 
@@ -463,7 +450,7 @@ impl<Item: ListWidgetItem + 'static> Widget for ListWidget<Item> {
                 // huge block to "cut th text if necessary"
                 let text: String = {
                     let full_text: String = match item.get(column_idx) {
-                        Some(s) => s.to_string(),
+                        Some(s) => s.as_str().to_string(),
                         None => "".to_string(),
                     };
                     if full_text.len() <= actual_max_text_length as usize {
@@ -486,7 +473,7 @@ impl<Item: ListWidgetItem + 'static> Widget for ListWidget<Item> {
                     Some(highlight_iter) => {
                         let mut x_stride: usize = 0;
                         let mut highlight_iter = highlight_iter.peekable();
-                        for (grapheme_idx, grapheme) in text.graphemes(true).enumerate() {
+                        for (grapheme_idx, grapheme) in text.graphemes().enumerate() {
                             let highlight = highlight_iter.peek() == Some(&grapheme_idx);
                             if highlight {
                                 highlight_iter.next();

@@ -1,6 +1,4 @@
 use crate::*;
-use crate::*;
-use crate::primitives::xy::XY;
 use crate::unpack_or;
 
 pub struct BorderStyle {

@@ -3,10 +3,10 @@ use std::ops::Range;
 use log::warn;
 
 use crate::*;
-use crate::primitives::printable::Printable;
-use crate::primitives::stupid_cursor::StupidCursor;
-use crate::primitives::styled_printable::{StyleBorrowedPrintable, StyleWrappedPrintable, StyledPrintable};
-use crate::primitives::xy::XY;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::text::text_buffer::TextBuffer;
 use crate::unpack_or;
 

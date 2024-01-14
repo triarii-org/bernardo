@@ -11,12 +11,12 @@ use crate::*;
 use crate::*;
 use crate::*;
 use crate::*;
-use crate::primitives::common_edit_msgs::CommonEditMsg;
-use crate::primitives::has_invariant::HasInvariant;
-use crate::primitives::rect::Rect;
-use crate::primitives::scroll::ScrollDirection;
-use crate::primitives::search_pattern::SearchPattern;
-use crate::primitives::xy::XY;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::text::buffer_state::{BufferState, SetFilePathResult};
 use crate::w7e::buffer_state_shared_ref::BufferSharedRef;
 

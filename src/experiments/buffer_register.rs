@@ -7,7 +7,7 @@ use log::error;
 use crate::fs::path::SPath;
 use crate::fs::read_error::ReadError;
 use crate::gladius::providers::Providers;
-use crate::primitives::has_invariant::HasInvariant;
+use crate::*;
 use crate::text::buffer_state::BufferState;
 use crate::w7e::buffer_state_shared_ref::BufferSharedRef;
 use crate::widgets::main_view::main_view::DocumentIdentifier;

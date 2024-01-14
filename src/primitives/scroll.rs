@@ -1,5 +1,4 @@
-use crate::primitives::scroll::ScrollDirection::{Both, Vertical};
-use crate::primitives::xy::XY;
+use crate::*;
 
 #[derive(PartialEq, Eq)]
 pub enum ScrollDirection {
@@ -14,7 +13,7 @@ impl ScrollDirection {
     }
 
     pub fn free_y(&self) -> bool {
-        *self == Vertical || *self == Both
+        *self == ScrollDirection::Vertical || *self == ScrollDirection::Both
     }
 }
 

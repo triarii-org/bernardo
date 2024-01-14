@@ -1,7 +1,7 @@
 use std::fmt::Debug;
 
 use crate::fs::path::SPath;
-use crate::primitives::stupid_cursor::StupidCursor;
+use crate::*;
 use crate::promise::promise::Promise;
 use crate::w7e::navcomp_group::NavCompTickSender;
 

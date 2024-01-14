@@ -5,9 +5,9 @@ use crate::*;
 use crate::gladius::paradigm::recursive_treat_views;
 use crate::*;
 use crate::*;
-use crate::primitives::scroll::ScrollDirection;
-use crate::primitives::sized_xy::SizedXY;
-use crate::primitives::xy::XY;
+use crate::*;
+use crate::*;
+use crate::*;
 
 
 use crate::widgets::list_widget::list_widget::ListWidget;

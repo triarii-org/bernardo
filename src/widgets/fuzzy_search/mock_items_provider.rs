@@ -3,12 +3,15 @@ pub mod mock {
 
     use std::rc::Rc;
 
-    use crate::primitives::alphabet::mock::ALPHABET;
-
     use crate::widgets::fuzzy_search::helpers::is_subsequence;
     use crate::widgets::fuzzy_search::item_provider::{Item, ItemsProvider};
     use crate::widgets::main_view::msg::MainViewMsg;
     use crate::*;
+
+    const ALPHABET: [&str; 26] = [
+        "alfa", "bravo", "charlie", "delta", "echo", "foxtrot", "golf", "hotel", "india", "juliet", "kilo", "lima", "mike", "november",
+        "oscar", "papa", "quebec", "romeo", "sierra", "tango", "uniform", "victor", "whiskey", "x-ray", "yankee", "zulu",
+    ];
 
     pub struct MockItemProvider {
         num_items: usize,
@@ -45,7 +48,7 @@ pub mod mock {
 
     impl Item for String {
         fn display_name(&self) -> Rc<String> {
-            Rc::new(self.to_string())
+            Rc::new(self.to_owned())
         }
 
         fn on_hit(&self) -> Box<dyn AnyMsg> {
@@ -64,7 +67,7 @@ pub mod mock {
                     .iter()
                     .filter(move |t| is_subsequence(t, &query))
                     .take(limit)
-                    .map(|f| Box::new(f.to_string()) as Box<dyn Item>),
+                    .map(|f| Box::new(f.to_owned()) as Box<dyn Item>),
             )
         }
     }

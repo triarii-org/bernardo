@@ -1,7 +1,7 @@
 use std::io::{stdout, Error, ErrorKind, Stdout};
 
-use crate::primitives::sized_xy::SizedXY;
-use crate::primitives::xy::XY;
+use crate::*;
+use crate::*;
 use crossterm::terminal;
 
 use crate::*;

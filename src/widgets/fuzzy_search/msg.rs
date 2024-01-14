@@ -2,7 +2,7 @@ use std::fmt::Debug;
 
 use crate::*;
 
-use crate::primitives::common_edit_msgs::CommonEditMsg;
+use crate::*;
 
 #[derive(Clone, Copy, Debug)]
 pub enum Navigation {

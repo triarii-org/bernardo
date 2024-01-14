@@ -1,5 +1,5 @@
-use crate::primitives::rect::Rect;
-use crate::primitives::xy::XY;
+use crate::*;
+use crate::*;
 
 /*
 Screenspace represents a combined information about output size:

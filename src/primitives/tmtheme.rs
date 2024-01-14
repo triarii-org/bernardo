@@ -6,7 +6,7 @@ use log::{debug, error};
 use syntect::highlighting::{Highlighter, ThemeSet};
 use syntect::parsing::Scope;
 
-use crate::primitives::color::Color;
+use crate::*;
 
 impl Into<Color> for syntect::highlighting::Color {
     fn into(self) -> Color {

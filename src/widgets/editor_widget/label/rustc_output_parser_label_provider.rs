@@ -4,7 +4,7 @@ use log::warn;
 use regex::Regex;
 
 use crate::fs::path::SPath;
-use crate::primitives::printable::Printable;
+use crate::*;
 use crate::text::text_buffer::TextBuffer;
 use crate::widgets::editor_widget::label::label::{Label, LabelPos, LabelStyle};
 use crate::widgets::editor_widget::label::labels_provider::LabelsProvider;
@@ -194,7 +194,7 @@ warning: unused import: `crate::io::style::TextStyle`
 warning: unused import: `crate::primitives::rect::Rect`
  --> src/io/buffer_output/buffer_output_cells_iter.rs:6:5
   |
-6 | use crate::primitives::rect::Rect;
+6 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -314,7 +314,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
   --> src/widgets/tree_view/tree_view.rs:16:5
    |
-16 | use crate::primitives::rect::Rect;
+16 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -326,7 +326,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
   --> src/widgets/button.rs:10:5
    |
-10 | use crate::primitives::rect::Rect;
+10 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -338,7 +338,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
   --> src/widgets/edit_box.rs:14:5
    |
-14 | use crate::primitives::rect::Rect;
+14 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -350,7 +350,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
  --> src/widgets/no_editor.rs:6:5
   |
-6 | use crate::primitives::rect::Rect;
+6 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::unpack_or`
@@ -446,7 +446,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
   --> src/widgets/editor_widget/completion/completion_widget.rs:17:5
    |
-17 | use crate::primitives::rect::Rect;
+17 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -458,7 +458,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
   --> src/widgets/editor_widget/context_bar/widget.rs:12:5
    |
-12 | use crate::primitives::rect::Rect;
+12 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `std::ops::Range`
@@ -524,7 +524,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
   --> src/widgets/list_widget/list_widget.rs:17:5
    |
-17 | use crate::primitives::rect::Rect;
+17 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `std::rc::Rc`
@@ -578,7 +578,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
   --> src/widgets/code_results_view/code_results_widget.rs:25:5
    |
-25 | use crate::primitives::rect::Rect;
+25 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::text::buffer_state::BufferState`
@@ -638,7 +638,7 @@ warning: unused import: `unicode_segmentation::UnicodeSegmentation`
 warning: unused import: `crate::primitives::printable::Printable`
  --> src/widgets/editor_widget/label/rustc_output_parser_label_provider.rs:4:5
   |
-4 | use crate::primitives::printable::Printable;
+4 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Promise`
@@ -1088,7 +1088,7 @@ warning: unused import: `crate::io::style::TextStyle`
 warning: unused import: `crate::primitives::rect::Rect`
  --> src/io/buffer_output/buffer_output_cells_iter.rs:6:5
   |
-6 | use crate::primitives::rect::Rect;
+6 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -1208,7 +1208,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
   --> src/widgets/tree_view/tree_view.rs:16:5
    |
-16 | use crate::primitives::rect::Rect;
+16 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -1220,7 +1220,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
   --> src/widgets/button.rs:10:5
    |
-10 | use crate::primitives::rect::Rect;
+10 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -1232,7 +1232,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
   --> src/widgets/edit_box.rs:14:5
    |
-14 | use crate::primitives::rect::Rect;
+14 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -1244,7 +1244,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
  --> src/widgets/no_editor.rs:6:5
   |
-6 | use crate::primitives::rect::Rect;
+6 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::unpack_or`
@@ -1340,7 +1340,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
   --> src/widgets/editor_widget/completion/completion_widget.rs:17:5
    |
-17 | use crate::primitives::rect::Rect;
+17 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -1352,7 +1352,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
   --> src/widgets/editor_widget/context_bar/widget.rs:12:5
    |
-12 | use crate::primitives::rect::Rect;
+12 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `std::ops::Range`
@@ -1418,7 +1418,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
   --> src/widgets/list_widget/list_widget.rs:17:5
    |
-17 | use crate::primitives::rect::Rect;
+17 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `std::rc::Rc`
@@ -1472,7 +1472,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::primitives::rect::Rect`
   --> src/widgets/code_results_view/code_results_widget.rs:25:5
    |
-25 | use crate::primitives::rect::Rect;
+25 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::text::buffer_state::BufferState`
@@ -1532,7 +1532,7 @@ warning: unused import: `unicode_segmentation::UnicodeSegmentation`
 warning: unused import: `crate::primitives::printable::Printable`
  --> src/widgets/editor_widget/label/rustc_output_parser_label_provider.rs:4:5
   |
-4 | use crate::primitives::printable::Printable;
+4 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Promise`

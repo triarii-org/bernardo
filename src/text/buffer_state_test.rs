@@ -1,4 +1,4 @@
-use crate::primitives::common_edit_msgs::CommonEditMsg;
+use crate::*;
 use crate::text::buffer_state::BufferState;
 use crate::widgets::main_view::main_view::DocumentIdentifier;
 

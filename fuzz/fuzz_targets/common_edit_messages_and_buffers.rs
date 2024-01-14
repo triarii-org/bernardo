@@ -3,7 +3,6 @@
 use bernardo::cursor::cursor_set::CursorSet;
 use bernardo::cursor::cursor_set_fuzz;
 use bernardo::cursor::cursor_set_fuzz::*;
-use bernardo::primitives::common_edit_msgs::CommonEditMsg;
 use bernardo::text::buffer_state::BufferState;
 use bernardo::text::buffer_state_fuzz::*;
 use libfuzzer_sys::arbitrary;
@@ -15,12 +14,12 @@ struct Items {
     cems: Vec<CommonEditMsg>,
 }
 
-fuzz_target!(|items : Items| {
+fuzz_target!(|items: Items| {
     match items {
         Items { mut buffer_state, cems } => {
             for cem in cems.iter() {
                 buffer_state.apply_cem(cem.clone(), 10, None);
             }
-        },
+        }
     }
 });

@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 
-use crate::primitives::color::Color;
-use crate::primitives::is_default::IsDefault;
+use crate::*;
+use crate::*;
 
 #[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, Hash)]
 pub enum Effect {

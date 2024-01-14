@@ -7,9 +7,6 @@ use crossbeam_channel::select;
 use log::error;
 
 use bernardo::gladius::paradigm::recursive_treat_views;
-use bernardo::primitives::rect::Rect;
-use bernardo::primitives::sized_xy::SizedXY;
-
 use bernardo::*;
 
 use crate::reader_main_widget::ReaderMainWidget;

@@ -7,10 +7,10 @@ use crate::*;
 use crate::*;
 use crate::*;
 use crate::*;
-use crate::primitives::common_edit_msgs::{key_to_edit_msg, CommonEditMsg};
-use crate::primitives::common_query::CommonQuery;
-use crate::primitives::rect::Rect;
-use crate::primitives::xy::XY;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::subwidget;
 use crate::text::buffer_state::BufferState;
 
