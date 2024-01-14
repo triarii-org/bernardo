@@ -1,6 +1,5 @@
 use crate::fs::path::SPath;
 use crate::*;
-use crate::w7e::inspector::LangInspector;
 
 pub struct RustLangInspector {}
 

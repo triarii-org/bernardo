@@ -34,7 +34,8 @@ pub use text::*;
 mod tsw;
 pub use tsw::*;
 
-pub mod w7e;
+mod w7e;
+pub use w7e::*;
 
 mod widget;
 pub use widget::*;

@@ -5,7 +5,6 @@ use lazy_static::lazy_static;
 use log::{error, warn};
 use serde::{Deserialize, Serialize};
 
-
 use crate::*;
 use crate::*;
 use crate::*;
@@ -193,7 +192,7 @@ impl Theme {
     uses default filesystem (std). It is actually needed, the config might need to be initialized before filesystem AND it's most likely
     not local to any workspace.
      */
-    pub fn load_from_file(path: &Path) -> Result<Self, LoadError> {
+    pub fn load_from_file(path: &Path) -> Result<Self, ConfigLoadError> {
         let b = std::fs::read(path)?;
         let s = std::str::from_utf8(&b)?;
         let item = ron::from_str(s)?;
@@ -213,7 +212,7 @@ impl Theme {
         Ok(())
     }
 
-    pub fn load_or_create_default(root_config_dir: &Path) -> Result<Self, LoadError> {
+    pub fn load_or_create_default(root_config_dir: &Path) -> Result<Self, ConfigLoadError> {
         let full_path = root_config_dir.join(DEFAULT_THEME_PATH);
         if full_path.exists() {
             Self::load_from_file(&full_path)

@@ -4,16 +4,16 @@ use std::path::PathBuf;
 use crossbeam_channel::select;
 use log::{debug, error};
 
-use crate::*;
-use crate::*;
 use crate::gladius::paradigm::recursive_treat_views;
 use crate::gladius::providers::Providers;
-use crate::*;
-use crate::w7e::handler_load_error::HandlerLoadError;
-use crate::w7e::inspector::{inspect_workspace, InspectError};
-use crate::w7e::workspace::WORKSPACE_FILE_NAME;
-use crate::w7e::workspace::{LoadError, ScopeLoadErrors, Workspace};
 use crate::widgets::main_view::main_view::MainView;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::*;
 
 pub fn run_gladius<I: Input, O: FinalOutput>(providers: Providers, input: I, mut output: O, files: Vec<PathBuf>) {
@@ -22,8 +22,8 @@ pub fn run_gladius<I: Input, O: FinalOutput>(providers: Providers, input: I, mut
     let (workspace_op, _scope_errors): (Option<Workspace>, ScopeLoadErrors) = match Workspace::try_load(workspace_dir.clone()) {
         Ok(res) => (Some(res.0), res.1),
         Err(e) => match e {
-            LoadError::WorkspaceFileNotFound => (None, ScopeLoadErrors::default()),
-            LoadError::ReadError(e) => {
+            WorkspaceLoadError::WorkspaceFileNotFound => (None, ScopeLoadErrors::default()),
+            WorkspaceLoadError::ReadError(e) => {
                 error!(
                     "failed reading workspace file at {}, because:\n{}\nterminating. To continue, rename/remove {} in that folder.",
                     workspace_dir, e, WORKSPACE_FILE_NAME

@@ -2,8 +2,6 @@ use std::fmt::Debug;
 
 use crate::fs::path::SPath;
 use crate::*;
-use crate::*;
-use crate::w7e::navcomp_group::NavCompTickSender;
 
 // So I am not sure if I want to escalate errors from underlying implementation (LSP most likely)
 //  or just provide some generic "check health" status, that would trigger a reload when LSP dies.

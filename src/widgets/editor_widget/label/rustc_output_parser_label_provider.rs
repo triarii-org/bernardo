@@ -284,7 +284,7 @@ warning: unused import: `DocumentSymbolResponse`
 warning: unused imports: `NavCompSymbol`, `SymbolPromise`
   --> src/w7e/navcomp_provider_lsp.rs:19:122
    |
-19 | use crate::w7e::navcomp_provider::{Completion, CompletionAction, CompletionsPromise, FormattingPromise, NavCompProvider, NavCompSymbol, StupidSubstituteMessage, SymbolContextActionsPromise, SymbolPromise, SymbolType, SymbolUsage, SymbolUsagesPromise};
+19 | use crate::*;
    |                                                                                                                          ^^^^^^^^^^^^^                                                        ^^^^^^^^^^^^^
 
 warning: unused imports: `Arc`, `RwLock`, `TryLockResult`
@@ -296,7 +296,7 @@ warning: unused imports: `Arc`, `RwLock`, `TryLockResult`
 warning: unused imports: `NavCompGroupRef`, `NavCompGroup`
   --> src/w7e/workspace.rs:13:33
    |
-13 | use crate::w7e::navcomp_group::{NavCompGroup, NavCompGroupRef};
+13 | use crate::*;
    |                                 ^^^^^^^^^^^^  ^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -392,13 +392,13 @@ warning: unused import: `crate::text::buffer_state::BufferState`
 warning: unused import: `crate::w7e::buffer_state_shared_ref::BufferSharedRef`
   --> src/widgets/main_view/main_view.rs:28:5
    |
-28 | use crate::w7e::buffer_state_shared_ref::BufferSharedRef;
+28 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::w7e::navcomp_group::NavCompGroupRef`
   --> src/widgets/main_view/main_view.rs:29:5
    |
-29 | use crate::w7e::navcomp_group::NavCompGroupRef;
+29 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `either::Either`
@@ -410,7 +410,7 @@ warning: unused import: `either::Either`
 warning: unused import: `crate::w7e::navcomp_provider::SymbolUsagesPromise`
  --> src/widgets/main_view/msg.rs:6:5
   |
-6 | use crate::w7e::navcomp_provider::SymbolUsagesPromise;
+6 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `std::sync::RwLockWriteGuard`
@@ -434,7 +434,7 @@ warning: unused import: `crate::tsw::tree_sitter_wrapper::HighlightItem`
 warning: unused import: `NavCompSymbol`
   --> src/widgets/editor_widget/editor_widget.rs:38:54
    |
-38 | use crate::w7e::navcomp_provider::{CompletionAction, NavCompSymbol};
+38 | use crate::*;
    |                                                      ^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -500,13 +500,13 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::w7e::handler::NavCompRef`
   --> src/widgets/editor_view/editor_view.rs:24:5
    |
-24 | use crate::w7e::handler::NavCompRef;
+24 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::w7e::navcomp_group::NavCompGroupRef`
   --> src/widgets/editor_view/editor_view.rs:25:5
    |
-25 | use crate::w7e::navcomp_group::NavCompGroupRef;
+25 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::widgets::main_view::main_view::DocumentIdentifier`
@@ -590,7 +590,7 @@ warning: unused import: `crate::text::buffer_state::BufferState`
 warning: unused import: `crate::w7e::buffer_state_shared_ref::BufferSharedRef`
   --> src/widgets/code_results_view/code_results_widget.rs:30:5
    |
-30 | use crate::w7e::buffer_state_shared_ref::BufferSharedRef;
+30 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `UpdateResult`
@@ -1178,7 +1178,7 @@ warning: unused import: `DocumentSymbolResponse`
 warning: unused imports: `NavCompSymbol`, `SymbolPromise`
   --> src/w7e/navcomp_provider_lsp.rs:19:122
    |
-19 | use crate::w7e::navcomp_provider::{Completion, CompletionAction, CompletionsPromise, FormattingPromise, NavCompProvider, NavCompSymbol, StupidSubstituteMessage, SymbolContextActionsPromise, SymbolPromise, SymbolType, SymbolUsage, SymbolUsagesPromise};
+19 | use crate::*;
    |                                                                                                                          ^^^^^^^^^^^^^                                                        ^^^^^^^^^^^^^
 
 warning: unused imports: `Arc`, `RwLock`, `TryLockResult`
@@ -1190,7 +1190,7 @@ warning: unused imports: `Arc`, `RwLock`, `TryLockResult`
 warning: unused imports: `NavCompGroupRef`, `NavCompGroup`
   --> src/w7e/workspace.rs:13:33
    |
-13 | use crate::w7e::navcomp_group::{NavCompGroup, NavCompGroupRef};
+13 | use crate::*;
    |                                 ^^^^^^^^^^^^  ^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -1286,13 +1286,13 @@ warning: unused import: `crate::text::buffer_state::BufferState`
 warning: unused import: `crate::w7e::buffer_state_shared_ref::BufferSharedRef`
   --> src/widgets/main_view/main_view.rs:28:5
    |
-28 | use crate::w7e::buffer_state_shared_ref::BufferSharedRef;
+28 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::w7e::navcomp_group::NavCompGroupRef`
   --> src/widgets/main_view/main_view.rs:29:5
    |
-29 | use crate::w7e::navcomp_group::NavCompGroupRef;
+29 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `either::Either`
@@ -1304,7 +1304,7 @@ warning: unused import: `either::Either`
 warning: unused import: `crate::w7e::navcomp_provider::SymbolUsagesPromise`
  --> src/widgets/main_view/msg.rs:6:5
   |
-6 | use crate::w7e::navcomp_provider::SymbolUsagesPromise;
+6 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `std::sync::RwLockWriteGuard`
@@ -1328,7 +1328,7 @@ warning: unused import: `crate::tsw::tree_sitter_wrapper::HighlightItem`
 warning: unused import: `NavCompSymbol`
   --> src/widgets/editor_widget/editor_widget.rs:38:54
    |
-38 | use crate::w7e::navcomp_provider::{CompletionAction, NavCompSymbol};
+38 | use crate::*;
    |                                                      ^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -1394,13 +1394,13 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::w7e::handler::NavCompRef`
   --> src/widgets/editor_view/editor_view.rs:24:5
    |
-24 | use crate::w7e::handler::NavCompRef;
+24 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::w7e::navcomp_group::NavCompGroupRef`
   --> src/widgets/editor_view/editor_view.rs:25:5
    |
-25 | use crate::w7e::navcomp_group::NavCompGroupRef;
+25 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::widgets::main_view::main_view::DocumentIdentifier`
@@ -1484,7 +1484,7 @@ warning: unused import: `crate::text::buffer_state::BufferState`
 warning: unused import: `crate::w7e::buffer_state_shared_ref::BufferSharedRef`
   --> src/widgets/code_results_view/code_results_widget.rs:30:5
    |
-30 | use crate::w7e::buffer_state_shared_ref::BufferSharedRef;
+30 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `UpdateResult`

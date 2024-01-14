@@ -6,7 +6,7 @@ use log::{debug, error};
 
 use crate::*;
 use crate::*;
-use crate::w7e::navcomp_group::NavCompTick;
+use crate::*;
 
 pub struct MockNavCompPromise<T: Send + 'static> {
     receiver: Receiver<T>,

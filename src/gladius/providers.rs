@@ -10,7 +10,7 @@ use crate::*;
 use crate::fs::fsf_ref::FsfRef;
 use crate::gladius::navcomp_loader::NavCompLoader;
 use crate::*;
-use crate::w7e::navcomp_group::NavCompGroup;
+use crate::*;
 use crate::widgets::editor_widget::label::labels_provider::LabelsProviderRef;
 
 use crate::*;

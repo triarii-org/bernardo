@@ -3,10 +3,8 @@ use std::sync::Arc;
 
 use log::debug;
 
-use crate::*;
 use crate::fs::path::SPath;
 use crate::*;
-use crate::w7e::handler::NavCompRef;
 
 #[derive(Debug, Copy, Clone)]
 pub enum NavCompTick {

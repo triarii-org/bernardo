@@ -8,18 +8,8 @@ use log::{debug, error};
 use lsp_types::{CompletionResponse, CompletionTextEdit, DocumentSymbolResponse, Position, SymbolKind};
 
 use crate::fs::path::SPath;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
 use crate::unpack_or_e;
-use crate::w7e::navcomp_group::NavCompTickSender;
-use crate::w7e::navcomp_provider::{
-    Completion, CompletionAction, CompletionsPromise, FormattingPromise, NavCompProvider, NavCompSymbol, StupidSubstituteMessage,
-    SymbolContextActionsPromise, SymbolPromise, SymbolType, SymbolUsage, SymbolUsagesPromise,
-};
+use crate::*;
 
 /*
 TODO I am silently ignoring errors here. I guess that if NavComp fails it should get re-started.

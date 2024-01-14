@@ -87,7 +87,7 @@ impl Config {
     /*
     uses default filesystem (std). It is actually needed, it's unlikely that we want the theme config to be in
      */
-    pub fn load_from_file(path: &Path) -> Result<Self, LoadError> {
+    pub fn load_from_file(path: &Path) -> Result<Self, ConfigLoadError> {
         let b = std::fs::read(path)?;
         let s = std::str::from_utf8(&b)?;
         let item: Config = ron::from_str(s)?;

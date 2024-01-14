@@ -3,7 +3,7 @@ use std::rc::Rc;
 
 use log::error;
 
-use crate::w7e::navcomp_provider::{Completion, CompletionsPromise};
+use crate::*;
 use crate::widgets::list_widget::list_widget_item::ListWidgetItem;
 use crate::widgets::list_widget::provider::ListItemProvider;
 

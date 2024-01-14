@@ -1,8 +1,8 @@
 use log::debug;
 
 use crate::*;
-use crate::w7e::navcomp_provider::Completion;
-use crate::w7e::navcomp_provider::CompletionAction::Insert;
+use crate::*;
+use crate::*;
 
 use crate::*;
 
@@ -56,12 +56,12 @@ fn completion_test_1() {
             Completion {
                 key: "into_os_string".to_string(),
                 desc: None,
-                action: Insert("into_os_string".to_string()),
+                action: CompletionAction::Insert("into_os_string".to_string()),
             },
             Completion {
                 key: "into_boxed_path".to_string(),
                 desc: None,
-                action: Insert("into_boxed_path".to_string()),
+                action: CompletionAction::Insert("into_boxed_path".to_string()),
             },
         ]),
     });

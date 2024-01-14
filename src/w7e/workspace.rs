@@ -4,15 +4,15 @@ use std::sync::{Arc, RwLock, TryLockResult};
 use log::debug;
 use serde::{Deserialize, Serialize};
 
-use crate::*;
 use crate::fs;
 use crate::fs::path::SPath;
 use crate::fs::write_error::WriteOrSerError;
 use crate::gladius::providers::Providers;
-use crate::w7e::handler_load_error::HandlerLoadError;
-use crate::w7e::navcomp_group::{NavCompGroup, NavCompGroupRef};
-use crate::w7e::project_scope;
-use crate::w7e::project_scope::{ProjectScope, SerializableProjectScope};
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 
 /*
 So a funny finding while adding NavCompTick channel is that it seems like I could immediately add
@@ -27,7 +27,7 @@ pub const WORKSPACE_FILE_NAME: &'static str = ".gladius_workspace.ron";
 
 pub struct Scopes(Vec<ProjectScope>);
 
-pub type ScopeLoadErrors = Vec<(PathBuf, project_scope::LoadError)>;
+pub type ScopeLoadErrors = Vec<(PathBuf, ProjectLoadError)>;
 
 pub struct Workspace {
     root_path: SPath,
@@ -42,14 +42,14 @@ pub struct SerializableWorkspace {
 impl ToPrettyRonString for SerializableWorkspace {}
 
 #[derive(Debug)]
-pub enum LoadError {
+pub enum WorkspaceLoadError {
     WorkspaceFileNotFound,
     ReadError(fs::read_error::ReadError),
 }
 
-impl From<fs::read_error::ReadError> for LoadError {
+impl From<fs::read_error::ReadError> for WorkspaceLoadError {
     fn from(re: fs::read_error::ReadError) -> Self {
-        LoadError::ReadError(re)
+        WorkspaceLoadError::ReadError(re)
     }
 }
 
@@ -58,10 +58,10 @@ impl Workspace {
         Workspace { root_path, scopes }
     }
 
-    pub fn try_load(root_path: SPath) -> Result<(Workspace, ScopeLoadErrors), LoadError> {
+    pub fn try_load(root_path: SPath) -> Result<(Workspace, ScopeLoadErrors), WorkspaceLoadError> {
         let workspace_file = root_path
             .descendant_checked(WORKSPACE_FILE_NAME)
-            .ok_or(LoadError::WorkspaceFileNotFound)?;
+            .ok_or(WorkspaceLoadError::WorkspaceFileNotFound)?;
         debug!("loading workspace file from {:?}", workspace_file.absolute_path());
         let serialized_workspace = workspace_file.read_entire_file_to_item::<SerializableWorkspace>()?;
         Self::from(serialized_workspace, root_path)
@@ -73,7 +73,7 @@ impl Workspace {
         file.overwrite_with_ron(&pill, false)
     }
 
-    pub fn from(sw: SerializableWorkspace, root_path: SPath) -> Result<(Workspace, ScopeLoadErrors), LoadError> {
+    pub fn from(sw: SerializableWorkspace, root_path: SPath) -> Result<(Workspace, ScopeLoadErrors), WorkspaceLoadError> {
         let mut scopes: Vec<ProjectScope> = Vec::new();
         let mut scope_errors = ScopeLoadErrors::new();
 

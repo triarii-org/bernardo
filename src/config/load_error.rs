@@ -7,48 +7,48 @@ use std::str::Utf8Error;
 use crate::fs::read_error::ReadError;
 
 #[derive(Debug)]
-pub enum LoadError {
+pub enum ConfigLoadError {
     ReadError(ReadError),
     IoError(std::io::Error),
     DeserializationError(ron::Error),
     UnmappedError(String),
 }
 
-impl From<ron::Error> for LoadError {
+impl From<ron::Error> for ConfigLoadError {
     fn from(e: ron::Error) -> Self {
-        LoadError::DeserializationError(e)
+        ConfigLoadError::DeserializationError(e)
     }
 }
 
-impl From<ReadError> for LoadError {
+impl From<ReadError> for ConfigLoadError {
     fn from(re: ReadError) -> Self {
-        LoadError::ReadError(re)
+        ConfigLoadError::ReadError(re)
     }
 }
 
-impl From<std::io::Error> for LoadError {
+impl From<std::io::Error> for ConfigLoadError {
     fn from(ioe: std::io::Error) -> Self {
-        LoadError::ReadError(ReadError::from(ioe))
+        ConfigLoadError::ReadError(ReadError::from(ioe))
     }
 }
 
-impl From<std::str::Utf8Error> for LoadError {
+impl From<std::str::Utf8Error> for ConfigLoadError {
     fn from(ue: Utf8Error) -> Self {
-        LoadError::ReadError(ReadError::Utf8Error(ue))
+        ConfigLoadError::ReadError(ReadError::Utf8Error(ue))
     }
 }
 
-impl Display for LoadError {
+impl Display for ConfigLoadError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         write!(f, "{:?}", self)
     }
 }
 
 //TODO
-impl From<ron::error::SpannedError> for LoadError {
+impl From<ron::error::SpannedError> for ConfigLoadError {
     fn from(e: ron::error::SpannedError) -> Self {
-        LoadError::UnmappedError(format!("{}", e))
+        ConfigLoadError::UnmappedError(format!("{}", e))
     }
 }
 
-impl std::error::Error for LoadError {}
+impl std::error::Error for ConfigLoadError {}

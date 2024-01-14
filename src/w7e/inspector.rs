@@ -7,8 +7,8 @@ use maplit::hashmap;
 
 use crate::fs::path::SPath;
 use crate::*;
-use crate::w7e::project_scope::ProjectScope;
-use crate::w7e::rust::inspector_rust::RustLangInspector;
+use crate::*;
+use crate::*;
 
 #[derive(Debug)]
 pub enum InspectError {

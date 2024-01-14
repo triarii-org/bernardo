@@ -1,8 +1,8 @@
 use log::debug;
 
 use crate::*;
-use crate::w7e::navcomp_provider::Completion;
-use crate::w7e::navcomp_provider::CompletionAction::Insert;
+use crate::*;
+use crate::*;
 
 use crate::*;
 

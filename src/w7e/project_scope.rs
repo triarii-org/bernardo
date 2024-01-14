@@ -3,10 +3,10 @@ use std::path::PathBuf;
 use log::debug;
 use serde::{Deserialize, Serialize};
 
-use crate::*;
 use crate::fs::path::SPath;
 use crate::*;
-use crate::w7e::handler::Handler;
+use crate::*;
+use crate::*;
 
 pub struct ProjectScope {
     pub lang_id: LangId,
@@ -29,7 +29,7 @@ pub struct SerializableProjectScope {
 impl ToPrettyRonString for SerializableProjectScope {}
 
 #[derive(Debug, Eq, PartialEq)]
-pub enum LoadError {
+pub enum ProjectLoadError {
     DirectoryNotFound,
 }
 
@@ -42,12 +42,12 @@ impl ProjectScope {
         }
     }
 
-    pub fn from_serializable(sps: SerializableProjectScope, workspace: &SPath) -> Result<Self, LoadError> {
+    pub fn from_serializable(sps: SerializableProjectScope, workspace: &SPath) -> Result<Self, ProjectLoadError> {
         debug!("loading project scope from pill: {:?}", sps);
         let ff = if sps.path.as_os_str().is_empty() {
             workspace.clone()
         } else {
-            workspace.descendant_checked(&sps.path).ok_or(LoadError::DirectoryNotFound)?
+            workspace.descendant_checked(&sps.path).ok_or(ProjectLoadError::DirectoryNotFound)?
         };
 
         Ok(ProjectScope {

@@ -7,13 +7,6 @@ use crossbeam_channel::{select, Receiver, Sender};
 use log::{debug, error};
 
 use crate::fs::path::SPath;
-use crate::*;
-use crate::*;
-use crate::w7e::navcomp_group::{NavCompTick, NavCompTickSender};
-use crate::w7e::navcomp_provider::{
-    Completion, CompletionsPromise, FormattingPromise, NavCompProvider, NavCompSymbol, SymbolContextActionsPromise, SymbolPromise,
-    SymbolType, SymbolUsage, SymbolUsagesPromise,
-};
 use crate::{unpack_or, unpack_or_e};
 
 use crate::*;
