@@ -1,6 +1,9 @@
 mod gladius;
 pub use gladius::*;
 
+mod gladius_temp;
+pub use gladius_temp::*;
+
 mod app;
 pub use app::App;
 
@@ -46,7 +49,7 @@ pub use widget::*;
 mod widgets;
 pub use widgets::*;
 
-#[cfg(feature = "test-utils")]
+#[cfg(test)]
 mod mocks;
-#[cfg(feature = "test-utils")]
+#[cfg(test)]
 pub use mocks::*;

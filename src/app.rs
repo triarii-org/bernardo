@@ -1,7 +1,5 @@
 use std::io::{stdout, Error, ErrorKind, Stdout};
 
-use crate::*;
-use crate::*;
 use crossterm::terminal;
 
 use crate::*;
