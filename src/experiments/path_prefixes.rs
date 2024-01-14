@@ -36,7 +36,7 @@
 // mod tests {
 //     use std::path::PathBuf;
 //
-//     use crate::experiments::path_prefixes::PathPrefixes;
+//     use crate::*;
 //
 //     #[test]
 //     fn test_some_prefixes() {

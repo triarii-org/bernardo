@@ -1,7 +1,7 @@
 use streaming_iterator::StreamingIterator;
 use unicode_width::UnicodeWidthStr;
 
-use crate::experiments::screenspace::Screenspace;
+use crate::*;
 use crate::*;
 use crate::*;
 use crate::primitives::printable::Printable;

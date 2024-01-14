@@ -4,7 +4,7 @@ use std::str::FromStr;
 use serde::de::Visitor;
 use serde::{de, Deserialize, Deserializer, Serialize, Serializer};
 
-use crate::experiments::focus_group::FocusUpdate;
+use crate::*;
 
 // TODO (hardening) here potentially impossible combinations, like ALT+LeftAlt are deserializable,
 // should be fixed someday TODO (hardening) also, for some reason console does not support

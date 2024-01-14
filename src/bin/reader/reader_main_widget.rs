@@ -1,6 +1,5 @@
 use std::fmt::Debug;
 
-use bernardo::experiments::screenspace::Screenspace;
 use bernardo::primitives::scroll::ScrollDirection;
 use bernardo::primitives::xy::XY;
 use bernardo::widgets::dump_visualizer_widget::DumpVisualizerWidget;

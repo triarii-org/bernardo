@@ -1,6 +1,6 @@
-use crate::experiments::clipboard::ClipboardRef;
-use crate::experiments::screen_shot::screenshot;
-use crate::experiments::screenspace::Screenspace;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::gladius::paradigm::recursive_treat_views;
 use crate::*;
 use crate::*;

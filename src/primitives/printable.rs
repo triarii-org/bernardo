@@ -4,7 +4,7 @@ use std::sync::Arc;
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::experiments::grapheme_lines_streaming_iterator::GraphemeLinesStreamingIterator;
+use crate::*;
 
 pub trait Printable {
     fn graphemes(&self) -> Box<dyn Iterator<Item = &str> + '_>;

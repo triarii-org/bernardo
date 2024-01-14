@@ -4,7 +4,7 @@ use log::{debug, error, warn};
 use ropey::Rope;
 use unicode_segmentation::UnicodeSegmentation;
 
-use crate::experiments::regex_search::{regex_find, FindError};
+use crate::*;
 use crate::*;
 use crate::primitives::search_pattern::SearchPattern;
 use crate::tsw::lang_id::LangId;

@@ -53,7 +53,7 @@ mod tests {
 
     use streaming_iterator::StreamingIterator;
 
-    use crate::experiments::grapheme_lines_streaming_iterator::GraphemeLinesStreamingIterator;
+    use crate::*;
     use crate::primitives::printable::Printable;
 
     #[test]

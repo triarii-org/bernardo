@@ -1,4 +1,4 @@
-use crate::experiments::screen_shot::screenshot;
+use crate::*;
 use crate::primitives::printable::Printable;
 use crate::primitives::stupid_cursor::StupidCursor;
 use crate::widgets::editor_widget::label::label::{Label, LabelPos, LabelStyle};

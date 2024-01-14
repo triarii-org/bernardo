@@ -5,8 +5,8 @@ of key components like EditorView or CodeResultsView
 
 use std::sync::{Arc, RwLock};
 
-use crate::experiments::buffer_register::{BufferRegister, BufferRegisterRef};
-use crate::experiments::clipboard::ClipboardRef;
+use crate::*;
+use crate::*;
 use crate::fs::fsf_ref::FsfRef;
 use crate::gladius::navcomp_loader::NavCompLoader;
 use crate::tsw::tree_sitter_wrapper::TreeSitterWrapper;

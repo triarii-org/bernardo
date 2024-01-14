@@ -7,7 +7,6 @@ The graph is built using basic geometry.
 use std::cmp::max;
 use std::collections::HashMap;
 
-use crate::experiments::focus_group::{FocusGraph, FocusGraphNode, FocusUpdate};
 use crate::*;
 use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
@@ -171,8 +170,8 @@ pub fn from_geometry<AdditionalData: Clone>(
 
 #[cfg(test)]
 mod tests {
-    use crate::experiments::focus_group::FocusUpdate;
-    use crate::experiments::from_geometry::{from_geometry, get_full_size};
+    use crate::*;
+    use crate::*;
     use crate::primitives::rect::Rect;
     use crate::primitives::xy::XY;
 

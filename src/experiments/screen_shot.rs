@@ -3,8 +3,9 @@ use std::path::PathBuf;
 
 use log::{debug, error};
 
-use crate::*;
 use crate::primitives::helpers::get_next_filename;
+
+use crate::*;
 
 pub fn screenshot(dump: &BufferOutput) -> bool {
     let screenshot_dir: PathBuf = PathBuf::from("./screenshots/");

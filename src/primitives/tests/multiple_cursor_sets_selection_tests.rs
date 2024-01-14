@@ -2,7 +2,7 @@ use std::collections::HashSet;
 
 use ropey::Rope;
 
-use crate::experiments::clipboard::{Clipboard, ClipboardRef};
+use crate::*;
 use crate::primitives::common_edit_msgs::{CommonEditMsg, _apply_cem};
 use crate::primitives::has_invariant::HasInvariant;
 use crate::primitives::printable::Printable;

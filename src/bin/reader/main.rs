@@ -6,7 +6,6 @@ use clap::Parser;
 use crossbeam_channel::select;
 use log::error;
 
-use bernardo::experiments::screenspace::Screenspace;
 use bernardo::gladius::paradigm::recursive_treat_views;
 use bernardo::primitives::rect::Rect;
 use bernardo::primitives::sized_xy::SizedXY;

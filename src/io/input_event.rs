@@ -2,7 +2,7 @@ use std::fmt::Debug;
 
 use serde::{Deserialize, Serialize};
 
-use crate::experiments::focus_group::FocusUpdate;
+use crate::*;
 use crate::*;
 
 #[derive(Debug, Clone, Copy, Serialize, Deserialize)]

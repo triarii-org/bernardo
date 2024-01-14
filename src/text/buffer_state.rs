@@ -11,9 +11,9 @@ use tree_sitter::Point;
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::experiments::clipboard::ClipboardRef;
-use crate::experiments::filename_to_language::filename_to_language;
-use crate::experiments::regex_search::FindError;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::fs::path::SPath;
 use crate::*;
 use crate::primitives::common_edit_msgs::{CommonEditMsg, _apply_cem};

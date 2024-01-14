@@ -1,5 +1,3 @@
-
-
 use crate::*;
 
 pub trait Getter<W>: Fn(&W) -> &dyn Widget {
@@ -125,17 +123,14 @@ impl<W: Widget> SubwidgetPointerOp<W> {
 #[macro_export]
 macro_rules! subwidget {
     ($parent: ident.$ child: ident) => {
-        $crate::experiments::subwidget_pointer::SubwidgetPointer::new(
-            Box::new(|p: &$parent| &p.$child),
-            Box::new(|p: &mut $parent| &mut p.$child),
-        )
+        $crate::SubwidgetPointer::new(Box::new(|p: &$parent| &p.$child), Box::new(|p: &mut $parent| &mut p.$child))
     };
 }
 
 #[macro_export]
 macro_rules! selfwidget {
     ($parent: ident) => {
-        $crate::experiments::subwidget_pointer::SubwidgetPointer::new(
+        $crate::SubwidgetPointer::new(
             Box::new(|p: &$parent| p as &dyn Widget),
             Box::new(|p: &mut $parent| p as &mut dyn Widget),
         )
@@ -145,7 +140,7 @@ macro_rules! selfwidget {
 #[macro_export]
 macro_rules! subwidget_op {
     ($parent: ident.$ child: ident) => {
-        $crate::experiments::subwidget_pointer::SubwidgetPointerOp::new(
+        $crate::SubwidgetPointerOp::new(
             Box::new(|p: &$parent| p.$child.as_ref().map(|w| w as &dyn Widget)),
             Box::new(|p: &mut $parent| p.$child.as_mut().map(|w| w as &mut dyn Widget)),
         )
@@ -155,14 +150,7 @@ macro_rules! subwidget_op {
 #[cfg(test)]
 mod tests {
     #![allow(dead_code)]
-
-    use crate::experiments::screenspace::Screenspace;
-    use crate::experiments::subwidget_pointer::{SubwidgetPointer, SubwidgetPointerOp};
-    use crate::*;
-    use crate::*;
     use crate::primitives::xy::XY;
-    
-    
 
     use super::*;
 

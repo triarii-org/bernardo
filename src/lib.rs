@@ -7,7 +7,8 @@ pub use config::*;
 mod cursor;
 pub use cursor::*;
 
-pub mod experiments;
+mod experiments;
+pub use experiments::*;
 
 pub mod fs;
 pub mod gladius;

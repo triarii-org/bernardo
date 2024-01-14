@@ -3,7 +3,7 @@ use std::sync::{Arc, RwLock};
 
 use log::error;
 
-use crate::experiments::clipboard::{Clipboard, ClipboardRef};
+use crate::*;
 
 #[derive(Debug, Default)]
 pub struct MockClipboard {

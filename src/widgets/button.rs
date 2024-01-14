@@ -1,7 +1,7 @@
 use log::warn;
 use unicode_width::UnicodeWidthStr;
 
-use crate::experiments::screenspace::Screenspace;
+use crate::*;
 use crate::primitives::printable::Printable;
 use crate::primitives::rect::Rect;
 use crate::primitives::xy::XY;
