@@ -2,7 +2,6 @@ use std::sync::Arc;
 
 use log::{debug, error};
 
-use crate::fs::path::SPath;
 use crate::*;
 
 /*

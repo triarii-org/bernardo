@@ -5,7 +5,6 @@ This is a piece of specialized code for TreeView of SPath
 use log::{debug, error};
 use streaming_iterator::StreamingIterator;
 
-use crate::fs::path::SPath;
 use crate::*;
 
 impl TreeViewWidget<SPath, FileTreeNode> {
@@ -36,9 +35,6 @@ impl TreeViewWidget<SPath, FileTreeNode> {
 
 #[cfg(test)]
 mod tests {
-    use crate::fs::filesystem_front::FilesystemFront;
-    use crate::fs::mock_fs::MockFS;
-    use crate::fs::path::SPath;
 
     use crate::*;
     use crate::*;

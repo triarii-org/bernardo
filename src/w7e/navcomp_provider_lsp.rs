@@ -7,8 +7,6 @@ use crossbeam_channel::{Receiver, Sender};
 use log::{debug, error};
 use lsp_types::{CompletionResponse, CompletionTextEdit, DocumentSymbolResponse, Position, SymbolKind};
 
-use crate::fs::path::SPath;
-
 use crate::*;
 
 /*

@@ -2,7 +2,6 @@ use std::collections::VecDeque;
 
 use log::error;
 
-use crate::fs::path::SPath;
 use crate::*;
 
 /*
@@ -65,9 +64,6 @@ impl Iterator for RecursiveFsIter {
 
 #[cfg(test)]
 mod tests {
-    use crate::fs::filesystem_front::FilesystemFront;
-    use crate::fs::fsf_iter::RecursiveFsIter;
-    use crate::fs::mock_fs::MockFS;
 
     use super::*;
 

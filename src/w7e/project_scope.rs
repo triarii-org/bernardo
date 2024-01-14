@@ -3,7 +3,6 @@ use std::path::PathBuf;
 use log::debug;
 use serde::{Deserialize, Serialize};
 
-use crate::fs::path::SPath;
 use crate::*;
 use crate::*;
 use crate::*;

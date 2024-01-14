@@ -1,6 +1,5 @@
 use std::fmt::{Display, Formatter};
 
-use crate::fs::read_error::ReadError;
 use crate::*;
 
 #[derive(Debug, Eq, PartialEq)]

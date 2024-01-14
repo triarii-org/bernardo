@@ -1,6 +1,5 @@
 use std::ops::Range;
 
-use crate::fs::path::SPath;
 use crate::*;
 use crate::*;
 use crate::*;

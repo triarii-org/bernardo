@@ -11,7 +11,6 @@ use tree_sitter::Point;
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::fs::path::SPath;
 use crate::*;
 use crate::*;
 use crate::*;

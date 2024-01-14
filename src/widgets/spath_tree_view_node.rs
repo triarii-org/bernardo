@@ -3,7 +3,6 @@ use std::fmt::Debug;
 
 use log::error;
 
-use crate::fs::path::SPath;
 use crate::*;
 
 #[derive(Debug, Clone)]

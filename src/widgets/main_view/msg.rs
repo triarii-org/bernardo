@@ -1,6 +1,5 @@
 use either::Either;
 
-use crate::fs::path::SPath;
 use crate::*;
 use crate::*;
 

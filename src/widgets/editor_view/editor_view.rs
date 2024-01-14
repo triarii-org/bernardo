@@ -1,7 +1,6 @@
 use log::{debug, error, warn};
 use unicode_width::UnicodeWidthStr;
 
-use crate::fs::path::SPath;
 use crate::gladius::providers::Providers;
 use crate::{subwidget, unpack_or, unpack_or_e};
 

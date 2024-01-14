@@ -12,10 +12,6 @@ use serde::Serialize;
 use streaming_iterator::StreamingIterator;
 use url::Url;
 
-use crate::fs::fsf_iter::RecursiveFsIter;
-use crate::fs::fsf_ref::FsfRef;
-use crate::fs::read_error::{ListError, ReadError};
-use crate::fs::write_error::{WriteError, WriteOrSerError};
 use crate::*;
 
 // TODO add some invariants.
@@ -387,9 +383,6 @@ impl Ord for SPath {
 #[cfg(test)]
 mod tests {
     use streaming_iterator::StreamingIterator;
-
-    use crate::fs::filesystem_front::FilesystemFront;
-    use crate::fs::mock_fs::MockFS;
 
     use super::*;
 

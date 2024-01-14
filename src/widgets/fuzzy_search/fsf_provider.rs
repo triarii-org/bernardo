@@ -1,8 +1,6 @@
 use std::fmt::Debug;
 use std::rc::Rc;
 
-use crate::fs::fsf_ref::FsfRef;
-use crate::fs::path::SPath;
 use crate::*;
 
 pub type SPathToMsg = fn(&SPath) -> Box<dyn AnyMsg>;

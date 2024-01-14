@@ -5,7 +5,6 @@ This is a piece of specialized code for TreeView of DirTreeNode
 use log::{debug, error, warn};
 use streaming_iterator::StreamingIterator;
 
-use crate::fs::path::SPath;
 use crate::*;
 
 impl TreeViewWidget<SPath, DirTreeNode> {
@@ -37,9 +36,6 @@ impl TreeViewWidget<SPath, DirTreeNode> {
 
 #[cfg(test)]
 mod tests {
-    use crate::fs::filesystem_front::FilesystemFront;
-    use crate::fs::mock_fs::MockFS;
-    use crate::fs::path::SPath;
 
     use crate::*;
     use crate::*;

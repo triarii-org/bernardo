@@ -3,7 +3,6 @@ use std::ops::Range;
 use log::warn;
 use regex::Regex;
 
-use crate::fs::path::SPath;
 use crate::*;
 
 /*
@@ -563,7 +562,7 @@ warning: unused import: `crate::cursor::cursor::Cursor`
 warning: unused import: `crate::fs::read_error::ReadError`
   --> src/widgets/code_results_view/code_results_widget.rs:16:5
    |
-16 | use crate::fs::read_error::ReadError;
+16 | 
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -599,7 +598,7 @@ warning: unused import: `UpdateResult`
 warning: unused import: `crate::fs::path::SPath`
  --> src/widgets/code_results_view/code_results_msg.rs:3:5
   |
-3 | use crate::fs::path::SPath;
+3 | 
   |     ^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::widgets::main_view::main_view::DocumentIdentifier`
@@ -1457,7 +1456,7 @@ warning: unused import: `crate::cursor::cursor::Cursor`
 warning: unused import: `crate::fs::read_error::ReadError`
   --> src/widgets/code_results_view/code_results_widget.rs:16:5
    |
-16 | use crate::fs::read_error::ReadError;
+16 | 
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -1493,7 +1492,7 @@ warning: unused import: `UpdateResult`
 warning: unused import: `crate::fs::path::SPath`
  --> src/widgets/code_results_view/code_results_msg.rs:3:5
   |
-3 | use crate::fs::path::SPath;
+3 | 
   |     ^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::widgets::main_view::main_view::DocumentIdentifier`

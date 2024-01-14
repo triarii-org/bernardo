@@ -10,7 +10,9 @@ pub use cursor::*;
 mod experiments;
 pub use experiments::*;
 
-pub mod fs;
+mod fs;
+pub use fs::*;
+
 pub mod gladius;
 
 mod io;

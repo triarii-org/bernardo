@@ -1,7 +1,5 @@
 use std::time::Duration;
 
-use crate::fs::path::SPath;
-
 use crate::*;
 
 pub const INIT_TIMEOUT: Duration = Duration::from_millis(2000);

@@ -10,7 +10,6 @@ like:
 use std::ops::Range;
 use std::sync::Arc;
 
-use crate::fs::path::SPath;
 use crate::*;
 use crate::*;
 

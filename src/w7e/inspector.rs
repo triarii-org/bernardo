@@ -5,7 +5,6 @@ use lazy_static::lazy_static;
 use log::debug;
 use maplit::hashmap;
 
-use crate::fs::path::SPath;
 use crate::*;
 use crate::*;
 use crate::*;

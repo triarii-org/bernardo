@@ -1,6 +1,5 @@
 use std::fmt::Debug;
 
-use crate::fs::path::SPath;
 use crate::*;
 
 #[derive(Debug)]

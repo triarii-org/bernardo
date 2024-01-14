@@ -3,7 +3,6 @@ use std::sync::Arc;
 
 use log::debug;
 
-use crate::fs::path::SPath;
 use crate::*;
 
 #[derive(Debug, Copy, Clone)]

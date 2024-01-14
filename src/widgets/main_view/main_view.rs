@@ -3,8 +3,6 @@ use std::rc::Rc;
 use log::{debug, error, warn};
 use uuid::Uuid;
 
-use crate::fs::path::SPath;
-use crate::fs::read_error::ReadError;
 use crate::gladius::providers::Providers;
 use crate::{subwidget, unpack_or, unpack_or_e};
 

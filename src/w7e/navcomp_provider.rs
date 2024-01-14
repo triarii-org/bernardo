@@ -1,6 +1,5 @@
 use std::fmt::Debug;
 
-use crate::fs::path::SPath;
 use crate::*;
 
 // So I am not sure if I want to escalate errors from underlying implementation (LSP most likely)

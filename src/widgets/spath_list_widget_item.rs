@@ -2,7 +2,6 @@ use std::rc::Rc;
 
 use log::warn;
 
-use crate::fs::path::SPath;
 use crate::*;
 
 impl ListWidgetItem for SPath {

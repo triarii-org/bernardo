@@ -7,11 +7,7 @@ use std::sync::RwLock;
 use log::{debug, error};
 use streaming_iterator::StreamingIterator;
 
-use crate::fs::dir_entry::DirEntry;
-use crate::fs::filesystem_front::FilesystemFront;
-use crate::fs::fsf_ref::FsfRef;
-use crate::fs::read_error::{ListError, ReadError};
-use crate::fs::write_error::WriteError;
+use crate::*;
 
 pub enum Record {
     File(Vec<u8>),
@@ -344,10 +340,7 @@ mod tests {
     use std::collections::HashMap;
     use std::path::{Path, PathBuf};
 
-    use crate::de;
-    use crate::fs::filesystem_front::FilesystemFront;
-    use crate::fs::mock_fs::{MockFS, Record};
-    use crate::fs::read_error::ReadError;
+    use super::*;
 
     #[test]
     fn make_some_records() {

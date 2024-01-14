@@ -7,10 +7,7 @@ use std::sync::{Arc, RwLock};
 use log::error;
 use streaming_iterator::StreamingIterator;
 
-use crate::fs::filesystem_front::FilesystemFront;
-use crate::fs::path::SPath;
-use crate::fs::read_error::{ListError, ReadError};
-use crate::fs::write_error::WriteError;
+use crate::*;
 
 // Chaching should be implemented here or nowhere.
 
@@ -159,7 +156,7 @@ impl FsfRef {
 macro_rules! spath {
     ( $fsf:expr $(, $c:expr)* ) => {{
         #[allow(unused_mut)]
-        let mut sp : Option<crate::fs::path::SPath> = Some($fsf.root());
+        let mut sp : Option<$crate::SPath> = Some($fsf.root());
         $(
             sp = sp.map(|s| s.descendant_unchecked($c)).flatten();
         )*
@@ -169,8 +166,7 @@ macro_rules! spath {
 
 #[cfg(test)]
 mod tests {
-    use crate::fs::filesystem_front::FilesystemFront;
-    use crate::fs::mock_fs::MockFS;
+    use super::*;
 
     #[test]
     fn spath_macro() {

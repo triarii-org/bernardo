@@ -4,7 +4,7 @@
 use std::fmt::{Display, Formatter};
 use std::str::Utf8Error;
 
-use crate::fs::read_error::ReadError;
+use crate::*;
 
 #[derive(Debug)]
 pub enum ConfigLoadError {
