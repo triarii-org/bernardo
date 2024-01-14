@@ -1,6 +1,6 @@
 use crate::primitives::rect::Rect;
 
-use crate::mocks::*;
+use crate::*;
 
 pub struct ScrollInterpreter<'a> {
     rect: Rect,

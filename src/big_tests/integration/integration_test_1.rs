@@ -3,7 +3,7 @@ use log::debug;
 use crate::io::keys::Keycode;
 use std::process::Command;
 
-use crate::mocks::*;
+use crate::*;
 
 #[test]
 fn integration_test_with_rust_analyzer() {

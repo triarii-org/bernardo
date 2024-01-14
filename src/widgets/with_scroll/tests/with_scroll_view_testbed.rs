@@ -15,7 +15,7 @@ use crate::widgets::list_widget::list_widget::ListWidget;
 use crate::widgets::list_widget::list_widget_item::ListWidgetItem;
 use crate::widgets::with_scroll::with_scroll::WithScroll;
 
-use crate::mocks::*;
+use crate::*;
 
 impl ListWidgetItem for Rc<String> {
     fn get_column_name(idx: usize) -> &'static str {

@@ -8,7 +8,7 @@ use crate::widgets::fuzzy_search::fuzzy_search::FuzzySearchWidget;
 use crate::widgets::no_editor::NoEditorWidget;
 use crate::widgets::with_scroll::with_scroll::WithScroll;
 
-use crate::mocks::*;
+use crate::*;
 
 /*
 No time to come up with good name. It's basically a frame with "metadata" that was emited while it

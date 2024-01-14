@@ -2,7 +2,7 @@ use crate::io::buffer_output::horizontal_iter_item::HorizontalIterItem;
 use crate::io::output::Metadata;
 use crate::primitives::xy::XY;
 
-use crate::mocks::*;
+use crate::*;
 
 pub struct CompletionInterpreter<'a> {
     meta: &'a Metadata,

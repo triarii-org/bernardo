@@ -6,7 +6,7 @@ use crate::primitives::stupid_cursor::StupidCursor;
 use crate::spath;
 use crate::w7e::navcomp_provider::{NavCompSymbol, SymbolType, SymbolUsage};
 
-use crate::mocks::*;
+use crate::*;
 
 fn get_full_setup() -> FullSetup {
     let mut full_setup: FullSetup = FullSetup::new("./test_envs/show_usages_test_1")

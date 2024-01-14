@@ -14,7 +14,7 @@ use crate::primitives::has_invariant::HasInvariant;
 use crate::primitives::printable::Printable;
 use crate::text::text_buffer::TextBuffer;
 
-use crate::mocks::*;
+use crate::*;
 
 /*
 This converts "set of cursors over same buffer", and cem, and apply cem to "selected" one, and

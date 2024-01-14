@@ -11,7 +11,7 @@ use crate::primitives::xy::XY;
 use crate::widget::widget::Widget;
 use crate::widgets::editor_view::editor_view::EditorView;
 
-use crate::mocks::*;
+use crate::*;
 
 pub struct EditorViewTestbed {
     pub editor_view: EditorView,

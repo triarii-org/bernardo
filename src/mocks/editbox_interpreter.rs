@@ -1,7 +1,7 @@
 use crate::io::output::Metadata;
 use crate::widgets::edit_box::EditBoxWidget;
 
-use crate::mocks::*;
+use crate::*;
 
 pub struct EditWidgetInterpreter<'a> {
     meta: &'a Metadata,

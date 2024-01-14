@@ -5,7 +5,7 @@ use crate::widgets::list_widget::list_widget;
 use crate::widgets::save_file_dialog::save_file_dialog::SaveFileDialogWidget;
 use crate::widgets::tree_view::tree_view;
 
-use crate::mocks::*;
+use crate::*;
 
 pub struct SaveFileInterpreter<'a> {
     meta: &'a Metadata,

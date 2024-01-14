@@ -1,6 +1,6 @@
 use crate::io::keys::Keycode;
 
-use crate::mocks::*;
+use crate::*;
 
 #[test]
 fn dropping_cursor_test_1() {

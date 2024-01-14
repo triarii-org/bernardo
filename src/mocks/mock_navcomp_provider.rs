@@ -16,7 +16,7 @@ use crate::w7e::navcomp_provider::{
 };
 use crate::{unpack_or, unpack_or_e};
 
-use crate::mocks::*;
+use crate::*;
 
 pub struct MockCompletionMatcher {
     // None matches all

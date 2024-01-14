@@ -22,7 +22,7 @@ use crate::widgets::editor_widget::label::labels_provider::LabelsProviderRef;
 use crate::widgets::main_view::main_view::DocumentIdentifier;
 use crate::widgets::tests::editor_view_testbed::EditorViewTestbed;
 
-use crate::mocks::*;
+use crate::*;
 
 pub struct SideChannels {
     pub navcomp_pilot: MockNavCompProviderPilot,

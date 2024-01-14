@@ -11,7 +11,7 @@ use crate::w7e::navcomp_provider::NavCompProvider;
 use crate::w7e::project_scope::ProjectScope;
 use crate::w7e::rust::handler_rust::RustHandler;
 
-use crate::mocks::*;
+use crate::*;
 
 pub struct MockNavcompLoader {
     event_sender: Sender<MockNavCompEvent>,

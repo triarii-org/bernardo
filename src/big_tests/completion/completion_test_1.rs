@@ -4,7 +4,7 @@ use crate::io::keys::Keycode;
 use crate::w7e::navcomp_provider::Completion;
 use crate::w7e::navcomp_provider::CompletionAction::Insert;
 
-use crate::mocks::*;
+use crate::*;
 
 #[test]
 fn completion_test_1() {

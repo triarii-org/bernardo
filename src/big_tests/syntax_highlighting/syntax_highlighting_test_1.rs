@@ -4,7 +4,7 @@ use crate::io::keys::Keycode;
 use crate::w7e::navcomp_provider::Completion;
 use crate::w7e::navcomp_provider::CompletionAction::Insert;
 
-use crate::mocks::*;
+use crate::*;
 
 // This test is not super advanced, but I have bigger fish to fry than implementing yet another
 // parsed output iterator

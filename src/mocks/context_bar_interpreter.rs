@@ -2,7 +2,7 @@ use crate::io::output::Metadata;
 use crate::widgets::edit_box::EditBoxWidget;
 use crate::widgets::editor_widget::context_bar::widget::ContextBarWidget;
 
-use crate::mocks::*;
+use crate::*;
 
 pub struct ContextBarWidgetInterpreter<'a> {
     meta: &'a Metadata,

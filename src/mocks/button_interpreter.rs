@@ -1,7 +1,7 @@
 use crate::io::output::Metadata;
 use crate::widgets::button::ButtonWidget;
 
-use crate::mocks::*;
+use crate::*;
 
 #[derive(Clone, Debug)]
 pub struct ButtonWidgetInterpreter<'a> {

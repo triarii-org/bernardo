@@ -21,4 +21,6 @@ pub mod widgets;
 pub mod big_tests;
 
 #[cfg(test)]
-pub mod mocks;
+mod mocks;
+#[cfg(test)]
+pub use mocks::*;

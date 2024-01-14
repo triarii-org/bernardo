@@ -6,7 +6,7 @@ use crate::widgets::editor_widget::label::labels_provider::LabelsProvider;
 use crate::widgets::tests::editor_view_testbed::EditorViewTestbed;
 use crate::widgets::tests::widget_testbed_builder::WidgetTestbedBuilder;
 
-use crate::mocks::*;
+use crate::*;
 
 fn get_setup() -> EditorViewTestbed {
     let mut mock_labels_provider = MockLabelsProvider::new();

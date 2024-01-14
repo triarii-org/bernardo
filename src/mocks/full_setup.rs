@@ -27,7 +27,7 @@ use crate::tsw::tree_sitter_wrapper::TreeSitterWrapper;
 use crate::widgets::code_results_view::code_results_widget::CodeResultsView;
 use crate::widgets::tree_view;
 
-use crate::mocks::*;
+use crate::*;
 
 pub struct FullSetupBuilder {
     path: PathBuf,

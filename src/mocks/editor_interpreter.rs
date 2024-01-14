@@ -14,7 +14,7 @@ use crate::widgets::editor_widget::editor_widget::EditorWidget;
 use crate::widgets::save_file_dialog::save_file_dialog::SaveFileDialogWidget;
 use crate::widgets::with_scroll::with_scroll::WithScroll;
 
-use crate::mocks::*;
+use crate::*;
 
 pub struct EditorInterpreter<'a> {
     meta: &'a Metadata,
