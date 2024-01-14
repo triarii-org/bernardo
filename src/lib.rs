@@ -25,7 +25,9 @@ pub use lsp_client::*;
 mod primitives;
 pub use primitives::*;
 
-pub mod promise;
+mod promise;
+pub use promise::*;
+
 pub mod text;
 pub mod tsw;
 pub mod w7e;

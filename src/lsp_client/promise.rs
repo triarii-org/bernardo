@@ -9,7 +9,6 @@ use lsp_types::request::Request;
 use serde_json::Value;
 
 use crate::*;
-use crate::promise::promise::{Promise, PromiseState, UpdateResult};
 
 pub struct LSPPromise<R: Request> {
     //Invariant: never item and error are set in the same time. They can be both empty though.

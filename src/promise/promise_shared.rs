@@ -2,7 +2,7 @@
 //
 // use log::error;
 //
-// use crate::promise::promise::Promise;
+// use crate::*;
 //
 // #[derive(Clone, Debug)]
 // pub struct PromiseShared<A, P: Promise<A>> {

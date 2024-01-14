@@ -380,7 +380,7 @@ warning: unused import: `crate::io::loading_state::LoadingState`
 warning: unused import: `crate::promise::promise::PromiseState`
   --> src/widgets/main_view/main_view.rs:26:5
    |
-26 | use crate::promise::promise::PromiseState;
+26 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::text::buffer_state::BufferState`
@@ -596,7 +596,7 @@ warning: unused import: `crate::w7e::buffer_state_shared_ref::BufferSharedRef`
 warning: unused import: `UpdateResult`
  --> src/widgets/code_results_view/promise_provider.rs:8:45
   |
-8 | use crate::promise::promise::{PromiseState, UpdateResult};
+8 | use crate::*;
   |                                             ^^^^^^^^^^^^
 
 warning: unused import: `crate::fs::path::SPath`
@@ -644,7 +644,7 @@ warning: unused import: `crate::primitives::printable::Printable`
 warning: unused import: `Promise`
   --> src/widgets/editor_widget/editor_widget.rs:32:31
    |
-32 | use crate::promise::promise::{Promise, PromiseState};
+32 | use crate::*;
    |                               ^^^^^^^
 
 warning: unused variable: `size`
@@ -1274,7 +1274,7 @@ warning: unused import: `crate::io::loading_state::LoadingState`
 warning: unused import: `crate::promise::promise::PromiseState`
   --> src/widgets/main_view/main_view.rs:26:5
    |
-26 | use crate::promise::promise::PromiseState;
+26 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::text::buffer_state::BufferState`
@@ -1490,7 +1490,7 @@ warning: unused import: `crate::w7e::buffer_state_shared_ref::BufferSharedRef`
 warning: unused import: `UpdateResult`
  --> src/widgets/code_results_view/promise_provider.rs:8:45
   |
-8 | use crate::promise::promise::{PromiseState, UpdateResult};
+8 | use crate::*;
   |                                             ^^^^^^^^^^^^
 
 warning: unused import: `crate::fs::path::SPath`
@@ -1538,7 +1538,7 @@ warning: unused import: `crate::primitives::printable::Printable`
 warning: unused import: `Promise`
   --> src/widgets/editor_widget/editor_widget.rs:32:31
    |
-32 | use crate::promise::promise::{Promise, PromiseState};
+32 | use crate::*;
    |                               ^^^^^^^
 
 For more information about this error, try `rustc --explain E0425`.

@@ -4,7 +4,7 @@ use std::time::Duration;
 
 use log::{debug, error};
 
-use crate::promise::promise::{Promise, PromiseState, UpdateResult};
+use crate::*;
 
 pub struct MappedPromise<A, P: Promise<A> + Sized, B, F: FnOnce(A) -> B> {
     // if broken, everything will be set to None
@@ -162,8 +162,8 @@ mod tests {
     use std::mem;
     use std::time::Duration;
 
-    use crate::promise::promise::{Promise, PromiseState, ResolvedPromise, UpdateResult};
-    use crate::promise::promise_map::MappedPromise;
+    use crate::*;
+    use crate::*;
 
     struct MockPromise<A> {
         //done + value == None => broken

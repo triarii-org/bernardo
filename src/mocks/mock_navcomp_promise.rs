@@ -4,7 +4,7 @@ use std::time::Duration;
 use crossbeam_channel::{Receiver, Sender, TryRecvError};
 use log::{debug, error};
 
-use crate::promise::promise::{Promise, PromiseState, UpdateResult};
+use crate::*;
 use crate::tsw::lang_id::LangId;
 use crate::w7e::navcomp_group::NavCompTick;
 

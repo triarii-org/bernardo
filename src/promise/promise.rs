@@ -3,7 +3,7 @@ use std::time::{Duration, Instant};
 
 use log::debug;
 
-use crate::promise::promise_map::MappedPromise;
+use crate::*;
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub enum PromiseState {
