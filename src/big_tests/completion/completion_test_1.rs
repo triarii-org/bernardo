@@ -1,10 +1,10 @@
 use log::debug;
 
 use crate::io::keys::Keycode;
-use crate::mocks::full_setup::FullSetup;
-use crate::mocks::mock_navcomp_provider::MockCompletionMatcher;
 use crate::w7e::navcomp_provider::Completion;
 use crate::w7e::navcomp_provider::CompletionAction::Insert;
+
+use crate::mocks::*;
 
 #[test]
 fn completion_test_1() {

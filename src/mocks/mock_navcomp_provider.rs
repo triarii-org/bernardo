@@ -7,8 +7,6 @@ use crossbeam_channel::{select, Receiver, Sender};
 use log::{debug, error};
 
 use crate::fs::path::SPath;
-use crate::mocks::mock_navcomp_promise::MockNavCompPromise;
-use crate::mocks::mock_navcomp_provider::MockNavCompEvent::FileOpened;
 use crate::primitives::stupid_cursor::StupidCursor;
 use crate::promise::promise::Promise;
 use crate::w7e::navcomp_group::{NavCompTick, NavCompTickSender};
@@ -17,6 +15,8 @@ use crate::w7e::navcomp_provider::{
     SymbolType, SymbolUsage, SymbolUsagesPromise,
 };
 use crate::{unpack_or, unpack_or_e};
+
+use crate::mocks::*;
 
 pub struct MockCompletionMatcher {
     // None matches all
@@ -108,7 +108,7 @@ impl MockNavCompProviderPilot {
                     match msg_res {
                         Ok(msg) => {
                             match msg {
-                                FileOpened(opened_path, contents) if &opened_path == requested_path => {
+                                MockNavCompEvent::FileOpened(opened_path, contents) if &opened_path == requested_path => {
                                     return Some(contents);
                                 }
                                 other => {
@@ -210,7 +210,7 @@ impl NavCompProvider for MockNavCompProvider {
     //                 None => {
     //                     debug!("returning broken symbol promise");
     //                     Box::new(
-    //                         
+    //
     // MockNavCompPromise::<Option<NavCompSymbol>>::new_broken(self.navcomp_tick_server.clone())
     //                     ) as SymbolPromise
     //                 }

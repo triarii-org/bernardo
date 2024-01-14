@@ -1,6 +1,7 @@
 use crate::io::output::Metadata;
-use crate::mocks::meta_frame::MetaOutputFrame;
 use crate::widgets::fuzzy_search::fuzzy_search::FuzzySearchWidget;
+
+use crate::mocks::*;
 
 pub struct FuzzySearchInterpreter<'a> {
     meta: &'a Metadata,

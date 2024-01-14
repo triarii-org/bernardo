@@ -4,13 +4,14 @@ use crossbeam_channel::Sender;
 
 use crate::config::config::ConfigRef;
 use crate::gladius::navcomp_loader::NavCompLoader;
-use crate::mocks::mock_navcomp_provider::{MockCompletionMatcher, MockNavCompEvent, MockSymbolMatcher};
 use crate::w7e::handler::Handler;
 use crate::w7e::handler_load_error::HandlerLoadError;
 use crate::w7e::navcomp_group::NavCompTickSender;
 use crate::w7e::navcomp_provider::NavCompProvider;
 use crate::w7e::project_scope::ProjectScope;
 use crate::w7e::rust::handler_rust::RustHandler;
+
+use crate::mocks::*;
 
 pub struct MockNavcompLoader {
     event_sender: Sender<MockNavCompEvent>,
@@ -41,7 +42,7 @@ impl NavCompLoader for MockNavcompLoader {
     ) -> Result<Box<dyn Handler>, HandlerLoadError> {
         debug_assert!(project_scope.handler_id.as_ref() == Some(&"rust".to_string())); // yeah I know it's shit, I have 100 compile errors
 
-        let navcomp_op = Some(Arc::new(Box::new(crate::mocks::mock_navcomp_provider::MockNavCompProvider::new(
+        let navcomp_op = Some(Arc::new(Box::new(MockNavCompProvider::new(
             navcomp_tick_sender,
             self.event_sender.clone(),
             self.completions.clone(),

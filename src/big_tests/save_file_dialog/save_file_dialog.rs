@@ -4,9 +4,9 @@ use crate::experiments::focus_group::FocusUpdate;
 use crate::experiments::screen_shot::screenshot;
 use crate::io::input_event::InputEvent;
 use crate::io::keys::Keycode;
-use crate::mocks::full_setup::FullSetup;
-use crate::mocks::treeview_interpreter::TreeViewInterpreterItem;
 use crate::spath;
+
+use crate::mocks::*;
 
 fn common_start() -> FullSetup {
     let mut full_setup: FullSetup = FullSetup::new("./test_envs/save_file_dialog_test_1")

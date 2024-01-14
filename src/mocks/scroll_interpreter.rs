@@ -1,5 +1,6 @@
-use crate::mocks::meta_frame::MetaOutputFrame;
 use crate::primitives::rect::Rect;
+
+use crate::mocks::*;
 
 pub struct ScrollInterpreter<'a> {
     rect: Rect,

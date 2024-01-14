@@ -5,12 +5,6 @@ use crate::io::buffer_output::horizontal_iter_item::HorizontalIterItem;
 use crate::io::cell::Cell;
 use crate::io::output::Metadata;
 use crate::io::style::TextStyle;
-use crate::mocks::completion_interpreter::CompletionInterpreter;
-use crate::mocks::context_bar_interpreter::ContextBarWidgetInterpreter;
-use crate::mocks::editbox_interpreter::EditWidgetInterpreter;
-use crate::mocks::meta_frame::MetaOutputFrame;
-use crate::mocks::savefile_interpreter::SaveFileInterpreter;
-use crate::mocks::scroll_interpreter::ScrollInterpreter;
 use crate::primitives::rect::Rect;
 use crate::primitives::xy::XY;
 use crate::widgets::edit_box::EditBoxWidget;
@@ -19,6 +13,8 @@ use crate::widgets::editor_widget::context_bar::widget::ContextBarWidget;
 use crate::widgets::editor_widget::editor_widget::EditorWidget;
 use crate::widgets::save_file_dialog::save_file_dialog::SaveFileDialogWidget;
 use crate::widgets::with_scroll::with_scroll::WithScroll;
+
+use crate::mocks::*;
 
 pub struct EditorInterpreter<'a> {
     meta: &'a Metadata,

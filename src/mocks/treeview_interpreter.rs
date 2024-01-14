@@ -1,9 +1,10 @@
 use unicode_segmentation::UnicodeSegmentation;
 
 use crate::io::output::Metadata;
-use crate::mocks::meta_frame::MetaOutputFrame;
 use crate::primitives::xy::XY;
 use crate::widgets::tree_view::tree_view;
+
+use crate::mocks::*;
 
 pub struct TreeViewInterpreter<'a> {
     meta: &'a Metadata,

@@ -10,12 +10,6 @@ use crate::fs::fsf_ref::FsfRef;
 use crate::fs::mock_fs::MockFS;
 use crate::gladius::providers::Providers;
 use crate::io::input_event::InputEvent;
-use crate::mocks::meta_frame::MetaOutputFrame;
-use crate::mocks::mock_clipboard::MockClipboard;
-use crate::mocks::mock_input::MockInput;
-use crate::mocks::mock_navcomp_loader::MockNavcompLoader;
-use crate::mocks::mock_navcomp_provider::{MockCompletionMatcher, MockNavCompEvent, MockNavCompProviderPilot, MockSymbolMatcher};
-use crate::mocks::mock_output::MockOutput;
 use crate::primitives::xy::XY;
 use crate::text::buffer_state::BufferState;
 use crate::tsw::lang_id::LangId;
@@ -27,6 +21,8 @@ use crate::widgets::editor_view::editor_view::EditorView;
 use crate::widgets::editor_widget::label::labels_provider::LabelsProviderRef;
 use crate::widgets::main_view::main_view::DocumentIdentifier;
 use crate::widgets::tests::editor_view_testbed::EditorViewTestbed;
+
+use crate::mocks::*;
 
 pub struct SideChannels {
     pub navcomp_pilot: MockNavCompProviderPilot,

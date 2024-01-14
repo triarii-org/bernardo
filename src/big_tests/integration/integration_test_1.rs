@@ -1,8 +1,9 @@
 use log::debug;
 
 use crate::io::keys::Keycode;
-use crate::mocks::full_setup::FullSetup;
 use std::process::Command;
+
+use crate::mocks::*;
 
 #[test]
 fn integration_test_with_rust_analyzer() {

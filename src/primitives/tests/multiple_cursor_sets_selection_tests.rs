@@ -9,11 +9,12 @@ use crate::cursor::tests::cursor_tests_common::{
     common_assert_pair_makes_sense, common_buffer_cursors_sel_to_text, common_text_to_buffer_cursors_with_selections,
 };
 use crate::experiments::clipboard::{Clipboard, ClipboardRef};
-use crate::mocks::mock_clipboard::MockClipboard;
 use crate::primitives::common_edit_msgs::{CommonEditMsg, _apply_cem};
 use crate::primitives::has_invariant::HasInvariant;
 use crate::primitives::printable::Printable;
 use crate::text::text_buffer::TextBuffer;
+
+use crate::mocks::*;
 
 /*
 This converts "set of cursors over same buffer", and cem, and apply cem to "selected" one, and

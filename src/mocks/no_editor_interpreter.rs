@@ -1,6 +1,7 @@
 use crate::io::output::Metadata;
-use crate::mocks::meta_frame::MetaOutputFrame;
 use crate::widgets::no_editor::NoEditorWidget;
+
+use crate::mocks::*;
 
 pub struct NoEditorInterpreter<'a> {
     meta: &'a Metadata,

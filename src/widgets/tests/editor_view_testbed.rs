@@ -6,14 +6,12 @@ use crate::experiments::screenspace::Screenspace;
 use crate::gladius::paradigm::recursive_treat_views;
 use crate::io::input_event::InputEvent;
 use crate::io::output::FinalOutput;
-use crate::mocks::editor_interpreter::EditorInterpreter;
-use crate::mocks::meta_frame::MetaOutputFrame;
-use crate::mocks::mock_navcomp_provider::MockNavCompProviderPilot;
-use crate::mocks::mock_output::MockOutput;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
 use crate::widget::widget::Widget;
 use crate::widgets::editor_view::editor_view::EditorView;
+
+use crate::mocks::*;
 
 pub struct EditorViewTestbed {
     pub editor_view: EditorView,

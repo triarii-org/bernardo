@@ -7,10 +7,11 @@ use crate::config::theme::Theme;
 use crate::io::buffer_output::buffer_output::BufferOutput;
 use crate::io::output::{FinalOutput, Metadata, Output};
 use crate::io::style::TextStyle;
-use crate::mocks::meta_frame::MetaOutputFrame;
 use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
+
+use crate::mocks::*;
 
 pub struct MockOutput {
     buffer_0: BufferOutput,

@@ -21,21 +21,13 @@ use crate::gladius::providers::Providers;
 use crate::gladius::run_gladius::run_gladius;
 use crate::io::input_event::InputEvent;
 use crate::io::keys::{Key, Keycode};
-use crate::mocks::code_results_interpreter::CodeResultsViewInterpreter;
-use crate::mocks::editor_interpreter::EditorInterpreter;
-use crate::mocks::fuzzy_search_interpreter::FuzzySearchInterpreter;
-use crate::mocks::meta_frame::MetaOutputFrame;
-use crate::mocks::mock_clipboard::MockClipboard;
-use crate::mocks::mock_input::MockInput;
-use crate::mocks::mock_navcomp_loader::MockNavcompLoader;
-use crate::mocks::mock_navcomp_provider::{MockCompletionMatcher, MockNavCompEvent, MockNavCompProviderPilot, MockSymbolMatcher};
-use crate::mocks::mock_output::MockOutput;
-use crate::mocks::treeview_interpreter::TreeViewInterpreter;
 use crate::primitives::xy::XY;
 use crate::tsw::language_set::LanguageSet;
 use crate::tsw::tree_sitter_wrapper::TreeSitterWrapper;
 use crate::widgets::code_results_view::code_results_widget::CodeResultsView;
 use crate::widgets::tree_view;
+
+use crate::mocks::*;
 
 pub struct FullSetupBuilder {
     path: PathBuf,
@@ -251,7 +243,7 @@ impl FullSetup {
             .as_ref()
             .map(|frame| {
                 frame
-                    .get_meta_by_type(crate::mocks::full_setup::tree_view::tree_view::TYPENAME)
+                    .get_meta_by_type(tree_view::tree_view::TYPENAME)
                     .filter(|meta| meta.rect.pos == XY::ZERO)
                     .next()
                     .map(|meta| TreeViewInterpreter::new(meta, frame))

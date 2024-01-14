@@ -6,9 +6,6 @@ use crate::experiments::screenspace::Screenspace;
 use crate::gladius::paradigm::recursive_treat_views;
 use crate::io::input_event::InputEvent;
 use crate::io::output::FinalOutput;
-use crate::mocks::meta_frame::MetaOutputFrame;
-use crate::mocks::mock_output::MockOutput;
-use crate::mocks::with_scroll_interpreter::WithScrollWidgetInterpreter;
 use crate::primitives::scroll::ScrollDirection;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
@@ -17,6 +14,8 @@ use crate::widget::widget::Widget;
 use crate::widgets::list_widget::list_widget::ListWidget;
 use crate::widgets::list_widget::list_widget_item::ListWidgetItem;
 use crate::widgets::with_scroll::with_scroll::WithScroll;
+
+use crate::mocks::*;
 
 impl ListWidgetItem for Rc<String> {
     fn get_column_name(idx: usize) -> &'static str {

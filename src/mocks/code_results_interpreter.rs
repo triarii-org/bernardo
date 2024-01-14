@@ -1,6 +1,7 @@
 use crate::io::output::Metadata;
-use crate::mocks::meta_frame::MetaOutputFrame;
 use crate::widgets::code_results_view::code_results_widget::CodeResultsView;
+
+use crate::mocks::*;
 
 pub struct CodeResultsViewInterpreter<'a> {
     meta: &'a Metadata,

@@ -1,14 +1,11 @@
 use crate::io::output::Metadata;
-use crate::mocks::button_interpreter::ButtonWidgetInterpreter;
-use crate::mocks::editbox_interpreter::EditWidgetInterpreter;
-use crate::mocks::listview_interpreter::ListViewInterpreter;
-use crate::mocks::meta_frame::MetaOutputFrame;
-use crate::mocks::treeview_interpreter::TreeViewInterpreter;
 use crate::widgets::button::ButtonWidget;
 use crate::widgets::edit_box::EditBoxWidget;
 use crate::widgets::list_widget::list_widget;
 use crate::widgets::save_file_dialog::save_file_dialog::SaveFileDialogWidget;
 use crate::widgets::tree_view::tree_view;
+
+use crate::mocks::*;
 
 pub struct SaveFileInterpreter<'a> {
     meta: &'a Metadata,

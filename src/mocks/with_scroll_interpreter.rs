@@ -1,9 +1,10 @@
 use std::marker::PhantomData;
 
 use crate::io::output::Metadata;
-use crate::mocks::meta_frame::MetaOutputFrame;
 use crate::widget::widget::Widget;
 use crate::widgets::with_scroll::with_scroll::WithScroll;
+
+use crate::mocks::*;
 
 pub struct WithScrollWidgetInterpreter<'a, T: Widget> {
     meta: &'a Metadata,

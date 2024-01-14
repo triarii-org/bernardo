@@ -1,6 +1,7 @@
 use crate::io::output::Metadata;
-use crate::mocks::meta_frame::MetaOutputFrame;
 use crate::widgets::list_widget::list_widget;
+
+use crate::mocks::*;
 
 pub struct ListViewInterpreter<'a> {
     meta: &'a Metadata,
