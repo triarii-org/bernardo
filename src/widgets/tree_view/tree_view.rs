@@ -6,7 +6,6 @@ use log::{debug, error, warn};
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::unpack_or_e;
 use crate::*;
 
 pub const TREE_VIEW_TYPENAME: &'static str = "tree_view";

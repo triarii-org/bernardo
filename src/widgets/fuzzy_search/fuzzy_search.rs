@@ -4,7 +4,6 @@ use log::{debug, error, warn};
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::unpack_or_e;
 use crate::*;
 use crate::*;
 use crate::*;

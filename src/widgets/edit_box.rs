@@ -2,7 +2,6 @@ use log::{debug, warn};
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::unpack_or_e;
 use crate::*;
 
 //TODO filter out the newlines on paste
