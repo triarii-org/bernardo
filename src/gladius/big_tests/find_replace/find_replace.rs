@@ -2,8 +2,6 @@ use log::debug;
 
 use crate::*;
 
-use crate::*;
-
 fn common_start() -> FullSetup {
     let mut full_setup: FullSetup = FullSetup::new("./test_envs/save_file_dialog_test_1")
         .with_files(["src/main.rs"])

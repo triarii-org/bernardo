@@ -23,9 +23,6 @@ pub(crate) use editbox_interpreter::EditWidgetInterpreter;
 mod editor_interpreter;
 pub(crate) use editor_interpreter::EditorInterpreter;
 
-mod full_setup;
-pub(crate) use full_setup::FullSetup;
-
 mod fuzzy_search_interpreter;
 pub(crate) use fuzzy_search_interpreter::FuzzySearchInterpreter;
 

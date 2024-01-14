@@ -1,10 +1,6 @@
 use log::debug;
 
 use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
 
 #[test]
 fn completion_test_1() {

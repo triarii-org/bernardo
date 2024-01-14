@@ -7,14 +7,6 @@ use log::{debug, error};
 use crate::gladius::paradigm::recursive_treat_views;
 use crate::gladius::providers::Providers;
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
 
 pub fn run_gladius<I: Input, O: FinalOutput>(providers: Providers, input: I, mut output: O, files: Vec<PathBuf>) {
     // Loading / Building workspace file

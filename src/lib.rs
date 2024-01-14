@@ -1,4 +1,5 @@
 pub mod gladius;
+pub use gladius::*;
 
 mod app;
 pub use app::App;
@@ -44,9 +45,6 @@ pub use widget::*;
 
 mod widgets;
 pub use widgets::*;
-
-#[cfg(test)]
-pub mod big_tests;
 
 #[cfg(test)]
 mod mocks;
