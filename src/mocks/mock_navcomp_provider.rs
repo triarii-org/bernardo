@@ -6,8 +6,6 @@ use std::time::Duration;
 use crossbeam_channel::{select, Receiver, Sender};
 use log::{debug, error};
 
-use crate::{unpack_or, unpack_or_e};
-
 use crate::*;
 
 pub struct MockCompletionMatcher {

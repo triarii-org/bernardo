@@ -6,10 +6,6 @@ use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::{unpack_or, unpack_or_e};
 
 // Over output is an output that is bigger than original,
 // physical or in-memory display. All write operations targeting lines/columns beyond it's borders

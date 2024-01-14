@@ -11,34 +11,6 @@ I hope I will discover most of functional constraints while implementing it.
 use log::{debug, error, warn};
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::{subwidget, unpack_or_e};
-
-use crate::*;
 
 // TODO now it displays both files and directories in tree view, it should only directories
 

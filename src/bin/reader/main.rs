@@ -8,9 +8,8 @@ use log::error;
 
 use bernardo::*;
 
-use crate::reader_main_widget::ReaderMainWidget;
-
 mod reader_main_widget;
+pub use reader_main_widget::ReaderMainWidget;
 
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = None)]

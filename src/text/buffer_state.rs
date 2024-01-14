@@ -12,15 +12,6 @@ use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::{unpack_or, unpack_or_e};
-
-use crate::*;
 
 // TODO it would use a method "would_accept_cem" to be used in "on_input" but before "update"
 

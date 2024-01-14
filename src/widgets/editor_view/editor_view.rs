@@ -1,8 +1,6 @@
 use log::{debug, error, warn};
 use unicode_width::UnicodeWidthStr;
 
-use crate::{subwidget, unpack_or, unpack_or_e};
-
 use crate::*;
 
 const PATTERN: &'static str = "pattern: ";

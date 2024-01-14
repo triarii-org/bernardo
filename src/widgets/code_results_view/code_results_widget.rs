@@ -4,28 +4,6 @@ use std::collections::HashSet;
 use log::{debug, error, warn};
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::{subwidget, unpack_or, unpack_or_e};
-
-use crate::*;
 
 pub struct CodeResultsView {
     wid: WID,

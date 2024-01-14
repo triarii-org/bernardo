@@ -8,7 +8,6 @@ use streaming_iterator::StreamingIterator;
 use unicode_width::UnicodeWidthStr;
 
 use crate::*;
-use crate::{unpack_or, unpack_or_e};
 
 const MIN_EDITOR_SIZE: XY = XY::new(10, 3);
 // const MAX_HOVER_SIZE: XY = XY::new(64, 20);
