@@ -1,7 +1,7 @@
 use crate::experiments::screenspace::Screenspace;
 use crate::experiments::subwidget_pointer::SubwidgetPointer;
-use crate::io::input_event::InputEvent;
-use crate::io::output::Output;
+use crate::*;
+use crate::*;
 use crate::layout::layout::{Layout, LayoutResult};
 use crate::layout::tests::mock_widget::MockWidget;
 use crate::primitives::xy::XY;

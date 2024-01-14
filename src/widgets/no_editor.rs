@@ -1,6 +1,6 @@
 use crate::experiments::screenspace::Screenspace;
-use crate::io::input_event::InputEvent;
-use crate::io::output::{Metadata, Output};
+use crate::*;
+use crate::*;
 use crate::primitives::rect::Rect;
 use crate::primitives::xy::XY;
 use crate::unpack_or;

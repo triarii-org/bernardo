@@ -3,11 +3,10 @@ use std::fmt::{Debug, Formatter};
 use log::debug;
 use unicode_width::UnicodeWidthStr;
 
-use crate::io::output::{Metadata, Output};
-use crate::io::style::{TextStyle, TEXT_STYLE_WHITE_ON_BLACK};
 use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
+use crate::*;
 
 pub struct SubOutput<'a> {
     output: &'a mut dyn Output,

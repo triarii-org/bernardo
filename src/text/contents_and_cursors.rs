@@ -5,7 +5,7 @@ use ropey::Rope;
 use unicode_segmentation::UnicodeSegmentation;
 
 use crate::experiments::regex_search::{regex_find, FindError};
-use crate::io::buffer;
+use crate::*;
 use crate::primitives::search_pattern::SearchPattern;
 use crate::tsw::lang_id::LangId;
 use crate::tsw::parsing_tuple::ParsingTuple;

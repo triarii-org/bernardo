@@ -3,7 +3,7 @@ use std::sync::Arc;
 
 use serde::{Deserialize, Serialize};
 
-use crate::io::keys::{Key, Keycode};
+use crate::*;
 use crate::primitives::is_default::IsDefault;
 
 use crate::*;

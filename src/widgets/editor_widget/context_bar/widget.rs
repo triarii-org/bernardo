@@ -2,9 +2,9 @@ use log::{error, warn};
 
 use crate::experiments::screenspace::Screenspace;
 use crate::experiments::subwidget_pointer::SubwidgetPointer;
-use crate::io::input_event::InputEvent;
-use crate::io::keys::Keycode;
-use crate::io::output::{Metadata, Output};
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::layout::layout::Layout;
 use crate::layout::leaf_layout::LeafLayout;
 use crate::primitives::common_edit_msgs::{key_to_edit_msg, CommonEditMsg};

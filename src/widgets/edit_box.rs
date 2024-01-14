@@ -2,13 +2,8 @@ use log::{debug, warn};
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-
 use crate::experiments::clipboard::ClipboardRef;
 use crate::experiments::screenspace::Screenspace;
-use crate::io::input_event::InputEvent;
-use crate::io::input_event::InputEvent::KeyInput;
-use crate::io::keys::Keycode;
-use crate::io::output::{Metadata, Output};
 use crate::primitives::common_edit_msgs::{key_to_edit_msg, CommonEditMsg};
 use crate::primitives::helpers;
 use crate::primitives::rect::Rect;
@@ -16,9 +11,10 @@ use crate::primitives::xy::XY;
 use crate::text::buffer_state::BufferState;
 use crate::text::text_buffer::TextBuffer;
 use crate::unpack_or_e;
-
-
-
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 
 use crate::*;
 
@@ -220,7 +216,7 @@ impl Widget for EditBoxWidget {
         let cursor_set_copy = unpack_or_e!(self.buffer.text().get_cursor_set(self.id), None, "failed to get cursor_set").clone();
 
         return match input_event {
-            KeyInput(key_event) => {
+            InputEvent::KeyInput(key_event) => {
                 if key_event.keycode == Keycode::Enter {
                     Some(Box::new(EditBoxWidgetMsg::Hit))
                 } else {

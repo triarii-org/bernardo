@@ -2,9 +2,6 @@ use std::fmt::Debug;
 
 use serde::{Deserialize, Serialize};
 
-use crate::io::buffer_output::buffer_output::BufferOutput;
-use crate::io::cell::Cell;
-use crate::io::style::TextStyle;
 use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;

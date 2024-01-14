@@ -11,7 +11,10 @@ pub mod experiments;
 
 pub mod fs;
 pub mod gladius;
-pub mod io;
+
+mod io;
+pub use io::*;
+
 pub mod layout;
 pub mod lsp_client;
 pub mod primitives;

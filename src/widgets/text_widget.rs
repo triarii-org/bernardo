@@ -2,8 +2,8 @@ use streaming_iterator::StreamingIterator;
 use unicode_width::UnicodeWidthStr;
 
 use crate::experiments::screenspace::Screenspace;
-use crate::io::input_event::InputEvent;
-use crate::io::output::Output;
+use crate::*;
+use crate::*;
 use crate::primitives::printable::Printable;
 use crate::primitives::xy::XY;
 

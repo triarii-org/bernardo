@@ -1,7 +1,7 @@
 use std::thread::sleep;
 use std::time::Duration;
 
-use crate::io::keys::Keycode;
+use crate::*;
 use crate::primitives::stupid_cursor::StupidCursor;
 use crate::spath;
 use crate::w7e::navcomp_provider::{NavCompSymbol, SymbolType, SymbolUsage};

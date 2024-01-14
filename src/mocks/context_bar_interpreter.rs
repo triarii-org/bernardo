@@ -1,4 +1,4 @@
-use crate::io::output::Metadata;
+use crate::*;
 use crate::widgets::edit_box::EditBoxWidget;
 use crate::widgets::editor_widget::context_bar::widget::ContextBarWidget;
 

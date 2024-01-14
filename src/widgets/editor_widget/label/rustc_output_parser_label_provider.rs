@@ -174,7 +174,7 @@ pub mod test {
 warning: unused import: `Metadata`
   --> src/io/buffer_output/buffer_output.rs:13:25
    |
-13 | use crate::io::output::{Metadata, Output};
+13 | use crate::*;
    |                         ^^^^^^^^
    |
    = note: `#[warn(unused_imports)]` on by default
@@ -188,7 +188,7 @@ warning: unused import: `std::string::String`
 warning: unused import: `crate::io::style::TextStyle`
  --> src/io/buffer_output/buffer_output_cells_iter.rs:5:5
   |
-5 | use crate::io::style::TextStyle;
+5 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -200,7 +200,7 @@ warning: unused import: `crate::primitives::rect::Rect`
 warning: unused import: `Metadata`
  --> src/io/over_output.rs:8:25
   |
-8 | use crate::io::output::{Metadata, Output};
+8 | use crate::*;
   |                         ^^^^^^^^
 
 warning: unused import: `crate::unpack_or`
@@ -218,13 +218,13 @@ warning: unused import: `debug`
 warning: unused import: `Metadata`
  --> src/io/sub_output.rs:6:25
   |
-6 | use crate::io::output::{Metadata, Output};
+6 | use crate::*;
   |                         ^^^^^^^^
 
 warning: unused import: `Metadata`
   --> src/io/crossterm_output.rs:12:38
    |
-12 | use crate::io::output::{FinalOutput, Metadata, Output};
+12 | use crate::*;
    |                                      ^^^^^^^^
 
 warning: unused import: `crate::cursor::cursor_set::CursorSet`
@@ -242,7 +242,7 @@ warning: unused import: `warn`
 warning: unused import: `crate::io::buffer`
   --> src/text/contents_and_cursors.rs:11:5
    |
-11 | use crate::io::buffer;
+11 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^
 
 warning: unused import: `std::cell::RefCell`
@@ -302,13 +302,13 @@ warning: unused imports: `NavCompGroupRef`, `NavCompGroup`
 warning: unused import: `Metadata`
   --> src/widgets/save_file_dialog/save_file_dialog.rs:22:25
    |
-22 | use crate::io::output::{Metadata, Output};
+22 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `Metadata`
   --> src/widgets/tree_view/tree_view.rs:13:25
    |
-13 | use crate::io::output::{Metadata, Output};
+13 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -320,7 +320,7 @@ warning: unused import: `crate::primitives::rect::Rect`
 warning: unused import: `Metadata`
  --> src/widgets/button.rs:8:25
   |
-8 | use crate::io::output::{Metadata, Output};
+8 | use crate::*;
   |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -332,7 +332,7 @@ warning: unused import: `crate::primitives::rect::Rect`
 warning: unused import: `Metadata`
   --> src/widgets/edit_box.rs:11:25
    |
-11 | use crate::io::output::{Metadata, Output};
+11 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -344,7 +344,7 @@ warning: unused import: `crate::primitives::rect::Rect`
 warning: unused import: `Metadata`
  --> src/widgets/no_editor.rs:5:25
   |
-5 | use crate::io::output::{Metadata, Output};
+5 | use crate::*;
   |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -362,7 +362,7 @@ warning: unused import: `crate::unpack_or`
 warning: unused import: `Metadata`
  --> src/widgets/with_scroll.rs:5:25
   |
-5 | use crate::io::output::{Metadata, Output};
+5 | use crate::*;
   |                         ^^^^^^^^
 
 warning: unused import: `std::collections::HashMap`
@@ -374,7 +374,7 @@ warning: unused import: `std::collections::HashMap`
 warning: unused import: `crate::io::loading_state::LoadingState`
   --> src/widgets/main_view/main_view.rs:16:5
    |
-16 | use crate::io::loading_state::LoadingState;
+16 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::promise::promise::PromiseState`
@@ -422,7 +422,7 @@ warning: unused import: `std::sync::RwLockWriteGuard`
 warning: unused import: `Metadata`
   --> src/widgets/editor_widget/editor_widget.rs:20:25
    |
-20 | use crate::io::output::{Metadata, Output};
+20 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `crate::tsw::tree_sitter_wrapper::HighlightItem`
@@ -440,7 +440,7 @@ warning: unused import: `NavCompSymbol`
 warning: unused import: `Metadata`
   --> src/widgets/editor_widget/completion/completion_widget.rs:13:25
    |
-13 | use crate::io::output::{Metadata, Output};
+13 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -452,7 +452,7 @@ warning: unused import: `crate::primitives::rect::Rect`
 warning: unused import: `Metadata`
  --> src/widgets/editor_widget/context_bar/widget.rs:7:25
   |
-7 | use crate::io::output::{Metadata, Output};
+7 | use crate::*;
   |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -488,13 +488,13 @@ warning: unused import: `unpack_or`
 warning: unused import: `Metadata`
   --> src/widgets/fuzzy_search/fuzzy_search.rs:13:25
    |
-13 | use crate::io::output::{Metadata, Output};
+13 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `Metadata`
   --> src/widgets/editor_view/editor_view.rs:10:25
    |
-10 | use crate::io::output::{Metadata, Output};
+10 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `crate::w7e::handler::NavCompRef`
@@ -518,7 +518,7 @@ warning: unused import: `crate::widgets::main_view::main_view::DocumentIdentifie
 warning: unused import: `Metadata`
   --> src/widgets/list_widget/list_widget.rs:12:25
    |
-12 | use crate::io::output::{Metadata, Output};
+12 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -572,7 +572,7 @@ warning: unused import: `crate::fs::read_error::ReadError`
 warning: unused import: `Metadata`
   --> src/widgets/code_results_view/code_results_widget.rs:21:25
    |
-21 | use crate::io::output::{Metadata, Output};
+21 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -614,7 +614,7 @@ warning: unused import: `crate::widgets::main_view::main_view::DocumentIdentifie
 warning: unused import: `Metadata`
  --> src/widgets/big_list/big_list_widget.rs:6:25
   |
-6 | use crate::io::output::{Metadata, Output};
+6 | use crate::*;
   |                         ^^^^^^^^
 
 warning: unused import: `std::collections::HashMap`
@@ -1068,7 +1068,7 @@ warning: `bernardo` (bin "reader") generated 11 warnings (run `cargo fix --bin "
 warning: unused import: `Metadata`
   --> src/io/buffer_output/buffer_output.rs:13:25
    |
-13 | use crate::io::output::{Metadata, Output};
+13 | use crate::*;
    |                         ^^^^^^^^
    |
    = note: `#[warn(unused_imports)]` on by default
@@ -1082,7 +1082,7 @@ warning: unused import: `std::string::String`
 warning: unused import: `crate::io::style::TextStyle`
  --> src/io/buffer_output/buffer_output_cells_iter.rs:5:5
   |
-5 | use crate::io::style::TextStyle;
+5 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -1094,7 +1094,7 @@ warning: unused import: `crate::primitives::rect::Rect`
 warning: unused import: `Metadata`
  --> src/io/over_output.rs:8:25
   |
-8 | use crate::io::output::{Metadata, Output};
+8 | use crate::*;
   |                         ^^^^^^^^
 
 warning: unused import: `crate::unpack_or`
@@ -1112,13 +1112,13 @@ warning: unused import: `debug`
 warning: unused import: `Metadata`
  --> src/io/sub_output.rs:6:25
   |
-6 | use crate::io::output::{Metadata, Output};
+6 | use crate::*;
   |                         ^^^^^^^^
 
 warning: unused import: `Metadata`
   --> src/io/crossterm_output.rs:12:38
    |
-12 | use crate::io::output::{FinalOutput, Metadata, Output};
+12 | use crate::*;
    |                                      ^^^^^^^^
 
 warning: unused import: `crate::cursor::cursor_set::CursorSet`
@@ -1136,7 +1136,7 @@ warning: unused import: `warn`
 warning: unused import: `crate::io::buffer`
   --> src/text/contents_and_cursors.rs:11:5
    |
-11 | use crate::io::buffer;
+11 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^
 
 warning: unused import: `std::cell::RefCell`
@@ -1196,13 +1196,13 @@ warning: unused imports: `NavCompGroupRef`, `NavCompGroup`
 warning: unused import: `Metadata`
   --> src/widgets/save_file_dialog/save_file_dialog.rs:22:25
    |
-22 | use crate::io::output::{Metadata, Output};
+22 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `Metadata`
   --> src/widgets/tree_view/tree_view.rs:13:25
    |
-13 | use crate::io::output::{Metadata, Output};
+13 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -1214,7 +1214,7 @@ warning: unused import: `crate::primitives::rect::Rect`
 warning: unused import: `Metadata`
  --> src/widgets/button.rs:8:25
   |
-8 | use crate::io::output::{Metadata, Output};
+8 | use crate::*;
   |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -1226,7 +1226,7 @@ warning: unused import: `crate::primitives::rect::Rect`
 warning: unused import: `Metadata`
   --> src/widgets/edit_box.rs:11:25
    |
-11 | use crate::io::output::{Metadata, Output};
+11 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -1238,7 +1238,7 @@ warning: unused import: `crate::primitives::rect::Rect`
 warning: unused import: `Metadata`
  --> src/widgets/no_editor.rs:5:25
   |
-5 | use crate::io::output::{Metadata, Output};
+5 | use crate::*;
   |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -1256,7 +1256,7 @@ warning: unused import: `crate::unpack_or`
 warning: unused import: `Metadata`
  --> src/widgets/with_scroll.rs:5:25
   |
-5 | use crate::io::output::{Metadata, Output};
+5 | use crate::*;
   |                         ^^^^^^^^
 
 warning: unused import: `std::collections::HashMap`
@@ -1268,7 +1268,7 @@ warning: unused import: `std::collections::HashMap`
 warning: unused import: `crate::io::loading_state::LoadingState`
   --> src/widgets/main_view/main_view.rs:16:5
    |
-16 | use crate::io::loading_state::LoadingState;
+16 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::promise::promise::PromiseState`
@@ -1316,7 +1316,7 @@ warning: unused import: `std::sync::RwLockWriteGuard`
 warning: unused import: `Metadata`
   --> src/widgets/editor_widget/editor_widget.rs:20:25
    |
-20 | use crate::io::output::{Metadata, Output};
+20 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `crate::tsw::tree_sitter_wrapper::HighlightItem`
@@ -1334,7 +1334,7 @@ warning: unused import: `NavCompSymbol`
 warning: unused import: `Metadata`
   --> src/widgets/editor_widget/completion/completion_widget.rs:13:25
    |
-13 | use crate::io::output::{Metadata, Output};
+13 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -1346,7 +1346,7 @@ warning: unused import: `crate::primitives::rect::Rect`
 warning: unused import: `Metadata`
  --> src/widgets/editor_widget/context_bar/widget.rs:7:25
   |
-7 | use crate::io::output::{Metadata, Output};
+7 | use crate::*;
   |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -1382,13 +1382,13 @@ warning: unused import: `unpack_or`
 warning: unused import: `Metadata`
   --> src/widgets/fuzzy_search/fuzzy_search.rs:13:25
    |
-13 | use crate::io::output::{Metadata, Output};
+13 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `Metadata`
   --> src/widgets/editor_view/editor_view.rs:10:25
    |
-10 | use crate::io::output::{Metadata, Output};
+10 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `crate::w7e::handler::NavCompRef`
@@ -1412,7 +1412,7 @@ warning: unused import: `crate::widgets::main_view::main_view::DocumentIdentifie
 warning: unused import: `Metadata`
   --> src/widgets/list_widget/list_widget.rs:12:25
    |
-12 | use crate::io::output::{Metadata, Output};
+12 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -1466,7 +1466,7 @@ warning: unused import: `crate::fs::read_error::ReadError`
 warning: unused import: `Metadata`
   --> src/widgets/code_results_view/code_results_widget.rs:21:25
    |
-21 | use crate::io::output::{Metadata, Output};
+21 | use crate::*;
    |                         ^^^^^^^^
 
 warning: unused import: `crate::primitives::rect::Rect`
@@ -1508,7 +1508,7 @@ warning: unused import: `crate::widgets::main_view::main_view::DocumentIdentifie
 warning: unused import: `Metadata`
  --> src/widgets/big_list/big_list_widget.rs:6:25
   |
-6 | use crate::io::output::{Metadata, Output};
+6 | use crate::*;
   |                         ^^^^^^^^
 
 warning: unused import: `std::collections::HashMap`

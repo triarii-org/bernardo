@@ -2,8 +2,8 @@ use log::debug;
 
 use crate::experiments::focus_group::FocusUpdate;
 use crate::experiments::screen_shot::screenshot;
-use crate::io::input_event::InputEvent;
-use crate::io::keys::Keycode;
+use crate::*;
+use crate::*;
 use crate::spath;
 
 use crate::*;

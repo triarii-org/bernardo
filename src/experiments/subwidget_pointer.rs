@@ -158,8 +158,8 @@ mod tests {
 
     use crate::experiments::screenspace::Screenspace;
     use crate::experiments::subwidget_pointer::{SubwidgetPointer, SubwidgetPointerOp};
-    use crate::io::input_event::InputEvent;
-    use crate::io::output::Output;
+    use crate::*;
+    use crate::*;
     use crate::primitives::xy::XY;
     
     

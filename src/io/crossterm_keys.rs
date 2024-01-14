@@ -2,7 +2,7 @@ use crossterm::event::KeyEvent as CKey;
 use crossterm::event::{KeyCode, KeyEvent, KeyModifiers};
 use log::error;
 
-use crate::io::keys::{Key, Keycode, Modifiers};
+use crate::*;
 
 impl From<CKey> for Key {
     fn from(ckey: CKey) -> Self {

@@ -1,4 +1,4 @@
-// use crate::io::style::{TextStyle, TEXT_STYLE_WHITE_ON_BLACK};
+// use crate::*;
 // use unicode_segmentation::UnicodeSegmentation;
 // use unicode_width::UnicodeWidthStr;
 // use std::slice::Iter;
@@ -95,7 +95,7 @@
 // #[cfg(test)]
 // mod tests {
 //     use crate::primitives::styled_string::StyledString;
-//     use crate::io::style::TEXT_STYLE_WHITE_ON_BLACK;
+//     use crate::*;
 //     use crate::primitives::xy::XY;
 //
 //     fn simple_styled_string(text : &str) -> StyledString {

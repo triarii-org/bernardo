@@ -2,8 +2,8 @@ use std::rc::Rc;
 
 use test_log::test;
 
-use crate::io::input_event::InputEvent;
-use crate::io::keys::Keycode;
+use crate::*;
+use crate::*;
 use crate::widgets::with_scroll::tests::with_scroll_view_testbed::WithScrollTestbed;
 
 fn get_setup() -> WithScrollTestbed {

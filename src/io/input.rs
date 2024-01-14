@@ -1,4 +1,4 @@
-use crate::io::input_source::InputSource;
+use crate::*;
 
 pub trait Input {
     fn source(&self) -> &InputSource;

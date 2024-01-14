@@ -1,10 +1,10 @@
 use std::io::{stdout, Error, ErrorKind, Stdout};
 
-use crate::io::crossterm_input::CrosstermInput;
-use crate::io::crossterm_output::CrosstermOutput;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
 use crossterm::terminal;
+
+use crate::*;
 
 pub type AppError = Box<dyn std::error::Error>;
 

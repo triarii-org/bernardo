@@ -1,6 +1,6 @@
 use unicode_segmentation::UnicodeSegmentation;
 
-use crate::io::output::Metadata;
+use crate::*;
 use crate::primitives::xy::XY;
 use crate::widgets::tree_view::tree_view;
 

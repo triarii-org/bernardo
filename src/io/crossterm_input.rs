@@ -4,10 +4,7 @@ use crossbeam_channel::Receiver;
 use crossterm::event::Event;
 use log::{error, warn};
 
-use crate::io::input::Input;
-use crate::io::input_event::InputEvent;
-use crate::io::input_source::InputSource;
-use crate::io::keys::Key;
+use crate::*;
 
 pub struct CrosstermInput {
     receiver: Receiver<InputEvent>,

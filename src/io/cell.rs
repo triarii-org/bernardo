@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::io::style::{TextStyle, TEXT_STYLE_WHITE_ON_BLACK};
+use crate::*;
 
 #[derive(Debug, Clone, Eq, PartialEq, Serialize, Deserialize)]
 pub enum Cell {

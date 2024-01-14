@@ -1,4 +1,4 @@
-use crate::io::keys::{Key, Keycode};
+use crate::*;
 use crate::primitives::arrow::Arrow;
 
 #[derive(Clone, Copy, Debug)]

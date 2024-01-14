@@ -7,10 +7,10 @@ use unicode_width::UnicodeWidthStr;
 
 use crate::experiments::clipboard::ClipboardRef;
 use crate::experiments::screenspace::Screenspace;
-use crate::io::input_event::InputEvent;
-use crate::io::keys::Keycode;
-use crate::io::output::{Metadata, Output};
-use crate::io::sub_output::SubOutput;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::primitives::common_edit_msgs::key_to_edit_msg;
 use crate::primitives::rect::Rect;
 use crate::primitives::xy::XY;

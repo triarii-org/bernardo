@@ -2,7 +2,7 @@ use std::ops::Range;
 
 use log::warn;
 
-use crate::io::style::TextStyle;
+use crate::*;
 use crate::primitives::printable::Printable;
 use crate::primitives::stupid_cursor::StupidCursor;
 use crate::primitives::styled_printable::{StyleBorrowedPrintable, StyleWrappedPrintable, StyledPrintable};

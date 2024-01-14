@@ -6,7 +6,7 @@ use log::{error, warn};
 use serde::{Deserialize, Serialize};
 
 
-use crate::io::style::{Effect, TextStyle};
+use crate::*;
 use crate::primitives::color::Color;
 use crate::primitives::tmtheme::TmTheme;
 

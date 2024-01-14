@@ -1,9 +1,6 @@
 use std::fmt::Debug;
 
 use bernardo::experiments::screenspace::Screenspace;
-use bernardo::io::buffer_output::buffer_output::BufferOutput;
-use bernardo::io::input_event::InputEvent;
-use bernardo::io::output::Output;
 use bernardo::primitives::scroll::ScrollDirection;
 use bernardo::primitives::xy::XY;
 use bernardo::widgets::dump_visualizer_widget::DumpVisualizerWidget;

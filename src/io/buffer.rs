@@ -95,7 +95,7 @@ where
 
 #[cfg(test)]
 mod test {
-    use crate::io::buffer_output::buffer_output::BufferOutput;
+    use crate::*;
     use crate::primitives::xy::XY;
 
     #[test]

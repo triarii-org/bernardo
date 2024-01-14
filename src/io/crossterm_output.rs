@@ -7,13 +7,10 @@ use crossterm::{cursor, style, terminal, QueueableCommand};
 use log::{debug, warn};
 use unicode_width::UnicodeWidthStr;
 
-use crate::io::buffer_output::buffer_output::BufferOutput;
-use crate::io::cell::Cell;
-use crate::io::output::{FinalOutput, Metadata, Output};
-use crate::io::style::{Effect, TextStyle};
 use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
+use crate::*;
 
 pub struct CrosstermOutput<W: Write> {
     stdout: W,

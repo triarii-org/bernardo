@@ -7,9 +7,9 @@ use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
 use crate::experiments::screenspace::Screenspace;
-use crate::io::input_event::InputEvent;
-use crate::io::keys::Keycode;
-use crate::io::output::{Metadata, Output};
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::primitives::arrow::Arrow;
 use crate::primitives::common_query::CommonQuery;
 use crate::primitives::helpers;

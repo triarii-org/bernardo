@@ -4,10 +4,10 @@ use log::{debug, error, warn};
 use unicode_width::UnicodeWidthStr;
 
 use crate::experiments::screenspace::Screenspace;
-use crate::io::input_event::InputEvent;
-use crate::io::output::{Metadata, Output};
-use crate::io::over_output::OverOutput;
-use crate::io::sub_output::SubOutput;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::primitives::rect::Rect;
 use crate::primitives::scroll::{Scroll, ScrollDirection};
 use crate::primitives::xy::XY;

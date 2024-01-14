@@ -2,16 +2,10 @@ use log::warn;
 use unicode_width::UnicodeWidthStr;
 
 use crate::experiments::screenspace::Screenspace;
-use crate::io::input_event::InputEvent;
-use crate::io::input_event::InputEvent::KeyInput;
-use crate::io::keys::Keycode;
-use crate::io::output::{Metadata, Output};
 use crate::primitives::printable::Printable;
 use crate::primitives::rect::Rect;
 use crate::primitives::xy::XY;
 use crate::unpack_or;
-
-
 
 use crate::*;
 
@@ -57,7 +51,7 @@ impl Widget for ButtonWidget {
         }
 
         return match input_event {
-            KeyInput(key_event) => match key_event.keycode {
+            InputEvent::KeyInput(key_event) => match key_event.keycode {
                 Keycode::Enter => Some(Box::new(ButtonWidgetMsg::Hit)),
                 _ => None,
             },

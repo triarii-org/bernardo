@@ -8,7 +8,7 @@ use std::cmp::max;
 use std::collections::HashMap;
 
 use crate::experiments::focus_group::{FocusGraph, FocusGraphNode, FocusUpdate};
-use crate::io::buffer::Buffer;
+use crate::*;
 use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;

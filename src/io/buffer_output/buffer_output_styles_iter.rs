@@ -1,9 +1,5 @@
 use std::string::String;
 
-use crate::io::buffer_output::buffer_output::BufferOutput;
-use crate::io::buffer_output::horizontal_iter_item::HorizontalIterItem;
-use crate::io::cell::Cell;
-use crate::io::style::TextStyle;
 use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
@@ -106,10 +102,10 @@ impl<'a> Iterator for BufferStyleIter<'a> {
 #[cfg(test)]
 mod tests {
 
-    use crate::io::buffer_output::buffer_output::BufferOutput;
-    use crate::io::cell::Cell;
     use crate::primitives::rect::Rect;
     use crate::primitives::xy::XY;
+    use crate::*;
+    use crate::*;
 
     use super::*;
 

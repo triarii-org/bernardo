@@ -8,11 +8,6 @@ use log::error;
 
 use bernardo::experiments::screenspace::Screenspace;
 use bernardo::gladius::paradigm::recursive_treat_views;
-use bernardo::io::buffer_output::buffer_output::BufferOutput;
-use bernardo::io::input::Input;
-use bernardo::io::input_event::InputEvent;
-use bernardo::io::keys::Keycode;
-use bernardo::io::output::{FinalOutput, Output};
 use bernardo::primitives::rect::Rect;
 use bernardo::primitives::sized_xy::SizedXY;
 

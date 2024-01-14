@@ -2,8 +2,9 @@
 This describes a continous horizontal piece of buffer output, containing "text" and perhaps having a
 consistent style.
  */
-use crate::io::style::TextStyle;
 use crate::primitives::xy::XY;
+
+use crate::*;
 
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct HorizontalIterItem {

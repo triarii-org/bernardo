@@ -5,16 +5,10 @@ use log::{debug, warn};
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::io::buffer::Buffer;
-use crate::io::buffer_output::buffer_output_cells_iter::BufferOutputCellsIter;
-use crate::io::buffer_output::buffer_output_lines_iter::BufferLinesIter;
-use crate::io::buffer_output::buffer_output_styles_iter::BufferStyleIter;
-use crate::io::cell::Cell;
-use crate::io::output::{Metadata, Output};
-use crate::io::style::TextStyle;
 use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
+use crate::*;
 
 pub type BufferOutput = Buffer<Cell>;
 

@@ -1,9 +1,7 @@
-use crate::io::output::Output;
-use crate::io::sub_output::SubOutput;
-use crate::io::tests::local_mock_output::LocalMockOutput;
 use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
+use crate::*;
 
 #[test]
 fn sub_output_test_1() {

@@ -6,8 +6,8 @@ use log::error;
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::io::output::Output;
-use crate::io::style::{Effect, TextStyle};
+use crate::*;
+use crate::*;
 use crate::primitives::color::Color;
 use crate::primitives::rect::Rect;
 use crate::primitives::xy::XY;

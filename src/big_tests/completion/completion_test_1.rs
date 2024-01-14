@@ -1,6 +1,6 @@
 use log::debug;
 
-use crate::io::keys::Keycode;
+use crate::*;
 use crate::w7e::navcomp_provider::Completion;
 use crate::w7e::navcomp_provider::CompletionAction::Insert;
 

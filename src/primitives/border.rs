@@ -1,5 +1,5 @@
-use crate::io::output::Output;
-use crate::io::style::TextStyle;
+use crate::*;
+use crate::*;
 use crate::primitives::xy::XY;
 use crate::unpack_or;
 

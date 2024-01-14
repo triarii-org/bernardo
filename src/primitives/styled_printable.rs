@@ -4,7 +4,7 @@ use std::sync::Arc;
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::io::style::TextStyle;
+use crate::*;
 use crate::primitives::printable::Printable;
 
 pub trait StyledPrintable {

@@ -2,8 +2,8 @@ use crate::experiments::clipboard::ClipboardRef;
 use crate::experiments::screen_shot::screenshot;
 use crate::experiments::screenspace::Screenspace;
 use crate::gladius::paradigm::recursive_treat_views;
-use crate::io::input_event::InputEvent;
-use crate::io::output::FinalOutput;
+use crate::*;
+use crate::*;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
 

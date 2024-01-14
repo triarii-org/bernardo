@@ -3,9 +3,9 @@ use std::io::Error;
 
 use crossbeam_channel::{Receiver, Sender};
 
-use crate::io::buffer_output::buffer_output::BufferOutput;
-use crate::io::output::{FinalOutput, Metadata, Output};
-use crate::io::style::TextStyle;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;

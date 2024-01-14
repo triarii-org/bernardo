@@ -1,3 +1,3 @@
-use crate::io::input_event::InputEvent;
+use crate::*;
 
 pub type InputSource = crossbeam_channel::Receiver<InputEvent>;
