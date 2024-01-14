@@ -3,7 +3,6 @@ use std::fmt::Debug;
 
 use log::{debug, error, warn};
 
-use crate::config::theme::Theme;
 use crate::experiments::focus_group::FocusUpdate;
 use crate::experiments::screenspace::Screenspace;
 use crate::experiments::subwidget_pointer::SubwidgetPointer;
@@ -23,6 +22,8 @@ use crate::widget::complex_widget::{ComplexWidget, DisplayState};
 use crate::widget::widget::{get_new_widget_id, Widget, WID};
 use crate::widgets::button::ButtonWidget;
 use crate::widgets::text_widget::TextWidget;
+
+use crate::*;
 
 // TODO handle too small displays
 

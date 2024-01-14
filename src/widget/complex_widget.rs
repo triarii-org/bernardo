@@ -1,6 +1,5 @@
 use log::{debug, error};
 
-use crate::config::theme::Theme;
 use crate::experiments::focus_group::{FocusGraph, FocusUpdate};
 use crate::experiments::from_geometry::from_geometry;
 use crate::experiments::screenspace::Screenspace;
@@ -13,6 +12,8 @@ use crate::primitives::helpers::fill_output;
 use crate::primitives::rect::Rect;
 use crate::primitives::xy::XY;
 use crate::widget::widget::{Widget, WID};
+
+use crate::*;
 
 // here one could merge focus_group.focused with ds.focused, but not it's not important.
 

@@ -1,4 +1,3 @@
-use crate::config::theme::Theme;
 use crate::experiments::screenspace::Screenspace;
 use crate::experiments::subwidget_pointer::SubwidgetPointer;
 use crate::io::input_event::InputEvent;
@@ -8,6 +7,8 @@ use crate::layout::tests::mock_widget::MockWidget;
 use crate::primitives::xy::XY;
 use crate::widget::any_msg::AnyMsg;
 use crate::widget::widget::{get_new_widget_id, Widget, WID};
+
+use crate::*;
 
 pub type LayoutMaker = Box<dyn Fn(&MockComplexWidget) -> Box<dyn Layout<MockComplexWidget>>>;
 

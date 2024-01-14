@@ -3,11 +3,10 @@ use std::sync::Arc;
 
 use serde::{Deserialize, Serialize};
 
-use crate::config::global_editor_options::GlobalEditorOptions;
-use crate::config::load_error::LoadError;
-use crate::config::save_error::SaveError;
 use crate::io::keys::{Key, Keycode};
 use crate::primitives::is_default::IsDefault;
+
+use crate::*;
 
 #[derive(Debug, Default, Deserialize, Serialize, PartialEq, Eq)]
 pub struct Config {

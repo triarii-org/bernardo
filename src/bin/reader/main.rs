@@ -6,7 +6,6 @@ use clap::Parser;
 use crossbeam_channel::select;
 use log::error;
 
-use bernardo::config::theme::Theme;
 use bernardo::experiments::screenspace::Screenspace;
 use bernardo::gladius::paradigm::recursive_treat_views;
 use bernardo::io::buffer_output::buffer_output::BufferOutput;
@@ -17,7 +16,8 @@ use bernardo::io::output::{FinalOutput, Output};
 use bernardo::primitives::rect::Rect;
 use bernardo::primitives::sized_xy::SizedXY;
 use bernardo::widget::widget::Widget;
-use bernardo::App;
+
+use bernardo::*;
 
 use crate::reader_main_widget::ReaderMainWidget;
 

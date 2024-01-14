@@ -1,6 +1,5 @@
 use log::{debug, error, warn};
 
-use crate::config::theme::Theme;
 use crate::experiments::screenspace::Screenspace;
 use crate::experiments::subwidget_pointer::SubwidgetPointer;
 use crate::io::input_event::InputEvent;
@@ -19,6 +18,8 @@ use crate::widget::fill_policy::SizePolicy;
 use crate::widget::widget::{get_new_widget_id, Widget, WID};
 use crate::widgets::big_list::msg::BigListWidgetMsg;
 use crate::widgets::text_widget::TextWidget;
+
+use crate::*;
 
 /*
 This is list of bigger items, to be paired with scroll.

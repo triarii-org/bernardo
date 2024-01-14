@@ -1,7 +1,6 @@
 use std::cmp::min;
 use std::mem;
 
-use crate::config::theme::Theme;
 use crate::experiments::screenspace::Screenspace;
 use crate::io::buffer_output::buffer_output::BufferOutput;
 use crate::io::cell::Cell;
@@ -12,6 +11,8 @@ use crate::primitives::xy::XY;
 use crate::unpack_or;
 use crate::widget::any_msg::AnyMsg;
 use crate::widget::widget::{get_new_widget_id, Widget, WID};
+
+use crate::*;
 
 pub struct DumpVisualizerWidget {
     wid: WID,

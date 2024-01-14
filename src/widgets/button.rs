@@ -1,7 +1,6 @@
 use log::warn;
 use unicode_width::UnicodeWidthStr;
 
-use crate::config::theme::Theme;
 use crate::experiments::screenspace::Screenspace;
 use crate::io::input_event::InputEvent;
 use crate::io::input_event::InputEvent::KeyInput;
@@ -13,6 +12,8 @@ use crate::primitives::xy::XY;
 use crate::unpack_or;
 use crate::widget::any_msg::AnyMsg;
 use crate::widget::widget::{get_new_widget_id, Widget, WidgetAction, WID};
+
+use crate::*;
 
 // TODO add fixed size and tests
 

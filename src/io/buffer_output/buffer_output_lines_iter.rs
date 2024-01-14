@@ -8,6 +8,8 @@ use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
 
+use crate::*;
+
 pub struct BufferLinesIter<'a> {
     buffer: &'a BufferOutput,
     rect: Rect,
@@ -105,11 +107,12 @@ impl<'a> Iterator for BufferLinesIter<'a> {
 
 #[cfg(test)]
 mod tests {
-    use crate::config::theme::Theme;
     use crate::io::buffer_output::buffer_output::BufferOutput;
     use crate::io::cell::Cell;
     use crate::primitives::rect::Rect;
     use crate::primitives::xy::XY;
+
+    use super::*;
 
     #[test]
     fn test_buffer_output_lines_iter_1() {

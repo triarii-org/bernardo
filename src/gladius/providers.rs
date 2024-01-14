@@ -5,8 +5,6 @@ of key components like EditorView or CodeResultsView
 
 use std::sync::{Arc, RwLock};
 
-use crate::config::config::ConfigRef;
-use crate::config::theme::Theme;
 use crate::experiments::buffer_register::{BufferRegister, BufferRegisterRef};
 use crate::experiments::clipboard::ClipboardRef;
 use crate::fs::fsf_ref::FsfRef;
@@ -14,6 +12,8 @@ use crate::gladius::navcomp_loader::NavCompLoader;
 use crate::tsw::tree_sitter_wrapper::TreeSitterWrapper;
 use crate::w7e::navcomp_group::NavCompGroup;
 use crate::widgets::editor_widget::label::labels_provider::LabelsProviderRef;
+
+use crate::*;
 
 // do not share via Arc, we want to be able to "overload" providers in tests or exotic cases
 #[derive(Clone)]

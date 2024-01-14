@@ -4,7 +4,6 @@ use log::{debug, error, warn};
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::config::theme::Theme;
 use crate::cursor::cursor::CursorStatus;
 use crate::experiments::clipboard::ClipboardRef;
 use crate::experiments::screenspace::Screenspace;
@@ -21,6 +20,8 @@ use crate::widget::widget::{get_new_widget_id, Widget, WidgetAction, WID};
 use crate::widgets::edit_box::{EditBoxWidget, EditBoxWidgetMsg};
 use crate::widgets::fuzzy_search::item_provider::{Item, ItemsProvider};
 use crate::widgets::fuzzy_search::msg::{FuzzySearchMsg, Navigation};
+
+use crate::*;
 
 /* TODO I am not sure if I want to keep this widget, or do I integrate it with context menu widget now brewing \
 slowly somewhere in editor */

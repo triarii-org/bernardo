@@ -1,7 +1,6 @@
 use log::{debug, error, warn};
 use unicode_width::UnicodeWidthStr;
 
-use crate::config::theme::Theme;
 use crate::experiments::screenspace::Screenspace;
 use crate::experiments::subwidget_pointer::SubwidgetPointer;
 use crate::fs::path::SPath;
@@ -32,6 +31,8 @@ use crate::widgets::save_file_dialog::save_file_dialog::SaveFileDialogWidget;
 use crate::widgets::text_widget::TextWidget;
 use crate::widgets::with_scroll::with_scroll::WithScroll;
 use crate::{subwidget, unpack_or, unpack_or_e};
+
+use crate::*;
 
 const PATTERN: &'static str = "pattern: ";
 const REPLACE: &'static str = "replace: ";

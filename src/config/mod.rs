@@ -1,5 +1,13 @@
 pub mod config;
-pub mod global_editor_options;
-pub mod load_error;
-pub mod save_error;
-pub mod theme;
+
+mod global_editor_options;
+pub use global_editor_options::GlobalEditorOptions;
+
+mod load_error;
+pub use load_error::LoadError;
+
+mod save_error;
+pub use save_error::SaveError;
+
+mod theme;
+pub use theme::{CursorsSettings, Theme, UiTheme};

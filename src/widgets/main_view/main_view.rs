@@ -3,7 +3,6 @@ use std::rc::Rc;
 use log::{debug, error, warn};
 use uuid::Uuid;
 
-use crate::config::theme::Theme;
 use crate::experiments::buffer_register::OpenResult;
 use crate::experiments::filename_to_language::filename_to_language;
 use crate::experiments::screenspace::Screenspace;
@@ -38,6 +37,8 @@ use crate::widgets::tree_view::tree_view::TreeViewWidget;
 use crate::widgets::tree_view::tree_view_node::TreeViewNode;
 use crate::widgets::with_scroll::with_scroll::WithScroll;
 use crate::{subwidget, unpack_or, unpack_or_e};
+
+use crate::*;
 
 pub type BufferId = Uuid;
 

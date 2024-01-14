@@ -2,13 +2,14 @@ use std::sync::Arc;
 
 use log::{debug, error};
 
-use crate::config::config::ConfigRef;
 use crate::fs::path::SPath;
 use crate::w7e::handler::{Handler, NavCompRef};
 use crate::w7e::handler_load_error::HandlerLoadError;
 use crate::w7e::navcomp_group::NavCompTickSender;
 use crate::w7e::navcomp_provider_lsp::NavCompProviderLsp;
 use crate::w7e::rust::handler_rust::RustHandler;
+
+use crate::*;
 
 /*
 This is a single point of entry to loading LanguageHandlers, to be used by both workspace generator

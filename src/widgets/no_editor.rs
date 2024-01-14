@@ -1,4 +1,3 @@
-use crate::config::theme::Theme;
 use crate::experiments::screenspace::Screenspace;
 use crate::io::input_event::InputEvent;
 use crate::io::output::{Metadata, Output};
@@ -7,6 +6,8 @@ use crate::primitives::xy::XY;
 use crate::unpack_or;
 use crate::widget::any_msg::AnyMsg;
 use crate::widget::widget::{get_new_widget_id, Widget, WID};
+
+use crate::*;
 
 pub struct NoEditorWidget {
     wid: WID,

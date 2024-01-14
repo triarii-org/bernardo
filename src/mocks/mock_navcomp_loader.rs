@@ -2,7 +2,6 @@ use std::sync::{Arc, RwLock};
 
 use crossbeam_channel::Sender;
 
-use crate::config::config::ConfigRef;
 use crate::gladius::navcomp_loader::NavCompLoader;
 use crate::w7e::handler::Handler;
 use crate::w7e::handler_load_error::HandlerLoadError;

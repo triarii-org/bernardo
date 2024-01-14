@@ -7,7 +7,6 @@ use matches::debug_assert_matches;
 use streaming_iterator::StreamingIterator;
 use unicode_width::UnicodeWidthStr;
 
-use crate::config::theme::Theme;
 use crate::cursor::cursor::{Cursor, CursorStatus, Selection};
 use crate::cursor::cursor_set::CursorSet;
 use crate::cursor::cursor_set_rect::cursor_set_to_rect;
@@ -48,6 +47,8 @@ use crate::widgets::editor_widget::label::label::Label;
 use crate::widgets::editor_widget::msg::EditorWidgetMsg;
 use crate::widgets::main_view::msg::MainViewMsg;
 use crate::{unpack_or, unpack_or_e};
+
+use crate::*;
 
 const MIN_EDITOR_SIZE: XY = XY::new(10, 3);
 // const MAX_HOVER_SIZE: XY = XY::new(64, 20);

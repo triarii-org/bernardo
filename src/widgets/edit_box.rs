@@ -2,7 +2,6 @@ use log::{debug, warn};
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::config::theme::Theme;
 use crate::cursor::cursor_set::CursorSet;
 use crate::experiments::clipboard::ClipboardRef;
 use crate::experiments::screenspace::Screenspace;
@@ -20,6 +19,8 @@ use crate::unpack_or_e;
 use crate::widget::any_msg::AnyMsg;
 use crate::widget::fill_policy::SizePolicy;
 use crate::widget::widget::{get_new_widget_id, Widget, WidgetAction, WID};
+
+use crate::*;
 
 //TODO filter out the newlines on paste
 //TODO add layout tests (min size, max size etc)

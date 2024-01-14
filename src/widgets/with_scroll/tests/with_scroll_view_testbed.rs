@@ -1,6 +1,5 @@
 use std::rc::Rc;
 
-use crate::config::theme::Theme;
 use crate::experiments::screen_shot::screenshot;
 use crate::experiments::screenspace::Screenspace;
 use crate::gladius::paradigm::recursive_treat_views;

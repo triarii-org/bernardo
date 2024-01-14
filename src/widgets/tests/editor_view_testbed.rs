@@ -1,5 +1,3 @@
-use crate::config::config::ConfigRef;
-use crate::config::theme::Theme;
 use crate::experiments::clipboard::ClipboardRef;
 use crate::experiments::screen_shot::screenshot;
 use crate::experiments::screenspace::Screenspace;

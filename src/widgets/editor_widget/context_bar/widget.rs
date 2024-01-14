@@ -1,6 +1,5 @@
 use log::{error, warn};
 
-use crate::config::theme::Theme;
 use crate::experiments::screenspace::Screenspace;
 use crate::experiments::subwidget_pointer::SubwidgetPointer;
 use crate::io::input_event::InputEvent;
@@ -23,6 +22,8 @@ use crate::widgets::editor_widget::context_bar::context_bar_item::ContextBarItem
 use crate::widgets::editor_widget::context_bar::msg::ContextBarWidgetMsg;
 use crate::widgets::editor_widget::msg::EditorWidgetMsg;
 use crate::widgets::list_widget::list_widget::ListWidget;
+
+use crate::*;
 
 pub struct ContextBarWidget {
     id: WID,

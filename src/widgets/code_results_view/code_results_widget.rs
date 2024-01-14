@@ -3,7 +3,6 @@ use std::collections::HashSet;
 
 use log::{debug, error, warn};
 
-use crate::config::theme::Theme;
 use crate::cursor::cursor_set::CursorSet;
 use crate::experiments::screenspace::Screenspace;
 use crate::experiments::subwidget_pointer::SubwidgetPointer;
@@ -30,6 +29,8 @@ use crate::widgets::main_view::msg::MainViewMsg;
 use crate::widgets::text_widget::TextWidget;
 use crate::widgets::with_scroll::with_scroll::WithScroll;
 use crate::{subwidget, unpack_or, unpack_or_e};
+
+use crate::*;
 
 pub struct CodeResultsView {
     wid: WID,

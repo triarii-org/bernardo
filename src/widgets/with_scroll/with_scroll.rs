@@ -3,7 +3,6 @@ use std::cmp::{max, min};
 use log::{debug, error, warn};
 use unicode_width::UnicodeWidthStr;
 
-use crate::config::theme::Theme;
 use crate::experiments::screenspace::Screenspace;
 use crate::io::input_event::InputEvent;
 use crate::io::output::{Metadata, Output};
@@ -16,6 +15,8 @@ use crate::unpack_or;
 use crate::widget::any_msg::AnyMsg;
 use crate::widget::fill_policy::{DeterminedBy, SizePolicy};
 use crate::widget::widget::{get_new_widget_id, Widget, WID};
+
+use crate::*;
 
 // const DEFAULT_MARGIN_WIDTH: u16 = 4;
 

@@ -10,7 +10,6 @@ I hope I will discover most of functional constraints while implementing it.
 
 use log::{debug, error, warn};
 
-use crate::config::theme::Theme;
 use crate::experiments::screenspace::Screenspace;
 use crate::experiments::subwidget_pointer::SubwidgetPointer;
 use crate::fs::fsf_ref::FsfRef;
@@ -43,6 +42,8 @@ use crate::widgets::spath_tree_view_node::DirTreeNode;
 use crate::widgets::tree_view::tree_view::TreeViewWidget;
 use crate::widgets::with_scroll::with_scroll::WithScroll;
 use crate::{subwidget, unpack_or_e};
+
+use crate::*;
 
 // TODO now it displays both files and directories in tree view, it should only directories
 

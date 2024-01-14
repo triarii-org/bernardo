@@ -8,8 +8,6 @@ use std::time::Duration;
 use crossbeam_channel::{select, Receiver, Sender};
 use log::{debug, error, warn, LevelFilter};
 
-use crate::config::config::{Config, ConfigRef};
-use crate::config::theme::Theme;
 use crate::experiments::clipboard::{Clipboard, ClipboardRef};
 use crate::experiments::screen_shot::screenshot;
 use crate::fs::filesystem_front::FilesystemFront;

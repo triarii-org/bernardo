@@ -1,4 +1,3 @@
-use crate::config::theme::Theme;
 use crate::io::buffer_output::buffer_output::BufferOutput;
 use crate::io::output::Metadata;
 use crate::widget::widget::Widget;

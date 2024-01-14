@@ -5,12 +5,12 @@ use lazy_static::lazy_static;
 use log::{error, warn};
 use serde::{Deserialize, Serialize};
 
-use crate::config::load_error::LoadError;
-use crate::config::save_error::SaveError;
 use crate::cursor::cursor::CursorStatus;
 use crate::io::style::{Effect, TextStyle};
 use crate::primitives::color::Color;
 use crate::primitives::tmtheme::TmTheme;
+
+use crate::*;
 
 // TODO get rid of clone (in mock output we need Rc/Arc)
 #[derive(Clone, Debug, Default, Deserialize, Serialize, PartialEq, Eq)]

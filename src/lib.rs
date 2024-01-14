@@ -1,7 +1,9 @@
 mod app;
 pub use app::App;
 
-pub mod config;
+mod config;
+pub use config::*;
+
 pub mod cursor;
 pub mod experiments;
 pub mod fs;

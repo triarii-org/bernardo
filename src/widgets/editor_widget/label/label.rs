@@ -2,8 +2,6 @@ use std::ops::Range;
 
 use log::warn;
 
-use crate::config::config::ConfigRef;
-use crate::config::theme::Theme;
 use crate::cursor::cursor::{Cursor, Selection, NEWLINE_WIDTH};
 use crate::io::style::TextStyle;
 use crate::primitives::printable::Printable;
@@ -12,6 +10,8 @@ use crate::primitives::styled_printable::{StyleBorrowedPrintable, StyleWrappedPr
 use crate::primitives::xy::XY;
 use crate::text::text_buffer::TextBuffer;
 use crate::unpack_or;
+
+use crate::*;
 
 pub enum LabelPos {
     /*

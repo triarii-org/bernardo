@@ -8,6 +8,8 @@ use crate::primitives::rect::Rect;
 use crate::primitives::sized_xy::SizedXY;
 use crate::primitives::xy::XY;
 
+use crate::*;
+
 /*
 This is an iterator, that uses text_style to FILTER the output. It will skip over items not matching
  */
@@ -103,11 +105,13 @@ impl<'a> Iterator for BufferStyleIter<'a> {
 
 #[cfg(test)]
 mod tests {
-    use crate::config::theme::Theme;
+
     use crate::io::buffer_output::buffer_output::BufferOutput;
     use crate::io::cell::Cell;
     use crate::primitives::rect::Rect;
     use crate::primitives::xy::XY;
+
+    use super::*;
 
     #[test]
     fn test_buffer_output_styles_iter() {
