@@ -1,7 +1,5 @@
 use std::fmt::{Debug, Formatter};
-use std::time::{Duration, Instant};
-
-use log::debug;
+use std::time::Duration;
 
 use crate::*;
 

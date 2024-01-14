@@ -1,8 +1,4 @@
 use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
 
 pub struct WidgetWithRect<W: Widget> {
     widget: SubwidgetPointer<W>,

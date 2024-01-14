@@ -1,5 +1,4 @@
 use crate::*;
-use crate::*;
 
 /*
 Screenspace represents a combined information about output size:

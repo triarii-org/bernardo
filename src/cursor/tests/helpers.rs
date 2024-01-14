@@ -4,8 +4,6 @@ use ropey::Rope;
 
 use crate::*;
 
-use crate::*;
-
 pub fn buffer_cursors_sel_to_text(b: &dyn TextBuffer, cs: &CursorSet) -> String {
     let res = common_buffer_cursors_sel_to_text(b, cs);
     res

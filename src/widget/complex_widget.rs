@@ -1,18 +1,6 @@
 use log::{debug, error};
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
 
 // here one could merge focus_group.focused with ds.focused, but not it's not important.
 
@@ -148,7 +136,7 @@ pub trait ComplexWidget: Widget + Sized {
 
                 for wwr in &ds.wwrs {
                     let widget = wwr.widget().get(self);
-                    let child_widget_desc = format!("{}", widget);
+                    let _child_widget_desc = format!("{}", widget);
 
                     if visible_rect.intersect(wwr.rect()).is_none() {
                         debug!(

@@ -1,13 +1,8 @@
 use std::fmt::{Debug, Formatter};
 
-use jsonrpc_core::futures::future::err;
-use jsonrpc_core::Id::Str;
 use log::error;
 use ropey::iter::{Chars, Chunks};
 use streaming_iterator::StreamingIterator;
-
-use crate::*;
-use crate::*;
 
 use crate::*;
 

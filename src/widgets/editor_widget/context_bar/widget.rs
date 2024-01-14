@@ -1,24 +1,6 @@
 use log::{error, warn};
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
 
 pub struct ContextBarWidget {
     id: WID,

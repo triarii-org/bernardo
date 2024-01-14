@@ -6,8 +6,6 @@ use log::debug;
 use maplit::hashmap;
 
 use crate::*;
-use crate::*;
-use crate::*;
 
 #[derive(Debug)]
 pub enum InspectError {

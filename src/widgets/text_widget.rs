@@ -28,7 +28,7 @@ impl TextWidget {
     pub fn text_size(&self) -> XY {
         let mut size = XY::ZERO;
 
-        let debug_text = self.text.to_string();
+        let _debug_text = self.text.to_string();
 
         let mut line_it = self.text.lines();
         while let Some(line) = line_it.next() {
@@ -70,7 +70,7 @@ impl Widget for TextWidget {
         self.text_size()
     }
 
-    fn layout(&mut self, screenspace: Screenspace) {}
+    fn layout(&mut self, _screenspace: Screenspace) {}
 
     fn on_input(&self, _input_event: InputEvent) -> Option<Box<dyn AnyMsg>> {
         None

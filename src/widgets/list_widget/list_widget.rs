@@ -7,9 +7,6 @@ use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
 use crate::*;
-use crate::*;
-
-use crate::*;
 
 // TODO there is an issue here. Theoretically between prelayout and render, the number of items in
 // provider can SHORTEN making "highlighted" invalid. This highlights very clearly the problem with
@@ -366,7 +363,7 @@ impl<Item: ListWidgetItem + 'static> Widget for ListWidget<Item> {
     }
 
     fn render(&self, theme: &Theme, focused: bool, output: &mut dyn Output) {
-        let size = unpack_or_e!(self.last_size, (), "render before layout");
+        let _size = unpack_or_e!(self.last_size, (), "render before layout");
         #[cfg(test)]
         output.emit_metadata(Metadata {
             id: self.id(),

@@ -8,9 +8,6 @@ use log::{debug, warn};
 use unicode_width::UnicodeWidthStr;
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
 
 pub struct CrosstermOutput<W: Write> {
     stdout: W,

@@ -1,18 +1,13 @@
-use std::cell::RefCell;
 use std::collections::HashMap;
 use std::fmt::Debug;
 use std::ops::Range;
-use std::rc::Rc;
+
 use std::sync::{Arc, RwLock};
 
 use log::{error, warn};
 use ropey::Rope;
 use tree_sitter::{InputEdit, Language, Parser, Point, Query, QueryCursor};
 
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
 use crate::*;
 
 static EMPTY_SLICE: [u8; 0] = [0; 0];

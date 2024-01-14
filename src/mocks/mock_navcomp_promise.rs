@@ -5,8 +5,6 @@ use crossbeam_channel::{Receiver, Sender, TryRecvError};
 use log::{debug, error};
 
 use crate::*;
-use crate::*;
-use crate::*;
 
 pub struct MockNavCompPromise<T: Send + 'static> {
     receiver: Receiver<T>,

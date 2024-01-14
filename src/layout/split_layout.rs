@@ -3,12 +3,6 @@ use std::cmp::max;
 use log::{debug, error, warn};
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
 
 /* TODO
 One of many issues this file have is it's readability, starting with the fact that it seems that
@@ -126,7 +120,7 @@ impl<W: Widget> SplitLayout<W> {
         LayoutResult::new(res, screenspace.output_size())
     }
 
-    fn get_just_rects(&self, output_size: XY, root: &W) -> Option<Vec<Rect>> {
+    fn get_just_rects(&self, output_size: XY, _root: &W) -> Option<Vec<Rect>> {
         let free_axis = if self.split_direction == SplitDirection::Vertical {
             output_size.y as usize
         } else {

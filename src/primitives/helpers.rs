@@ -7,10 +7,6 @@ use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
 
 pub fn get_next_filename(dir: &Path, prefix: &str, suffix: &str) -> Option<PathBuf> {
     return match fs::read_dir(&dir) {

@@ -9,7 +9,7 @@ Also, now it supports filtering and recursive filtering: if filter is present, t
         - it passes filter test
         - one of it's descendants up to "filter_depth_op" deep (None = infinity)
  */
-use std::borrow::Borrow;
+
 use std::collections::HashSet;
 use std::fmt::Debug;
 use std::hash::Hash;
@@ -61,7 +61,7 @@ impl<'a, Key: Hash + Eq + Debug + Clone, Item: TreeViewNode<Key>> Iterator for T
                 for (_idx, item) in idx_and_items.into_iter().rev() {
                     match self.filter_op {
                         Some(filter) => {
-                            if item.matching_self_or_children(filter.borrow(), self.filter_depth_op) == MaybeBool::False {
+                            if item.matching_self_or_children(filter, self.filter_depth_op) == MaybeBool::False {
                                 continue;
                             }
                         }

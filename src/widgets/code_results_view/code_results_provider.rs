@@ -1,6 +1,4 @@
 use crate::*;
-use crate::*;
-use crate::*;
 
 pub struct PollResult {
     pub old_state: LoadingState,

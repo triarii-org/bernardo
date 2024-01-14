@@ -6,8 +6,6 @@ use unicode_segmentation::UnicodeSegmentation;
 #[allow(unused_imports)]
 use crate::*;
 
-use crate::*;
-
 #[cfg(feature = "arbitrary")]
 impl<'a> Arbitrary<'a> for BufferState {
     fn arbitrary(u: &mut Unstructured<'a>) -> Result<Self> {

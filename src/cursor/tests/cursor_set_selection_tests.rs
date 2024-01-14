@@ -1,8 +1,4 @@
-use std::collections::HashSet;
-
 use ropey::Rope;
-
-use crate::*;
 
 use crate::*;
 

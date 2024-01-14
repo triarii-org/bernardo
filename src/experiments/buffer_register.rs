@@ -5,9 +5,6 @@ use std::sync::{Arc, RwLock};
 use log::error;
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
 
 /*
 This is a provider of mapping DocumentIdentifier to buffer.
@@ -106,7 +103,7 @@ impl HasInvariant for BufferRegister {
     fn check_invariant(&self) -> bool {
         // no two references to the same file
 
-        let mut seen_refs: HashSet<SPath> = HashSet::new();
+        let seen_refs: HashSet<SPath> = HashSet::new();
 
         for document_identifier in self.buffers.keys() {
             if let Some(path) = &document_identifier.file_path {

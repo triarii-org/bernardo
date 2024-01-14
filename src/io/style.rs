@@ -1,7 +1,6 @@
 use serde::{Deserialize, Serialize};
 
 use crate::*;
-use crate::*;
 
 #[derive(Copy, Clone, Debug, Deserialize, Serialize, Eq, PartialEq, Hash)]
 pub enum Effect {

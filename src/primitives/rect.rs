@@ -266,7 +266,6 @@ impl fmt::Display for Rect {
 #[cfg(test)]
 pub mod tests {
     use crate::*;
-    use crate::*;
 
     #[test]
     fn rect_intersect_test() {

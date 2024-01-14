@@ -3,7 +3,7 @@ use test_log::test;
 use crate::*;
 
 pub fn get_setup() -> EditorViewTestbed {
-    let mut editor_view_testbed = WidgetTestbedBuilder::new().build_editor();
+    let editor_view_testbed = WidgetTestbedBuilder::new().build_editor();
 
     {
         let some_text = r#"use std::path::PathBuf;
@@ -61,7 +61,7 @@ fn editor_view_context() {
     let mut setup = get_setup();
     setup.next_frame();
 
-    for i in 0..5 {
+    for _i in 0..5 {
         setup.push_input(InputEvent::KeyInput(Keycode::ArrowDown.to_key()))
     }
 

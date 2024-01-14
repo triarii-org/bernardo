@@ -2,9 +2,6 @@ use std::fmt::{Debug, Formatter};
 use std::io::Error;
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
 
 pub struct LocalMockOutput {
     pub size: XY,
@@ -24,7 +21,7 @@ impl Debug for LocalMockOutput {
 }
 
 impl Output for LocalMockOutput {
-    fn print_at(&mut self, pos: XY, style: TextStyle, text: &str) {
+    fn print_at(&mut self, _pos: XY, _style: TextStyle, _text: &str) {
         unimplemented!()
     }
 
@@ -36,7 +33,7 @@ impl Output for LocalMockOutput {
         self.visible_rect
     }
 
-    fn emit_metadata(&mut self, meta: Metadata) {
+    fn emit_metadata(&mut self, _meta: Metadata) {
         unimplemented!()
     }
 }

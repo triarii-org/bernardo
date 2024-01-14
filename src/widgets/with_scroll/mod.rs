@@ -74,7 +74,7 @@ impl<W: Widget> WithScroll<W> {
     }
 
     fn render_line_no(&self, margin_width: u16, theme: &Theme, focused: bool, output: &mut dyn Output) {
-        let layout_res = unpack_or!(self.layout_res.as_ref(), (), "render before layout");
+        let _layout_res = unpack_or!(self.layout_res.as_ref(), (), "render before layout");
         #[cfg(test)]
         {
             output.emit_metadata(Metadata {
@@ -121,7 +121,7 @@ impl<W: Widget> WithScroll<W> {
         /*
         This is a little over-documented function, but I am tired and I make mistakes, so it's quicker to just dump my brain then investigate "what was I thinking" later.
          */
-        let child_size_policy = self.child_widget.size_policy();
+        let _child_size_policy = self.child_widget.size_policy();
 
         // let's decide how much space will be offered to child first.
         let child_full_size = self.child_widget.full_size();
@@ -311,7 +311,7 @@ impl<W: Widget> Widget for WithScroll<W> {
         });
     }
 
-    fn on_input(&self, input_event: InputEvent) -> Option<Box<dyn AnyMsg>> {
+    fn on_input(&self, _input_event: InputEvent) -> Option<Box<dyn AnyMsg>> {
         None
     }
 

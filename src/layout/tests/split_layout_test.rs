@@ -1,9 +1,6 @@
 use test_log::test;
 
 use crate::*;
-use crate::*;
-
-use crate::*;
 
 #[test]
 fn split_layout_test_widget_determined() {

@@ -5,9 +5,6 @@ use std::slice::{Iter, IterMut};
 use log::{error, warn};
 
 use crate::*;
-use crate::*;
-
-use crate::*;
 
 use super::cursor::default_word_determinant;
 
@@ -155,7 +152,7 @@ impl CursorSet {
         let len = rope.len_chars();
         let mut res = false;
 
-        for mut c in &mut self.set {
+        for c in &mut self.set {
             //we allow anchor after last char (so you can backspace last char)
             if c.a < len {
                 let old_pos = c.a;
@@ -214,7 +211,7 @@ impl CursorSet {
 
         let last_line_idx = rope.len_lines() - 1;
 
-        for mut c in &mut self.set {
+        for c in &mut self.set {
             //getting data
             if !selecting {
                 c.clear_selection();
@@ -302,7 +299,7 @@ impl CursorSet {
                 }
             };
 
-            let new_line_is_last = new_line_idx + 1 == rope.len_lines();
+            let _new_line_is_last = new_line_idx + 1 == rope.len_lines();
             let new_line_num_chars = last_char_in_new_line_idx - new_line_begin;
 
             let preferred_target_column = match c.preferred_column {
@@ -596,7 +593,7 @@ impl CursorSet {
         let mut res = false;
 
         for c in self.set.iter_mut() {
-            res |= c.word_end(buffer, selecting, word_determinant.clone());
+            res |= c.word_end(buffer, selecting, word_determinant);
         }
 
         self.reduce_right();

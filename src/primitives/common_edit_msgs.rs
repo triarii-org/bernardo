@@ -7,8 +7,6 @@ use unicode_segmentation::UnicodeSegmentation;
 
 use crate::*;
 
-use crate::*;
-
 /*
 So I don't have to reimplement basic edit properties for multiple widgets, I moved all (cursor, content) related code here.
  */
@@ -334,7 +332,7 @@ fn update_cursors_after_insertion(cs: &mut CursorSet, char_pos: usize, char_len:
         } else {
             // "dupa[kot)" + { char_pos: 5, what: "nic" } -> "dupa[knicot)"
             if char_pos < c.get_end() {
-                if let Some(mut sel) = c.s.as_mut() {
+                if let Some(sel) = c.s.as_mut() {
                     if c.a == sel.e {
                         c.a += char_len;
                         sel.e += char_len;

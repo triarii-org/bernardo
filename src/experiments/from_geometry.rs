@@ -8,11 +8,6 @@ use std::cmp::max;
 use std::collections::HashMap;
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
 
 fn fill(b: &mut Buffer<WID>, wid: WID, rect: &Rect) {
     for x in rect.min_x()..u16::min(rect.max_x(), b.size().x) {
@@ -53,7 +48,7 @@ fn walk_to_first_hit(buffer: &Buffer<WID>, wid: WID, rect: &Rect, step: (i16, i1
         // WID -> overlap, lowest_index is overlap > 0 or maxint
         let mut hits: HashMap<WID, (usize, u16)> = HashMap::new();
 
-        for mut w in &mut walkers {
+        for w in &mut walkers {
             if step.0 == -1 && w.x == 0 {
                 break 'outer;
             }
@@ -170,10 +165,6 @@ pub fn from_geometry<AdditionalData: Clone>(
 
 #[cfg(test)]
 mod tests {
-    use crate::*;
-    use crate::*;
-    use crate::*;
-    use crate::*;
 
     use super::*;
 

@@ -1,5 +1,5 @@
 use std::fmt::{Debug, Formatter};
-use std::ops::Range;
+
 use std::sync::{Arc, RwLock, RwLockWriteGuard};
 use std::time::Duration;
 

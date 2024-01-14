@@ -5,12 +5,6 @@
 use log::{error, warn};
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
 
 pub type ChildRectFunc = Box<dyn Fn(Screenspace) -> Option<Rect>>;
 

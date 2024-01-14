@@ -37,7 +37,6 @@ impl TreeViewWidget<SPath, FileTreeNode> {
 mod tests {
 
     use crate::*;
-    use crate::*;
 
     #[test]
     fn test_set_path() {

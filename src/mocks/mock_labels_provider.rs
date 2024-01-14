@@ -1,7 +1,3 @@
-use std::ops::Range;
-
-use crate::*;
-use crate::*;
 use crate::*;
 
 pub struct MockLabelsProvider {
@@ -15,7 +11,7 @@ impl MockLabelsProvider {
 }
 
 impl LabelsProvider for MockLabelsProvider {
-    fn query_for(&self, path_op: Option<&SPath>) -> Box<dyn Iterator<Item = &'_ Label> + '_> {
+    fn query_for(&self, _path_op: Option<&SPath>) -> Box<dyn Iterator<Item = &'_ Label> + '_> {
         Box::new(self.labels.iter())
     }
 }

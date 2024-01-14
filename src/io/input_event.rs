@@ -3,7 +3,6 @@ use std::fmt::Debug;
 use serde::{Deserialize, Serialize};
 
 use crate::*;
-use crate::*;
 
 #[derive(Debug, Clone, Copy, Serialize, Deserialize)]
 pub enum InputEvent {

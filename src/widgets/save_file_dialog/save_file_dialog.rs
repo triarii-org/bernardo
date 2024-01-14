@@ -390,7 +390,7 @@ impl Widget for SaveFileDialogWidget {
     }
 
     fn render(&self, theme: &Theme, focused: bool, output: &mut dyn Output) {
-        let size = unpack_or_e!(self.display_state.as_ref(), (), "render before layout").total_size;
+        let _size = unpack_or_e!(self.display_state.as_ref(), (), "render before layout").total_size;
         #[cfg(test)]
         output.emit_metadata(Metadata {
             id: self.id(),

@@ -1,11 +1,10 @@
-use std::cell::Cell;
 use std::fmt::{Debug, Formatter};
 use std::path::PathBuf;
 use std::sync::RwLock;
 
 use crossbeam_channel::{Receiver, Sender};
 use log::{debug, error};
-use lsp_types::{CompletionResponse, CompletionTextEdit, DocumentSymbolResponse, Position, SymbolKind};
+use lsp_types::{CompletionResponse, CompletionTextEdit, Position, SymbolKind};
 
 use crate::*;
 

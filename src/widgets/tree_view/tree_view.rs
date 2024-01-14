@@ -306,7 +306,7 @@ impl<K: Hash + Eq + Debug + Clone + 'static, I: TreeViewNode<K> + 'static> Widge
     }
 
     fn render(&self, theme: &Theme, focused: bool, output: &mut dyn Output) {
-        let size = unpack_or_e!(self.last_size, (), "render before layout");
+        let _size = unpack_or_e!(self.last_size, (), "render before layout");
 
         #[cfg(test)]
         output.emit_metadata(Metadata {

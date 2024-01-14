@@ -4,8 +4,6 @@ consistent style.
  */
 use crate::*;
 
-use crate::*;
-
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct HorizontalIterItem {
     pub absolute_pos: XY,

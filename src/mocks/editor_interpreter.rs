@@ -1,19 +1,6 @@
 use log::error;
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
 
 pub struct EditorInterpreter<'a> {
     meta: &'a Metadata,

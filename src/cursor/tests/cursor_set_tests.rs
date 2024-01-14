@@ -9,11 +9,8 @@
 
 #![allow(dead_code)]
 
-use std::borrow::Borrow;
-
 use ropey::Rope;
 
-use crate::*;
 use crate::*;
 
 fn text_to_buffer_cursors(text: &str) -> (Rope, CursorSet) {

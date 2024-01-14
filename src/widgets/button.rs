@@ -72,7 +72,7 @@ impl Widget for ButtonWidget {
     }
 
     fn render(&self, theme: &Theme, focused: bool, output: &mut dyn Output) {
-        let size = XY::new(unpack_or!(self.last_size_x, (), "render before layout"), 1);
+        let _size = XY::new(unpack_or!(self.last_size_x, (), "render before layout"), 1);
         #[cfg(test)]
         output.emit_metadata(Metadata {
             id: self.id(),

@@ -1,12 +1,9 @@
 use std::sync::Arc;
 
-use log::{debug, error, warn};
+use log::{debug, error};
 use ropey::Rope;
 use unicode_segmentation::UnicodeSegmentation;
 
-use crate::*;
-use crate::*;
-use crate::*;
 use crate::*;
 
 /*

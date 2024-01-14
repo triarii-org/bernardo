@@ -4,8 +4,6 @@ use log::debug;
 use serde::{Deserialize, Serialize};
 
 use crate::*;
-use crate::*;
-use crate::*;
 
 pub struct ProjectScope {
     pub lang_id: LangId,

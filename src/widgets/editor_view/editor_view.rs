@@ -77,7 +77,7 @@ impl EditorView {
         }
     }
 
-    pub fn with_path(mut self, path: SPath) -> Self {
+    pub fn with_path(self, path: SPath) -> Self {
         let res = Self {
             start_path: Some(path),
 
@@ -87,7 +87,7 @@ impl EditorView {
         res
     }
 
-    pub fn with_path_op(mut self, path_op: Option<SPath>) -> Self {
+    pub fn with_path_op(self, path_op: Option<SPath>) -> Self {
         let res = Self {
             start_path: path_op,
             ..self
@@ -403,7 +403,7 @@ impl Widget for EditorView {
     }
 
     fn render(&self, theme: &Theme, focused: bool, output: &mut dyn Output) {
-        let total_size = unpack_or_e!(self.display_state.as_ref().map(|ds| ds.total_size), (), "render before layout");
+        let _total_size = unpack_or_e!(self.display_state.as_ref().map(|ds| ds.total_size), (), "render before layout");
 
         #[cfg(test)]
         output.emit_metadata(Metadata {

@@ -1,7 +1,4 @@
 use crate::*;
-use crate::*;
-
-use crate::*;
 
 pub struct CodeResultsViewInterpreter<'a> {
     meta: &'a Metadata,

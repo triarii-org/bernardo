@@ -1,10 +1,6 @@
 use std::string::String;
 
 use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
 
 /*
 This is an iterator, that uses text_style to FILTER the output. It will skip over items not matching
@@ -102,9 +98,6 @@ impl<'a> Iterator for BufferStyleIter<'a> {
 #[cfg(test)]
 mod tests {
 
-    use crate::*;
-    use crate::*;
-    use crate::*;
     use crate::*;
 
     use super::*;

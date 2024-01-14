@@ -1,10 +1,6 @@
 use std::string::String;
 
 use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
 
 pub struct BufferLinesIter<'a> {
     buffer: &'a BufferOutput,
@@ -103,9 +99,6 @@ impl<'a> Iterator for BufferLinesIter<'a> {
 
 #[cfg(test)]
 mod tests {
-    use crate::*;
-    use crate::*;
-    use crate::*;
     use crate::*;
 
     use super::*;

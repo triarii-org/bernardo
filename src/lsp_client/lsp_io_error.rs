@@ -1,5 +1,4 @@
 use crate::*;
-use crate::*;
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub enum LspIOError {

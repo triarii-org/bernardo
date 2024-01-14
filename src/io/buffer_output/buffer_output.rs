@@ -6,9 +6,6 @@ use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
 
 pub type BufferOutput = Buffer<Cell>;
 

@@ -95,7 +95,7 @@ impl WithScrollTestbed {
 fn get_setup() -> WithScrollTestbed {
     let mut testbed = WithScrollTestbed::new();
     {
-        let mut list = testbed.widget.internal_mut();
+        let list = testbed.widget.internal_mut();
 
         let items: Vec<Rc<String>> = (1..51).map(|idx| Rc::new(format!("item{}", idx))).collect();
 

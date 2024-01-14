@@ -1,10 +1,6 @@
 use log::error;
 
 use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
 
 fn cursor_to_xy(c: &Cursor, buffer: &dyn TextBuffer) -> XY {
     let y = buffer.char_to_line(c.a).unwrap_or_else(|| {

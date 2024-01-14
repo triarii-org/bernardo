@@ -1,7 +1,5 @@
 use crate::*;
 
-use crate::*;
-
 pub struct ScrollInterpreter<'a> {
     rect: Rect,
     output: &'a MetaOutputFrame,

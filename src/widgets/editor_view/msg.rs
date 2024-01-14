@@ -1,7 +1,5 @@
 use crate::*;
 
-use crate::*;
-
 #[derive(Clone, Debug)]
 pub enum EditorViewMsg {
     Save,

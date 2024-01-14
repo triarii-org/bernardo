@@ -1,11 +1,7 @@
 use std::fmt::{Debug, Formatter};
 
-use log::debug;
 use unicode_width::UnicodeWidthStr;
 
-use crate::*;
-use crate::*;
-use crate::*;
 use crate::*;
 
 pub struct SubOutput<'a> {
@@ -49,9 +45,9 @@ impl Output for SubOutput<'_> {
     So we compare for "drawing beyond border" against *size* of the frame, not it's position.
      */
     fn print_at(&mut self, pos: XY, style: TextStyle, text: &str) {
-        let end_pos = pos + (text.width() as u16, 0);
+        let _end_pos = pos + (text.width() as u16, 0);
 
-        let visible_rect = self.visible_rect();
+        let _visible_rect = self.visible_rect();
 
         // if cfg!(debug_assertions) {
         //     // this <= is not an error, grapheme END can meet with frame END.
@@ -91,7 +87,7 @@ impl Output for SubOutput<'_> {
 
         let my_visible_rect_in_parent_space = parent_visible_rect.intersect(self.frame_in_parent_space).unwrap(); // TODO unwrap
 
-        let mut my_visible_space_in_my_space = my_visible_rect_in_parent_space.minus_shift(self.frame_in_parent_space.pos).unwrap();
+        let my_visible_space_in_my_space = my_visible_rect_in_parent_space.minus_shift(self.frame_in_parent_space.pos).unwrap();
         // my_visible_space_in_my_space.pos -= self.frame_in_parent_space.pos;
 
         let res = my_visible_space_in_my_space;

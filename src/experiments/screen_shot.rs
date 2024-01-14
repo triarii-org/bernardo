@@ -5,8 +5,6 @@ use log::{debug, error};
 
 use crate::*;
 
-use crate::*;
-
 pub fn screenshot(dump: &BufferOutput) -> bool {
     let screenshot_dir: PathBuf = PathBuf::from("./screenshots/");
     if let Err(e) = fs::create_dir_all(&screenshot_dir) {

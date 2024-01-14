@@ -7,10 +7,9 @@ like:
 - warnings emitted by compiler
 - errors emitted by compiler
  */
-use std::ops::Range;
+
 use std::sync::Arc;
 
-use crate::*;
 use crate::*;
 
 pub trait LabelsProvider: Sync + Send {

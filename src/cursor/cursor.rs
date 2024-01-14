@@ -20,13 +20,11 @@
 // data. TODO add "invariant protectors" to cursor set and warnings/errors, maybe add tests.
 
 use std::cmp::Ordering;
-use std::collections::HashMap;
+
 use std::ops::Range;
-use std::slice::{Iter, IterMut};
 
 use log::{error, warn};
 
-use crate::*;
 use crate::*;
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]

@@ -1,8 +1,6 @@
 use crossbeam_channel::{unbounded, Receiver, Sender};
 
 use crate::*;
-use crate::*;
-use crate::*;
 
 pub struct MockInput {
     receiver: Receiver<InputEvent>,

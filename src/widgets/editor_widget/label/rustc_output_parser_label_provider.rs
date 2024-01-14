@@ -1,5 +1,3 @@
-use std::ops::Range;
-
 use log::warn;
 use regex::Regex;
 
@@ -63,7 +61,7 @@ impl RustcOutputParserLabelProvider {
                 }
             };
 
-            let filename = match capture.get(1).map(|m| m.as_str()) {
+            let _filename = match capture.get(1).map(|m| m.as_str()) {
                 Some(msg) => msg,
                 None => {
                     warn!("skipping warning: no filename");
@@ -79,7 +77,7 @@ impl RustcOutputParserLabelProvider {
                 }
             };
 
-            let col_number: usize = match capture.get(3).map(|m| m.as_str()).map(|s| s.parse::<usize>().ok()).flatten() {
+            let _col_number: usize = match capture.get(3).map(|m| m.as_str()).map(|s| s.parse::<usize>().ok()).flatten() {
                 Some(idx) => idx,
                 None => {
                     warn!("skipping warning: no column number");
@@ -103,7 +101,7 @@ impl RustcOutputParserLabelProvider {
                 }
             };
 
-            let filename = match capture.get(1).map(|m| m.as_str()) {
+            let _filename = match capture.get(1).map(|m| m.as_str()) {
                 Some(msg) => msg,
                 None => {
                     warn!("skipping error: no filename");
@@ -119,7 +117,7 @@ impl RustcOutputParserLabelProvider {
                 }
             };
 
-            let col_number: usize = match capture.get(3).map(|m| m.as_str()).map(|s| s.parse::<usize>().ok()).flatten() {
+            let _col_number: usize = match capture.get(3).map(|m| m.as_str()).map(|s| s.parse::<usize>().ok()).flatten() {
                 Some(idx) => idx,
                 None => {
                     warn!("skipping error: no column number");

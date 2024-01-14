@@ -1,10 +1,6 @@
-use std::rc::Rc;
-use std::sync::Arc;
-
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::*;
 use crate::*;
 
 pub trait StyledPrintable {

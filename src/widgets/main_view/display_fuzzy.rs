@@ -1,8 +1,6 @@
 use std::rc::Rc;
 
 use crate::*;
-use crate::*;
-use crate::*;
 
 pub struct DisplayItem {
     idx: usize,

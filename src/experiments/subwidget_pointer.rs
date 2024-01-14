@@ -177,7 +177,7 @@ mod tests {
                 unimplemented!()
             }
 
-            fn layout(&mut self, screenspace: Screenspace) {
+            fn layout(&mut self, _screenspace: Screenspace) {
                 todo!()
             }
 
@@ -220,7 +220,7 @@ mod tests {
                 unimplemented!()
             }
 
-            fn layout(&mut self, screenspace: Screenspace) {
+            fn layout(&mut self, _screenspace: Screenspace) {
                 todo!()
             }
 

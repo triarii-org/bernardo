@@ -76,8 +76,11 @@ impl MainView {
             Err(ReadError::FileNotFound),
             "failed to lock register"
         );
-        let OpenResult { buffer_shared_ref, opened } = register_lock.open_file(&self.providers, ff);
-        let mut buffer_shared_ref = buffer_shared_ref?;
+        let OpenResult {
+            buffer_shared_ref,
+            opened: _,
+        } = register_lock.open_file(&self.providers, ff);
+        let buffer_shared_ref = buffer_shared_ref?;
 
         if let Some(mut buffer_lock) = buffer_shared_ref.lock_rw() {
             buffer_lock.set_lang(filename_to_language(&ff));

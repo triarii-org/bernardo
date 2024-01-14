@@ -6,7 +6,6 @@ use serde::de::DeserializeOwned;
 use serde::{Deserialize, Serialize};
 
 use crate::*;
-use crate::*;
 
 #[derive(Clone, Serialize, Deserialize)]
 pub struct Buffer<T: Default + Clone> {
@@ -95,7 +94,6 @@ where
 
 #[cfg(test)]
 mod test {
-    use crate::*;
     use crate::*;
 
     #[test]

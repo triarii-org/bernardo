@@ -3,7 +3,7 @@ use std::ops::Add;
 use std::time;
 use std::time::Duration;
 
-use crossbeam_channel::{Receiver, RecvError, RecvTimeoutError, Sender, TryRecvError};
+use crossbeam_channel::{Receiver, RecvTimeoutError, Sender, TryRecvError};
 use log::{debug, error, warn};
 use lsp_types::request::Request;
 use serde_json::Value;
@@ -76,7 +76,7 @@ impl<R: Request> Promise<R::Result> for LSPPromise<R> {
             return PromiseState::Ready;
         }
 
-        let mut timeout = false;
+        let _timeout = false;
         let (timeout, value_op): (bool, Option<Value>) = if let Some(duration) = how_long {
             match self.receiver.recv_deadline(time::Instant::now().add(duration)) {
                 Ok(value) => (false, Some(value)),

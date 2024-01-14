@@ -1,5 +1,3 @@
-use log::debug;
-
 use crate::*;
 
 // This test is not super advanced, but I have bigger fish to fry than implementing yet another

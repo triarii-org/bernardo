@@ -15,17 +15,6 @@ use lsp_types;
 use url::Url;
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
 
 // I use ID == String, because i32 might be small, and i64 is safe, so I send i64 as string and so I
 // store it. LSP defines id integer as i32, while jsonrpc_core as u64.

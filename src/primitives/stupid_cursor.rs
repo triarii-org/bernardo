@@ -2,12 +2,8 @@ use std::cmp::Ordering;
 
 use log::debug;
 use log::error;
-use unicode_segmentation::UnicodeSegmentation;
-use unicode_width::UnicodeWidthStr;
 
-use crate::*;
-use crate::*;
-use crate::*;
+use unicode_width::UnicodeWidthStr;
 
 use crate::*;
 

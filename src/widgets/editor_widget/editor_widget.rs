@@ -217,7 +217,7 @@ impl EditorWidget {
             (Some(navcomp), Some(spath)) => {
                 navcomp.file_open_for_edition(spath, buffer.text().rope().clone());
             }
-            (Some(navcomp), None) => {
+            (Some(_navcomp), None) => {
                 warn!("unimplemented variant - set navcomp but not path");
             }
             _ => {
@@ -441,7 +441,7 @@ impl EditorWidget {
 
             let page_height = self.page_height();
 
-            let res = buffer.apply_stupid_substitute_messages(self.wid, edits, page_height as usize);
+            let _res = buffer.apply_stupid_substitute_messages(self.wid, edits, page_height as usize);
 
             // This theoretically could be optimised out, but maybe it's not worth it, it leads to
             // a new category of bugs if statement above turns out to be false, and it rarely is,
@@ -965,8 +965,8 @@ impl EditorWidget {
             "not opening completions - cursor not single."
         );
 
-        let path = unpack_or!(buffer.get_path(), (), "no path set");
-        let stupid_cursor = unpack_or!(
+        let _path = unpack_or!(buffer.get_path(), (), "no path set");
+        let _stupid_cursor = unpack_or!(
             StupidCursor::from_real_cursor(buffer, cursor).ok(),
             (),
             "failed conversion to stupid cursor"
@@ -1247,7 +1247,7 @@ impl Widget for EditorWidget {
                         (&EditorState::DroppingCursor { special_cursor }, EditorWidgetMsg::DropCursorFlip { cursor }) => {
                             debug_assert!(special_cursor.is_simple());
 
-                            let mut cursor_set = unpack_or!(buffer.cursors_mut(self.wid), None, "can't get cursor set");
+                            let cursor_set = unpack_or!(buffer.cursors_mut(self.wid), None, "can't get cursor set");
 
                             if !cursor_set.are_simple() {
                                 warn!("Cursors were supposed to be simple at this point. Recovering, but there was error.");

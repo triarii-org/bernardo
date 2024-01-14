@@ -1,7 +1,6 @@
 use std::rc::Rc;
 
 use crate::*;
-use crate::*;
 
 pub struct Actions<W: Widget> {
     vec: Vec<ActionTrigger<W>>,

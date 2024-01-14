@@ -1,13 +1,6 @@
 use log::debug;
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
 
 pub struct LeafLayout<W: Widget> {
     widget: SubwidgetPointer<W>,
@@ -51,9 +44,9 @@ impl<W: Widget> Layout<W> for LeafLayout<W> {
 
     fn layout(&self, root: &mut W, screenspace: Screenspace) -> LayoutResult<W> {
         let root_id = root.id();
-        let root_desc = format!("{:?}", root as &dyn Widget);
+        let _root_desc = format!("{:?}", root as &dyn Widget);
 
-        let widget_desc = {
+        let _widget_desc = {
             let widget = self.widget.get(root);
             format!("{:?}", widget)
         };

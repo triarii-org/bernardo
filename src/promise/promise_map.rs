@@ -163,7 +163,6 @@ mod tests {
     use std::time::Duration;
 
     use crate::*;
-    use crate::*;
 
     struct MockPromise<A> {
         //done + value == None => broken

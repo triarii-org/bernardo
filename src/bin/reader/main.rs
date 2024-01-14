@@ -43,7 +43,7 @@ fn main() {
                             filename = Some(dir_entry.path());
                         }
                     }
-                    Err(e) => {}
+                    Err(_e) => {}
                 }
             }
 
@@ -88,7 +88,7 @@ fn main() {
                     recv(input.source()) -> msg => {
                         // debug!("processing input: {:?}", msg);
                         match msg {
-                            Ok(mut ie) => {
+                            Ok(ie) => {
                                 // debug!("msg ie {:?}", ie);
                                 match ie {
                                     // InputEvent::KeyInput(key) if key.as_focus_update().is_some() && key.modifiers.alt => {

@@ -2,10 +2,10 @@ mod debug_helpers;
 pub(crate) use debug_helpers::{format_or_noop, lsp_debug_save};
 
 mod lsp_notification;
-pub(crate) use lsp_notification::{parse_notification, LspNotificationParsingError, LspServerNotification};
+pub(crate) use lsp_notification::{parse_notification, LspServerNotification};
 
 mod lsp_read;
-pub(crate) use lsp_read::{get_len_from_headers, read_lsp};
+pub(crate) use lsp_read::read_lsp;
 
 mod lsp_write;
 pub(crate) use lsp_write::{internal_send_notification, internal_send_notification_no_params, internal_send_request};
