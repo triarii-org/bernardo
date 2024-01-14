@@ -7,7 +7,7 @@ use ropey::iter::{Chars, Chunks};
 use streaming_iterator::StreamingIterator;
 
 use crate::*;
-use crate::tsw::lang_id::LangId;
+use crate::*;
 use crate::unpack_or;
 
 use crate::*;

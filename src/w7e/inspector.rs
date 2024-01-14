@@ -6,7 +6,7 @@ use log::debug;
 use maplit::hashmap;
 
 use crate::fs::path::SPath;
-use crate::tsw::lang_id::LangId;
+use crate::*;
 use crate::w7e::project_scope::ProjectScope;
 use crate::w7e::rust::inspector_rust::RustLangInspector;
 

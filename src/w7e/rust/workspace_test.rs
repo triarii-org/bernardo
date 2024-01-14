@@ -6,7 +6,7 @@ mod tests {
     use crate::fs::filesystem_front::FilesystemFront;
     use crate::fs::mock_fs::MockFS;
     use crate::spath;
-    use crate::tsw::lang_id::LangId;
+    use crate::*;
     use crate::w7e::project_scope::SerializableProjectScope;
     use crate::w7e::workspace::{ScopeLoadErrors, SerializableWorkspace, Workspace};
 

@@ -31,7 +31,9 @@ pub use promise::*;
 mod text;
 pub use text::*;
 
-pub mod tsw;
+mod tsw;
+pub use tsw::*;
+
 pub mod w7e;
 
 mod widget;

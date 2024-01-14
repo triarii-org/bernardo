@@ -5,7 +5,7 @@ use std::sync::{Arc, RwLock};
 
 use tree_sitter::{Language, Parser, Query, Tree};
 
-use crate::tsw::lang_id::LangId;
+use crate::*;
 
 #[derive(Clone)]
 pub struct ParsingTuple {

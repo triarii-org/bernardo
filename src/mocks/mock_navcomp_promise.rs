@@ -5,7 +5,7 @@ use crossbeam_channel::{Receiver, Sender, TryRecvError};
 use log::{debug, error};
 
 use crate::*;
-use crate::tsw::lang_id::LangId;
+use crate::*;
 use crate::w7e::navcomp_group::NavCompTick;
 
 pub struct MockNavCompPromise<T: Send + 'static> {

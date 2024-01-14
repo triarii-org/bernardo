@@ -10,10 +10,10 @@ use ropey::Rope;
 use tree_sitter::{InputEdit, Language, Parser, Point, Query, QueryCursor};
 
 use crate::*;
-use crate::tsw::lang_id::LangId;
-use crate::tsw::language_set::LanguageSet;
-use crate::tsw::parsing_tuple::ParsingTuple;
-use crate::tsw::rope_wrappers::RopeWrapper;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::unpack_or_e;
 
 static EMPTY_SLICE: [u8; 0] = [0; 0];

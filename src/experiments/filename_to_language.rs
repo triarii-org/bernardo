@@ -4,7 +4,7 @@ use lazy_static::lazy_static;
 use maplit::hashmap;
 
 use crate::fs::path::SPath;
-use crate::tsw::lang_id::LangId;
+use crate::*;
 
 lazy_static! {
     static ref EXT_TO_LANGUAGE : HashMap<&'static str, LangId> = hashmap! {

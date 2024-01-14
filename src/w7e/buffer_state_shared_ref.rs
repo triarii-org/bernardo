@@ -3,7 +3,7 @@ use std::sync::{Arc, RwLock, RwLockReadGuard, RwLockWriteGuard};
 use log::error;
 
 use crate::*;
-use crate::tsw::tree_sitter_wrapper::TreeSitterWrapper;
+use crate::*;
 use crate::widgets::main_view::main_view::DocumentIdentifier;
 
 #[derive(Clone, Debug)]

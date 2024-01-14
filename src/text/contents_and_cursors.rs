@@ -4,9 +4,9 @@ use log::{debug, error, warn};
 use ropey::Rope;
 use unicode_segmentation::UnicodeSegmentation;
 
-use crate::tsw::lang_id::LangId;
-use crate::tsw::parsing_tuple::ParsingTuple;
-use crate::tsw::tree_sitter_wrapper::TreeSitterWrapper;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::unpack_or_e;
 use crate::*;
 

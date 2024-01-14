@@ -6,7 +6,7 @@ use ropey::Rope;
 use tree_sitter::Point;
 
 use crate::*;
-use crate::tsw::tree_sitter_wrapper::pack_rope_with_callback;
+use crate::*;
 
 impl TextBuffer for Rope {
     fn byte_to_char(&self, byte_idx: usize) -> Option<usize> {

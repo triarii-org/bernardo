@@ -5,7 +5,7 @@ use log::debug;
 
 use crate::*;
 use crate::fs::path::SPath;
-use crate::tsw::lang_id::LangId;
+use crate::*;
 use crate::w7e::handler::NavCompRef;
 
 #[derive(Debug, Copy, Clone)]

@@ -428,7 +428,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::tsw::tree_sitter_wrapper::HighlightItem`
   --> src/widgets/editor_widget/editor_widget.rs:35:5
    |
-35 | use crate::tsw::tree_sitter_wrapper::HighlightItem;
+35 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `NavCompSymbol`
@@ -1322,7 +1322,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::tsw::tree_sitter_wrapper::HighlightItem`
   --> src/widgets/editor_widget/editor_widget.rs:35:5
    |
-35 | use crate::tsw::tree_sitter_wrapper::HighlightItem;
+35 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `NavCompSymbol`
