@@ -5,7 +5,7 @@ use regex::Regex;
 
 use crate::fs::path::SPath;
 use crate::*;
-use crate::text::text_buffer::TextBuffer;
+use crate::*;
 use crate::widgets::editor_widget::label::label::{Label, LabelPos, LabelStyle};
 use crate::widgets::editor_widget::label::labels_provider::LabelsProvider;
 
@@ -386,7 +386,7 @@ warning: unused import: `crate::promise::promise::PromiseState`
 warning: unused import: `crate::text::buffer_state::BufferState`
   --> src/widgets/main_view/main_view.rs:27:5
    |
-27 | use crate::text::buffer_state::BufferState;
+27 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::w7e::buffer_state_shared_ref::BufferSharedRef`
@@ -470,7 +470,7 @@ warning: unused import: `std::ops::Range`
 warning: unused import: `crate::text::text_buffer::TextBuffer`
  --> src/widgets/editor_widget/label/label.rs:6:5
   |
-6 | use crate::text::text_buffer::TextBuffer;
+6 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::widgets::editor_widget::label::labels_provider::LabelsProvider`
@@ -584,7 +584,7 @@ warning: unused import: `crate::primitives::rect::Rect`
 warning: unused import: `crate::text::buffer_state::BufferState`
   --> src/widgets/code_results_view/code_results_widget.rs:29:5
    |
-29 | use crate::text::buffer_state::BufferState;
+29 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::w7e::buffer_state_shared_ref::BufferSharedRef`
@@ -1280,7 +1280,7 @@ warning: unused import: `crate::promise::promise::PromiseState`
 warning: unused import: `crate::text::buffer_state::BufferState`
   --> src/widgets/main_view/main_view.rs:27:5
    |
-27 | use crate::text::buffer_state::BufferState;
+27 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::w7e::buffer_state_shared_ref::BufferSharedRef`
@@ -1364,7 +1364,7 @@ warning: unused import: `std::ops::Range`
 warning: unused import: `crate::text::text_buffer::TextBuffer`
  --> src/widgets/editor_widget/label/label.rs:6:5
   |
-6 | use crate::text::text_buffer::TextBuffer;
+6 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::widgets::editor_widget::label::labels_provider::LabelsProvider`
@@ -1478,7 +1478,7 @@ warning: unused import: `crate::primitives::rect::Rect`
 warning: unused import: `crate::text::buffer_state::BufferState`
   --> src/widgets/code_results_view/code_results_widget.rs:29:5
    |
-29 | use crate::text::buffer_state::BufferState;
+29 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `crate::w7e::buffer_state_shared_ref::BufferSharedRef`

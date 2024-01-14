@@ -1,6 +1,6 @@
 use regex::Regex;
 
-use crate::text::text_buffer::TextBuffer;
+use crate::*;
 
 /*
 I wasted hours trying to do regex search on the

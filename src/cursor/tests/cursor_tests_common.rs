@@ -2,7 +2,7 @@ use std::collections::HashSet;
 
 use ropey::Rope;
 
-use crate::text::text_buffer::TextBuffer;
+use crate::*;
 use crate::*;
 
 // these are the tests of testing framework. It's complicated.

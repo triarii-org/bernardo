@@ -27,7 +27,7 @@ use std::slice::{Iter, IterMut};
 use log::{error, warn};
 
 use crate::*;
-use crate::text::text_buffer::TextBuffer;
+use crate::*;
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
 #[cfg_attr(feature = "arbitrary", derive(arbitrary::Arbitrary))]

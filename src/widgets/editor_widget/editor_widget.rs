@@ -9,8 +9,8 @@ use unicode_width::UnicodeWidthStr;
 
 use crate::gladius::providers::Providers;
 use crate::*;
-use crate::text::buffer_state::BufferState;
-use crate::text::text_buffer::TextBuffer;
+use crate::*;
+use crate::*;
 use crate::w7e::buffer_state_shared_ref::BufferSharedRef;
 use crate::w7e::handler::NavCompRef;
 use crate::w7e::navcomp_provider::CompletionAction;

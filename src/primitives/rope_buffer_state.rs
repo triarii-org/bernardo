@@ -5,7 +5,7 @@ use ropey::iter::{Chars, Chunks};
 use ropey::Rope;
 use tree_sitter::Point;
 
-use crate::text::text_buffer::{LinesIter, TextBuffer};
+use crate::*;
 use crate::tsw::tree_sitter_wrapper::pack_rope_with_callback;
 
 impl TextBuffer for Rope {

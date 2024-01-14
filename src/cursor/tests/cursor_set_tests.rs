@@ -13,7 +13,7 @@ use std::borrow::Borrow;
 
 use ropey::Rope;
 
-use crate::text::text_buffer::TextBuffer;
+use crate::*;
 use crate::*;
 
 fn text_to_buffer_cursors(text: &str) -> (Rope, CursorSet) {

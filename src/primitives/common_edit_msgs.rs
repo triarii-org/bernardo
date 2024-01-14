@@ -5,7 +5,7 @@ use log::{error, warn};
 use streaming_iterator::StreamingIterator;
 use unicode_segmentation::UnicodeSegmentation;
 
-use crate::text::text_buffer::TextBuffer;
+use crate::*;
 
 use crate::*;
 

@@ -2,7 +2,7 @@
 // contracts will not change silently on some update.
 
 use crate::*;
-use crate::text::text_buffer::TextBuffer;
+use crate::*;
 
 #[test]
 fn rope_last_line_newline() {

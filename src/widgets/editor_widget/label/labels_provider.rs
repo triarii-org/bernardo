@@ -11,7 +11,7 @@ use std::ops::Range;
 use std::sync::Arc;
 
 use crate::fs::path::SPath;
-use crate::text::text_buffer::TextBuffer;
+use crate::*;
 use crate::widgets::editor_widget::label::label::Label;
 
 pub trait LabelsProvider: Sync + Send {

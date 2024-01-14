@@ -4,7 +4,7 @@ use libfuzzer_sys::arbitrary::{Arbitrary, Result, Unstructured};
 use unicode_segmentation::UnicodeSegmentation;
 
 #[allow(unused_imports)]
-use crate::text::buffer_state::{BufferState, BufferType};
+use crate::*;
 
 use crate::*;
 

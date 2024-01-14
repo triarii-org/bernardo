@@ -1,8 +1,16 @@
-pub mod buffer_state;
-pub mod buffer_state_fuzz;
+mod buffer_state;
+pub use buffer_state::{BufferState, BufferStateStreamingIterator, BufferType, SetFilePathResult};
+
+mod buffer_state_fuzz;
+
+mod text_buffer;
+pub use text_buffer::{LinesIter, TextBuffer};
+
+mod contents_and_cursors;
+pub use contents_and_cursors::ContentsAndCursors;
+
+#[cfg(test)]
 mod rope_tests;
-pub mod text_buffer;
 
 #[cfg(test)]
 mod buffer_state_test;
-mod contents_and_cursors;

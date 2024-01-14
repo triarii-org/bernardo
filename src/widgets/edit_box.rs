@@ -2,8 +2,8 @@ use log::{debug, warn};
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::text::buffer_state::BufferState;
-use crate::text::text_buffer::TextBuffer;
+use crate::*;
+use crate::*;
 use crate::unpack_or_e;
 use crate::*;
 use crate::*;

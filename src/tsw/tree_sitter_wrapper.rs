@@ -9,7 +9,7 @@ use log::{error, warn};
 use ropey::Rope;
 use tree_sitter::{InputEdit, Language, Parser, Point, Query, QueryCursor};
 
-use crate::text::text_buffer::TextBuffer;
+use crate::*;
 use crate::tsw::lang_id::LangId;
 use crate::tsw::language_set::LanguageSet;
 use crate::tsw::parsing_tuple::ParsingTuple;

@@ -28,7 +28,9 @@ pub use primitives::*;
 mod promise;
 pub use promise::*;
 
-pub mod text;
+mod text;
+pub use text::*;
+
 pub mod tsw;
 pub mod w7e;
 

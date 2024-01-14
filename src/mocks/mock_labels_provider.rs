@@ -1,7 +1,7 @@
 use std::ops::Range;
 
 use crate::fs::path::SPath;
-use crate::text::text_buffer::TextBuffer;
+use crate::*;
 use crate::widgets::editor_widget::label::label::Label;
 use crate::widgets::editor_widget::label::labels_provider::LabelsProvider;
 
