@@ -3,8 +3,7 @@
 [![ci_status](https://github.com/triarii-org/bernardo/actions/workflows/ci.yml/badge.svg)](https://github.com/triarii-org/bernardo/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/triarii-org/bernardo/graph/badge.svg)](https://codecov.io/gh/triarii-org/bernardo)
 
-If you see this on github, then it's a manual sync mirror that I often forget to push to.
-The up-to-date version is at https://gitlab.com/njskalski/bernardo
+### Introduction
 
 This is a repository currently hosting two projects: Gladius and Bernardo.
 Bernardo is a TUI widget library.
@@ -35,3 +34,10 @@ https://en.wikipedia.org/wiki/Bernard_Gui
 Bernardo Gui, an inquisitor, historian and for a period of time, Bishop of Tui :D. Portrayed as violent, unfair man in
 "The Name of the Rose" novel by Umberto Eco. Some sources claim that this image is overly negative. I consider using
 mouse for programming a heresy, so I figured I need a help from professional inquisition that no one expects.
+
+### Run
+
+```
+git submodule update --init
+cargo run
+```
