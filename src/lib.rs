@@ -1,3 +1,5 @@
+pub mod gladius;
+
 mod app;
 pub use app::App;
 
@@ -12,8 +14,6 @@ pub use experiments::*;
 
 mod fs;
 pub use fs::*;
-
-pub mod gladius;
 
 mod io;
 pub use io::*;

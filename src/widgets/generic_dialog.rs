@@ -3,7 +3,6 @@ use std::fmt::Debug;
 
 use log::{debug, error, warn};
 
-use crate::subwidget;
 use crate::*;
 
 // TODO handle too small displays

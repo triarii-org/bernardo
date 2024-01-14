@@ -4,7 +4,6 @@ I guess I should reuse FuzzySearch Widget, this is a placeholder now.
 
 use log::{debug, error, warn};
 
-use crate::subwidget;
 use crate::*;
 
 pub struct CompletionWidget {

@@ -1,6 +1,5 @@
 use log::{debug, error, warn};
 
-use crate::subwidget;
 use crate::*;
 
 /*
