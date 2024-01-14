@@ -1,5 +1,5 @@
 use crate::*;
-use crate::widgets::no_editor::NoEditorWidget;
+use crate::*;
 
 use crate::*;
 

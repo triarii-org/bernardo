@@ -7,8 +7,8 @@ use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
 use crate::unpack_or_e;
-use crate::widgets::list_widget::list_widget_item::ListWidgetItem;
-use crate::widgets::list_widget::provider::ListItemProvider;
+use crate::*;
+use crate::*;
 
 use crate::*;
 
@@ -17,7 +17,7 @@ use crate::*;
 // "providers" - they are not guaranteed to be constant. I'd have to copy the data from them out, or
 // introduce some new invariants.
 
-pub const TYPENAME: &'static str = "list_widget";
+pub const LIST_TYPENAME: &'static str = "list_widget";
 
 pub struct ListWidget<Item: ListWidgetItem> {
     id: WID,
@@ -218,13 +218,13 @@ impl<Item: ListWidgetItem + 'static> Widget for ListWidget<Item> {
     }
 
     fn typename(&self) -> &'static str {
-        TYPENAME
+        LIST_TYPENAME
     }
     fn static_typename() -> &'static str
     where
         Self: Sized,
     {
-        TYPENAME
+        LIST_TYPENAME
     }
     fn full_size(&self) -> XY {
         self.full_size_from_items()

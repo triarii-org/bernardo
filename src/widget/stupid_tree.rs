@@ -1,7 +1,7 @@
 use std::borrow::Cow;
 use std::rc::Rc;
 
-use crate::widgets::tree_view::tree_view_node::TreeViewNode;
+use crate::*;
 
 #[derive(Hash, Debug, PartialEq, Eq, Clone)]
 pub struct StupidTree {

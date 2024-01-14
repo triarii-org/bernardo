@@ -6,7 +6,7 @@ use log::{debug, error};
 
 use crate::gladius::paradigm::recursive_treat_views;
 use crate::gladius::providers::Providers;
-use crate::widgets::main_view::main_view::MainView;
+use crate::*;
 use crate::*;
 use crate::*;
 use crate::*;

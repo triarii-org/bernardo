@@ -2,6 +2,7 @@ use std::borrow::Cow;
 use std::fmt::Debug;
 use std::hash::Hash;
 
+// TODO(XXX): remove, this should probably just be an Option<bool>
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
 pub enum MaybeBool {
     False,

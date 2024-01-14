@@ -2,8 +2,6 @@ use std::fmt::Debug;
 
 use crate::*;
 
-use crate::*;
-
 #[derive(Clone, Copy, Debug)]
 pub enum Navigation {
     PageUp,

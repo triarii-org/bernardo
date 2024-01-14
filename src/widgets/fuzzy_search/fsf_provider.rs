@@ -3,8 +3,6 @@ use std::rc::Rc;
 
 use crate::fs::fsf_ref::FsfRef;
 use crate::fs::path::SPath;
-use crate::widgets::fuzzy_search::helpers::is_subsequence;
-use crate::widgets::fuzzy_search::item_provider::{Item, ItemsProvider};
 use crate::*;
 
 pub type SPathToMsg = fn(&SPath) -> Box<dyn AnyMsg>;

@@ -1,5 +1,5 @@
 use crate::*;
-use crate::widgets::edit_box::EditBoxWidget;
+use crate::*;
 
 use crate::*;
 

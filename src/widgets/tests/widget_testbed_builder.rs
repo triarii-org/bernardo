@@ -2,24 +2,10 @@ use std::sync::{Arc, RwLock};
 
 use crossbeam_channel::{Receiver, Sender};
 
-use crate::*;
 use crate::fs::filesystem_front::FilesystemFront;
 use crate::fs::fsf_ref::FsfRef;
 use crate::fs::mock_fs::MockFS;
 use crate::gladius::providers::Providers;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::widgets::editor_view::editor_view::EditorView;
-use crate::widgets::editor_widget::label::labels_provider::LabelsProviderRef;
-use crate::widgets::main_view::main_view::DocumentIdentifier;
-use crate::widgets::tests::editor_view_testbed::EditorViewTestbed;
-
 use crate::*;
 
 pub struct SideChannels {

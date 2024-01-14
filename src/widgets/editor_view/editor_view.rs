@@ -1,35 +1,8 @@
 use log::{debug, error, warn};
 use unicode_width::UnicodeWidthStr;
 
-use crate::*;
-use crate::*;
 use crate::fs::path::SPath;
 use crate::gladius::providers::Providers;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-
-
-
-use crate::widgets::edit_box::EditBoxWidget;
-use crate::widgets::editor_view::msg::EditorViewMsg;
-use crate::widgets::editor_widget::editor_widget::EditorWidget;
-use crate::widgets::main_view::msg::MainViewMsg;
-use crate::widgets::save_file_dialog::save_file_dialog::SaveFileDialogWidget;
-use crate::widgets::text_widget::TextWidget;
-use crate::widgets::with_scroll::with_scroll::WithScroll;
 use crate::{subwidget, unpack_or, unpack_or_e};
 
 use crate::*;

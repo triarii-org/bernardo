@@ -3,10 +3,6 @@ use streaming_iterator::StreamingIterator;
 use unicode_width::UnicodeWidthStr;
 
 use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
 
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
 pub struct CursorScreenPosition {

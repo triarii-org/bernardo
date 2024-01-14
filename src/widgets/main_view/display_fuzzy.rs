@@ -1,7 +1,7 @@
 use std::rc::Rc;
 
-use crate::widgets::fuzzy_search::item_provider::{Item, ItemsProvider};
-use crate::widgets::main_view::msg::MainViewMsg;
+use crate::*;
+use crate::*;
 use crate::*;
 
 pub struct DisplayItem {

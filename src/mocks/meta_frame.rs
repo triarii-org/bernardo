@@ -1,11 +1,11 @@
 use crate::*;
 use crate::*;
 
-use crate::widgets::code_results_view::code_results_widget::CodeResultsView;
-use crate::widgets::editor_view::editor_view::EditorView;
-use crate::widgets::fuzzy_search::fuzzy_search::FuzzySearchWidget;
-use crate::widgets::no_editor::NoEditorWidget;
-use crate::widgets::with_scroll::with_scroll::WithScroll;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 
 use crate::*;
 

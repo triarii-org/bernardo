@@ -7,12 +7,12 @@ use crate::*;
 use crate::*;
 use crate::*;
 use crate::*;
-use crate::widgets::edit_box::EditBoxWidget;
-use crate::widgets::editor_widget::completion::completion_widget::CompletionWidget;
-use crate::widgets::editor_widget::context_bar::widget::ContextBarWidget;
-use crate::widgets::editor_widget::editor_widget::EditorWidget;
-use crate::widgets::save_file_dialog::save_file_dialog::SaveFileDialogWidget;
-use crate::widgets::with_scroll::with_scroll::WithScroll;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 
 use crate::*;
 

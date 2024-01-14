@@ -5,9 +5,9 @@ use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
 use crate::unpack_or_e;
-use crate::widgets::edit_box::{EditBoxWidget, EditBoxWidgetMsg};
-use crate::widgets::fuzzy_search::item_provider::{Item, ItemsProvider};
-use crate::widgets::fuzzy_search::msg::{FuzzySearchMsg, Navigation};
+use crate::*;
+use crate::*;
+use crate::*;
 
 use crate::*;
 

@@ -1,10 +1,6 @@
 use log::debug;
 
 use crate::*;
-use crate::*;
-use crate::widgets::editor_widget::context_bar::context_bar_item::ContextBarItem;
-use crate::widgets::editor_widget::editor_widget::EditorState;
-use crate::*;
 
 /*
 I am preemptively moving this code away from EditorWidget, because I expect it to be big

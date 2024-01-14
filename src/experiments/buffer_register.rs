@@ -10,7 +10,7 @@ use crate::gladius::providers::Providers;
 use crate::*;
 use crate::*;
 use crate::*;
-use crate::widgets::main_view::main_view::DocumentIdentifier;
+use crate::*;
 
 /*
 This is a provider of mapping DocumentIdentifier to buffer.

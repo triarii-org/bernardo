@@ -4,30 +4,7 @@ I guess I should reuse FuzzySearch Widget, this is a placeholder now.
 
 use log::{debug, error, warn};
 
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
 use crate::subwidget;
-use crate::*;
-
-
-
-
-use crate::widgets::editor_widget::completion::msg::CompletionWidgetMsg;
-use crate::widgets::editor_widget::msg::EditorWidgetMsg;
-use crate::widgets::list_widget::list_widget::ListWidget;
-use crate::widgets::text_widget::TextWidget;
-use crate::widgets::with_scroll::with_scroll::WithScroll;
-
 use crate::*;
 
 pub struct CompletionWidget {

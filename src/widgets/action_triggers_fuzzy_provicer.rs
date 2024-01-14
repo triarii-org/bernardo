@@ -1,6 +1,6 @@
 use std::rc::Rc;
 
-use crate::widgets::fuzzy_search::item_provider::{Item, ItemsProvider};
+use crate::*;
 use crate::*;
 
 pub struct Actions<W: Widget> {

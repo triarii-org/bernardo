@@ -40,7 +40,8 @@ pub use w7e::*;
 mod widget;
 pub use widget::*;
 
-pub mod widgets;
+mod widgets;
+pub use widgets::*;
 
 #[cfg(test)]
 pub mod big_tests;

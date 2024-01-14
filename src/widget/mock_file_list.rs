@@ -1,6 +1,6 @@
 use std::rc::Rc;
 
-use crate::widgets::list_widget::list_widget_item::ListWidgetItem;
+use crate::*;
 
 #[derive(Clone, Debug)]
 pub struct MockFile {

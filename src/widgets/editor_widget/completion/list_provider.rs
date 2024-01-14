@@ -4,8 +4,6 @@ use std::rc::Rc;
 use log::error;
 
 use crate::*;
-use crate::widgets::list_widget::list_widget_item::ListWidgetItem;
-use crate::widgets::list_widget::provider::ListItemProvider;
 
 impl ListWidgetItem for Completion {
     fn get_column_name(idx: usize) -> &'static str {

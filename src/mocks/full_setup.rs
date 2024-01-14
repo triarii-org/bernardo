@@ -8,8 +8,6 @@ use std::time::Duration;
 use crossbeam_channel::{select, Receiver, Sender};
 use log::{debug, error, warn, LevelFilter};
 
-use crate::*;
-use crate::*;
 use crate::fs::filesystem_front::FilesystemFront;
 use crate::fs::fsf_ref::FsfRef;
 use crate::fs::mock_fs::MockFS;
@@ -22,8 +20,10 @@ use crate::*;
 use crate::*;
 use crate::*;
 use crate::*;
-use crate::widgets::code_results_view::code_results_widget::CodeResultsView;
-use crate::widgets::tree_view;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 
 use crate::*;
 
@@ -241,7 +241,7 @@ impl FullSetup {
             .as_ref()
             .map(|frame| {
                 frame
-                    .get_meta_by_type(tree_view::tree_view::TYPENAME)
+                    .get_meta_by_type(TREE_VIEW_TYPENAME)
                     .filter(|meta| meta.rect.pos == XY::ZERO)
                     .next()
                     .map(|meta| TreeViewInterpreter::new(meta, frame))

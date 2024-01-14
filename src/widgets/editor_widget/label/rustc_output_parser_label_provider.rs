@@ -5,9 +5,6 @@ use regex::Regex;
 
 use crate::fs::path::SPath;
 use crate::*;
-use crate::*;
-use crate::widgets::editor_widget::label::label::{Label, LabelPos, LabelStyle};
-use crate::widgets::editor_widget::label::labels_provider::LabelsProvider;
 
 /*
 TODO this is a very incomplete implementation.
@@ -152,7 +149,7 @@ impl RustcOutputParserLabelProvider {
 
 #[cfg(test)]
 pub mod test {
-    use crate::widgets::editor_widget::label::rustc_output_parser_label_provider::RustcOutputParserLabelProvider;
+    use crate::*;
 
     #[test]
     fn rustc_warnings_test() {
@@ -476,7 +473,7 @@ warning: unused import: `crate::text::text_buffer::TextBuffer`
 warning: unused import: `crate::widgets::editor_widget::label::labels_provider::LabelsProvider`
  --> src/widgets/editor_widget/label/rustc_output_parser_label_provider.rs:6:5
   |
-6 | use crate::widgets::editor_widget::label::labels_provider::LabelsProvider;
+6 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `unpack_or`
@@ -512,7 +509,7 @@ warning: unused import: `crate::w7e::navcomp_group::NavCompGroupRef`
 warning: unused import: `crate::widgets::main_view::main_view::DocumentIdentifier`
   --> src/widgets/editor_view/editor_view.rs:32:5
    |
-32 | use crate::widgets::main_view::main_view::DocumentIdentifier;
+32 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -608,7 +605,7 @@ warning: unused import: `crate::fs::path::SPath`
 warning: unused import: `crate::widgets::main_view::main_view::DocumentIdentifier`
  --> src/widgets/code_results_view/code_results_msg.rs:5:5
   |
-5 | use crate::widgets::main_view::main_view::DocumentIdentifier;
+5 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -1370,7 +1367,7 @@ warning: unused import: `crate::text::text_buffer::TextBuffer`
 warning: unused import: `crate::widgets::editor_widget::label::labels_provider::LabelsProvider`
  --> src/widgets/editor_widget/label/rustc_output_parser_label_provider.rs:6:5
   |
-6 | use crate::widgets::editor_widget::label::labels_provider::LabelsProvider;
+6 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `unpack_or`
@@ -1406,7 +1403,7 @@ warning: unused import: `crate::w7e::navcomp_group::NavCompGroupRef`
 warning: unused import: `crate::widgets::main_view::main_view::DocumentIdentifier`
   --> src/widgets/editor_view/editor_view.rs:32:5
    |
-32 | use crate::widgets::main_view::main_view::DocumentIdentifier;
+32 | use crate::*;
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -1502,7 +1499,7 @@ warning: unused import: `crate::fs::path::SPath`
 warning: unused import: `crate::widgets::main_view::main_view::DocumentIdentifier`
  --> src/widgets/code_results_view/code_results_msg.rs:5:5
   |
-5 | use crate::widgets::main_view::main_view::DocumentIdentifier;
+5 | use crate::*;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`

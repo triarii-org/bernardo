@@ -1,2 +1,5 @@
-pub mod editor_view;
+mod editor_view;
+pub use editor_view::EditorView;
+
 mod msg;
+pub use msg::EditorViewMsg;

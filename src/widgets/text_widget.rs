@@ -2,15 +2,6 @@ use streaming_iterator::StreamingIterator;
 use unicode_width::UnicodeWidthStr;
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-
-
-
-use crate::*;
 
 pub struct TextWidget {
     wid: WID,

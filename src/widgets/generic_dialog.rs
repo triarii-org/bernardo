@@ -3,26 +3,7 @@ use std::fmt::Debug;
 
 use log::{debug, error, warn};
 
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
 use crate::subwidget;
-
-
-
-use crate::widgets::button::ButtonWidget;
-use crate::widgets::text_widget::TextWidget;
-
 use crate::*;
 
 // TODO handle too small displays

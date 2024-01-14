@@ -12,7 +12,7 @@ use std::sync::Arc;
 
 use crate::fs::path::SPath;
 use crate::*;
-use crate::widgets::editor_widget::label::label::Label;
+use crate::*;
 
 pub trait LabelsProvider: Sync + Send {
     fn query_for(&self, path_op: Option<&SPath>) -> Box<dyn Iterator<Item = &'_ Label> + '_>;

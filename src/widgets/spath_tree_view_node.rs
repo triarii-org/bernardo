@@ -4,7 +4,7 @@ use std::fmt::Debug;
 use log::error;
 
 use crate::fs::path::SPath;
-use crate::widgets::tree_view::tree_view_node::TreeViewNode;
+use crate::*;
 
 #[derive(Debug, Clone)]
 pub struct DirTreeNode {

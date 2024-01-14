@@ -6,8 +6,7 @@ use log::{debug, error, warn};
 use streaming_iterator::StreamingIterator;
 
 use crate::fs::path::SPath;
-use crate::widgets::spath_tree_view_node::DirTreeNode;
-use crate::widgets::tree_view::tree_view::TreeViewWidget;
+use crate::*;
 
 impl TreeViewWidget<SPath, DirTreeNode> {
     pub fn expand_path(&mut self, path: &SPath) -> bool {
@@ -42,8 +41,8 @@ mod tests {
     use crate::fs::mock_fs::MockFS;
     use crate::fs::path::SPath;
     use crate::spath;
-    use crate::widgets::spath_tree_view_node::DirTreeNode;
-    use crate::widgets::tree_view::tree_view::TreeViewWidget;
+    use crate::*;
+    use crate::*;
 
     #[test]
     fn test_set_path() {

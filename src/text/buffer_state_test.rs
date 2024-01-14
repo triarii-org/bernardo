@@ -1,6 +1,6 @@
 use crate::*;
 use crate::*;
-use crate::widgets::main_view::main_view::DocumentIdentifier;
+use crate::*;
 
 use crate::*;
 

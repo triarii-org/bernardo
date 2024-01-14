@@ -1,8 +1,5 @@
 use std::collections::HashSet;
 
-use crate::widgets::tree_view::tree_it::TreeIt;
-use crate::widgets::tree_view::tree_view_node::TreeViewNode;
-
 use crate::*;
 
 #[test]

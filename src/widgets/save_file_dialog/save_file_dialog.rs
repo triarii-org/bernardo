@@ -32,15 +32,15 @@ use crate::*;
 
 
 
-use crate::widgets::button::ButtonWidget;
-use crate::widgets::edit_box::EditBoxWidget;
-use crate::widgets::generic_dialog::generic_dialog::GenericDialog;
-use crate::widgets::list_widget::list_widget::ListWidget;
-use crate::widgets::save_file_dialog::dialogs::override_dialog;
-use crate::widgets::save_file_dialog::save_file_dialog_msg::SaveFileDialogMsg;
-use crate::widgets::spath_tree_view_node::DirTreeNode;
-use crate::widgets::tree_view::tree_view::TreeViewWidget;
-use crate::widgets::with_scroll::with_scroll::WithScroll;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::{subwidget, unpack_or_e};
 
 use crate::*;

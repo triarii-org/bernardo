@@ -1,5 +1,5 @@
 use crate::*;
-use crate::widgets::list_widget::list_widget;
+use crate::*;
 
 use crate::*;
 
@@ -16,7 +16,7 @@ pub struct ListViewInterpreterItem {
 
 impl<'a> ListViewInterpreter<'a> {
     pub fn new(meta: &'a Metadata, output: &'a MetaOutputFrame) -> Self {
-        debug_assert!(meta.typename == list_widget::TYPENAME);
+        debug_assert!(meta.typename == LIST_TYPENAME);
 
         ListViewInterpreter { meta, output }
     }

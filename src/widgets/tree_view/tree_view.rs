@@ -8,20 +8,8 @@ use unicode_width::UnicodeWidthStr;
 
 use crate::unpack_or_e;
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
 
-use crate::widgets::tree_view::tree_it::TreeIt;
-use crate::widgets::tree_view::tree_view_node::{TreeItFilter, TreeViewNode};
-
-use crate::*;
-
-pub const TYPENAME: &'static str = "tree_view";
+pub const TREE_VIEW_TYPENAME: &'static str = "tree_view";
 
 // expectation is that these are sorted
 pub type LabelHighlighter = fn(&str) -> Vec<usize>;
@@ -236,11 +224,11 @@ impl<K: Hash + Eq + Debug + Clone + 'static, I: TreeViewNode<K> + 'static> Widge
     where
         Self: Sized,
     {
-        TYPENAME
+        TREE_VIEW_TYPENAME
     }
 
     fn typename(&self) -> &'static str {
-        TYPENAME
+        TREE_VIEW_TYPENAME
     }
 
     fn full_size(&self) -> XY {

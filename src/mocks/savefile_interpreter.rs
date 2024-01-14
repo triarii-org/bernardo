@@ -1,9 +1,9 @@
 use crate::*;
-use crate::widgets::button::ButtonWidget;
-use crate::widgets::edit_box::EditBoxWidget;
-use crate::widgets::list_widget::list_widget;
-use crate::widgets::save_file_dialog::save_file_dialog::SaveFileDialogWidget;
-use crate::widgets::tree_view::tree_view;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 
 use crate::*;
 
@@ -22,7 +22,7 @@ pub struct SaveFileInterpreter<'a> {
 impl<'a> SaveFileInterpreter<'a> {
     pub fn new(meta: &'a Metadata, output: &'a MetaOutputFrame) -> Self {
         let tree_view_meta: Vec<&Metadata> = output
-            .get_meta_by_type(tree_view::TYPENAME)
+            .get_meta_by_type(TREE_VIEW_TYPENAME)
             .filter(|c| meta.rect.contains_rect(c.rect))
             .collect();
 
@@ -30,7 +30,7 @@ impl<'a> SaveFileInterpreter<'a> {
         let tree_view = TreeViewInterpreter::new(tree_view_meta[0], output);
 
         let list_view_meta: Vec<&Metadata> = output
-            .get_meta_by_type(list_widget::TYPENAME)
+            .get_meta_by_type(LIST_TYPENAME)
             .filter(|c| meta.rect.contains_rect(c.rect))
             .collect();
 

@@ -4,8 +4,8 @@ use crate::*;
 use crate::fs::path::SPath;
 use crate::*;
 
-use crate::widgets::code_results_view::promise_provider::WrappedSymbolUsagesPromise;
-use crate::widgets::main_view::main_view::DocumentIdentifier;
+use crate::*;
+use crate::*;
 
 use crate::*;
 

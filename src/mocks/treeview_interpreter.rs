@@ -1,6 +1,6 @@
 use unicode_segmentation::UnicodeSegmentation;
 
-use crate::widgets::tree_view::tree_view;
+use crate::*;
 use crate::*;
 use crate::*;
 
@@ -22,7 +22,7 @@ pub struct TreeViewInterpreterItem {
 
 impl<'a> TreeViewInterpreter<'a> {
     pub fn new(meta: &'a Metadata, output: &'a MetaOutputFrame) -> Self {
-        debug_assert!(meta.typename == tree_view::TYPENAME);
+        debug_assert!(meta.typename == TREE_VIEW_TYPENAME);
 
         TreeViewInterpreter { meta, output }
     }

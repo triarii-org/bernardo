@@ -9,41 +9,7 @@ use unicode_width::UnicodeWidthStr;
 
 use crate::gladius::providers::Providers;
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::widgets::code_results_view::promise_provider::WrappedSymbolUsagesPromise;
-use crate::widgets::editor_widget::completion::completion_widget::CompletionWidget;
-use crate::widgets::editor_widget::context_bar::widget::ContextBarWidget;
-use crate::widgets::editor_widget::context_options_matrix::get_context_options;
-use crate::widgets::editor_widget::helpers::{find_trigger_and_substring, CursorScreenPosition};
-use crate::widgets::editor_widget::label::label::Label;
-use crate::widgets::editor_widget::msg::EditorWidgetMsg;
-use crate::widgets::main_view::msg::MainViewMsg;
 use crate::{unpack_or, unpack_or_e};
-
-use crate::*;
 
 const MIN_EDITOR_SIZE: XY = XY::new(10, 3);
 // const MAX_HOVER_SIZE: XY = XY::new(64, 20);

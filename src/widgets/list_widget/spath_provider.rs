@@ -4,7 +4,7 @@
 //
 // use crate::fs::path::SPath;
 // use crate::fs::read_error::ListError;
-// use crate::widgets::list_widget::provider::ListItemProvider;
+// use crate::*;
 //
 // #[derive(Debug)]
 // pub struct SPathListItemProvider {

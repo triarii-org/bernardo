@@ -1,7 +1,7 @@
 use std::fmt::Debug;
 use std::iter::empty;
 
-use crate::widgets::list_widget::list_widget_item::ListWidgetItem;
+use crate::*;
 
 pub trait ListItemProvider<Item: ListWidgetItem>: Debug {
     fn items(&self) -> Box<dyn Iterator<Item = &Item> + '_>;

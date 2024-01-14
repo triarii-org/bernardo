@@ -18,7 +18,7 @@ use crate::*;
 use crate::*;
 use crate::*;
 use crate::*;
-use crate::widgets::main_view::main_view::DocumentIdentifier;
+use crate::*;
 use crate::{unpack_or, unpack_or_e};
 
 use crate::*;

@@ -1,5 +1,5 @@
 use crate::*;
-use crate::widgets::fuzzy_search::fuzzy_search::FuzzySearchWidget;
+use crate::*;
 
 use crate::*;
 
