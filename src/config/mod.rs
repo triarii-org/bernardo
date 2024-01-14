@@ -1,4 +1,5 @@
-pub mod config;
+mod config;
+pub use config::{Config, ConfigRef};
 
 mod global_editor_options;
 pub use global_editor_options::GlobalEditorOptions;

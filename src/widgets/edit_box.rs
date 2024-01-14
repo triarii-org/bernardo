@@ -2,7 +2,7 @@ use log::{debug, warn};
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::cursor::cursor_set::CursorSet;
+
 use crate::experiments::clipboard::ClipboardRef;
 use crate::experiments::screenspace::Screenspace;
 use crate::io::input_event::InputEvent;

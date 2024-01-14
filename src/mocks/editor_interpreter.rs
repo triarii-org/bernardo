@@ -1,6 +1,6 @@
 use log::error;
 
-use crate::cursor::cursor::CursorStatus;
+
 use crate::io::buffer_output::horizontal_iter_item::HorizontalIterItem;
 use crate::io::cell::Cell;
 use crate::io::output::Metadata;

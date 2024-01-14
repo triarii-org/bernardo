@@ -2,10 +2,11 @@ use log::{debug, error};
 use streaming_iterator::StreamingIterator;
 use unicode_width::UnicodeWidthStr;
 
-use crate::cursor::cursor::Cursor;
 use crate::primitives::helpers::copy_last_n_columns;
 use crate::primitives::xy::XY;
 use crate::text::text_buffer::TextBuffer;
+
+use crate::*;
 
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
 pub struct CursorScreenPosition {

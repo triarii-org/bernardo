@@ -5,14 +5,14 @@ use log::{error, warn};
 use streaming_iterator::StreamingIterator;
 use unicode_segmentation::UnicodeSegmentation;
 
-use crate::cursor::cursor::Cursor;
-use crate::cursor::cursor_set::CursorSet;
 use crate::experiments::clipboard::ClipboardRef;
 use crate::io::keys::{Key, Keycode};
 use crate::primitives::arrow::Arrow;
 use crate::primitives::has_invariant::HasInvariant;
 use crate::primitives::printable::Printable;
 use crate::text::text_buffer::TextBuffer;
+
+use crate::*;
 
 /*
 So I don't have to reimplement basic edit properties for multiple widgets, I moved all (cursor, content) related code here.

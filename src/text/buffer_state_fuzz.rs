@@ -4,12 +4,9 @@ use libfuzzer_sys::arbitrary::{Arbitrary, Result, Unstructured};
 use unicode_segmentation::UnicodeSegmentation;
 
 #[allow(unused_imports)]
-use crate::cursor::cursor::Cursor;
-#[allow(unused_imports)]
-use crate::cursor::cursor::Selection;
-use crate::cursor::cursor_set::CursorSet;
-#[allow(unused_imports)]
 use crate::text::buffer_state::{BufferState, BufferType};
+
+use crate::*;
 
 #[cfg(feature = "arbitrary")]
 impl<'a> Arbitrary<'a> for BufferState {

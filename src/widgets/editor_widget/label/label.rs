@@ -2,7 +2,6 @@ use std::ops::Range;
 
 use log::warn;
 
-use crate::cursor::cursor::{Cursor, Selection, NEWLINE_WIDTH};
 use crate::io::style::TextStyle;
 use crate::primitives::printable::Printable;
 use crate::primitives::stupid_cursor::StupidCursor;

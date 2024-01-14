@@ -1,9 +1,8 @@
-use crate::cursor::tests::cursor_tests_common::{
-    common_assert_pair_makes_sense, common_buffer_cursors_sel_to_text, common_text_to_buffer_cursors_with_selections,
-};
 use crate::experiments::clipboard::{get_me_fake_clipboard, ClipboardRef};
 use crate::primitives::common_edit_msgs::{CommonEditMsg, _apply_cem};
 use crate::primitives::has_invariant::HasInvariant;
+
+use crate::*;
 
 fn text_to_text(text: &str, cem: CommonEditMsg, clipboard: Option<&ClipboardRef>) -> String {
     let (mut buffer, mut cs) = common_text_to_buffer_cursors_with_selections(text);

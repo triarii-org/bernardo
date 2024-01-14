@@ -5,12 +5,12 @@ use log::error;
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::cursor::cursor::Cursor;
-use crate::cursor::cursor::Selection;
 use crate::primitives::printable::Printable;
 use crate::primitives::xy::XY;
 use crate::text::text_buffer::TextBuffer;
 use crate::unpack_or;
+
+use crate::*;
 
 /*
 This is a completely useless variant of cursor, that is used only because LSP uses it.

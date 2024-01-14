@@ -7,9 +7,9 @@ use matches::debug_assert_matches;
 use streaming_iterator::StreamingIterator;
 use unicode_width::UnicodeWidthStr;
 
-use crate::cursor::cursor::{Cursor, CursorStatus, Selection};
-use crate::cursor::cursor_set::CursorSet;
-use crate::cursor::cursor_set_rect::cursor_set_to_rect;
+
+
+
 use crate::experiments::regex_search::FindError;
 use crate::experiments::screenspace::Screenspace;
 use crate::experiments::subwidget_pointer::SubwidgetPointer;

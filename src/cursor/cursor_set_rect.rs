@@ -1,10 +1,10 @@
 use log::error;
 
-use crate::cursor::cursor::Cursor;
-use crate::cursor::cursor_set::CursorSet;
 use crate::primitives::rect::Rect;
 use crate::primitives::xy::XY;
 use crate::text::text_buffer::TextBuffer;
+
+use crate::*;
 
 fn cursor_to_xy(c: &Cursor, buffer: &dyn TextBuffer) -> XY {
     let y = buffer.char_to_line(c.a).unwrap_or_else(|| {

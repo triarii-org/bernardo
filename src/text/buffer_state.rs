@@ -11,7 +11,6 @@ use tree_sitter::Point;
 use unicode_segmentation::UnicodeSegmentation;
 use unicode_width::UnicodeWidthStr;
 
-use crate::cursor::cursor_set::CursorSet;
 use crate::experiments::clipboard::ClipboardRef;
 use crate::experiments::filename_to_language::filename_to_language;
 use crate::experiments::regex_search::FindError;
@@ -29,6 +28,8 @@ use crate::w7e::navcomp_provider::StupidSubstituteMessage;
 use crate::widget::widget::WID;
 use crate::widgets::main_view::main_view::DocumentIdentifier;
 use crate::{unpack_or, unpack_or_e};
+
+use crate::*;
 
 // TODO it would use a method "would_accept_cem" to be used in "on_input" but before "update"
 

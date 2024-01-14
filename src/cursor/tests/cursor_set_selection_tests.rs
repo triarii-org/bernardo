@@ -2,13 +2,9 @@ use std::collections::HashSet;
 
 use ropey::Rope;
 
-use crate::cursor::cursor::Cursor;
-use crate::cursor::cursor::Selection;
-use crate::cursor::cursor_set::CursorSet;
-use crate::cursor::tests::cursor_tests_common::{
-    common_assert_pair_makes_sense, common_buffer_cursors_sel_to_text, common_text_to_buffer_cursors_with_selections,
-};
 use crate::text::text_buffer::TextBuffer;
+
+use crate::*;
 
 fn text_to_buffer_cursors(text: &str) -> (Rope, CursorSet) {
     let res = common_text_to_buffer_cursors_with_selections(text);
@@ -16,15 +12,10 @@ fn text_to_buffer_cursors(text: &str) -> (Rope, CursorSet) {
     res
 }
 
-pub fn apply_sel(input: &str, f: fn(&mut CursorSet, &dyn TextBuffer) -> ()) -> String {
+fn apply_sel(input: &str, f: fn(&mut CursorSet, &dyn TextBuffer) -> ()) -> String {
     let (bs, mut cs) = common_text_to_buffer_cursors_with_selections(input);
     f(&mut cs, &bs);
     buffer_cursors_sel_to_text(&bs, &cs)
-}
-
-pub fn buffer_cursors_sel_to_text(b: &dyn TextBuffer, cs: &CursorSet) -> String {
-    let res = common_buffer_cursors_sel_to_text(b, cs);
-    res
 }
 
 #[test]

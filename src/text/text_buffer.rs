@@ -6,10 +6,11 @@ use log::error;
 use ropey::iter::{Chars, Chunks};
 use streaming_iterator::StreamingIterator;
 
-use crate::cursor::cursor::Selection;
 use crate::primitives::xy::XY;
 use crate::tsw::lang_id::LangId;
 use crate::unpack_or;
+
+use crate::*;
 
 //TODO create tests for undo/redo/set milestone
 

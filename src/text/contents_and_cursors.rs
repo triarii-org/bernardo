@@ -4,9 +4,6 @@ use log::{debug, error, warn};
 use ropey::Rope;
 use unicode_segmentation::UnicodeSegmentation;
 
-use crate::cursor::cursor::Cursor;
-use crate::cursor::cursor::Selection;
-use crate::cursor::cursor_set::CursorSet;
 use crate::experiments::regex_search::{regex_find, FindError};
 use crate::io::buffer;
 use crate::primitives::search_pattern::SearchPattern;
@@ -15,6 +12,8 @@ use crate::tsw::parsing_tuple::ParsingTuple;
 use crate::tsw::tree_sitter_wrapper::TreeSitterWrapper;
 use crate::unpack_or_e;
 use crate::widget::widget::WID;
+
+use crate::*;
 
 /*
 I allow empty history, it means "nobody is looking at the buffer now, first who comes needs to set

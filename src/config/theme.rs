@@ -5,7 +5,7 @@ use lazy_static::lazy_static;
 use log::{error, warn};
 use serde::{Deserialize, Serialize};
 
-use crate::cursor::cursor::CursorStatus;
+
 use crate::io::style::{Effect, TextStyle};
 use crate::primitives::color::Color;
 use crate::primitives::tmtheme::TmTheme;

@@ -4,7 +4,9 @@ pub use app::App;
 mod config;
 pub use config::*;
 
-pub mod cursor;
+mod cursor;
+pub use cursor::*;
+
 pub mod experiments;
 pub mod fs;
 pub mod gladius;
