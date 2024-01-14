@@ -3,13 +3,6 @@ use std::sync::{Arc, RwLock};
 use crossbeam_channel::Sender;
 
 use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-
-use crate::*;
 
 pub struct MockNavcompLoader {
     event_sender: Sender<MockNavCompEvent>,

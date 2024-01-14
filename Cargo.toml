@@ -6,6 +6,9 @@ edition = "2021"
 license = "GPLv3"
 autobins = true
 
+[features]
+test-utils = []
+
 [lib]
 name = "bernardo"
 

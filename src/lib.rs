@@ -46,7 +46,7 @@ pub use widget::*;
 mod widgets;
 pub use widgets::*;
 
-#[cfg(test)]
+#[cfg(feature = "test-utils")]
 mod mocks;
-#[cfg(test)]
+#[cfg(feature = "test-utils")]
 pub(crate) use mocks::*;
