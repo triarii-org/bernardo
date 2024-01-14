@@ -2,8 +2,6 @@ use std::ops::Range;
 
 use log::warn;
 
-use crate::unpack_or;
-
 use crate::*;
 
 pub enum LabelPos {

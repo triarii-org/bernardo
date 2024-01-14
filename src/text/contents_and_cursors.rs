@@ -4,10 +4,10 @@ use log::{debug, error, warn};
 use ropey::Rope;
 use unicode_segmentation::UnicodeSegmentation;
 
-use crate::*;
-use crate::*;
-use crate::*;
 use crate::unpack_or_e;
+use crate::*;
+use crate::*;
+use crate::*;
 use crate::*;
 
 /*

@@ -9,12 +9,12 @@ use log::{error, warn};
 use ropey::Rope;
 use tree_sitter::{InputEdit, Language, Parser, Point, Query, QueryCursor};
 
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
-use crate::*;
 use crate::unpack_or_e;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
+use crate::*;
 
 static EMPTY_SLICE: [u8; 0] = [0; 0];
 

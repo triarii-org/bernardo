@@ -1,7 +1,6 @@
 use std::cmp::min;
 use std::mem;
 
-use crate::unpack_or;
 use crate::*;
 
 pub struct DumpVisualizerWidget {

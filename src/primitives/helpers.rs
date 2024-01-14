@@ -11,7 +11,6 @@ use crate::*;
 use crate::*;
 use crate::*;
 use crate::*;
-use crate::unpack_or;
 
 pub fn get_next_filename(dir: &Path, prefix: &str, suffix: &str) -> Option<PathBuf> {
     return match fs::read_dir(&dir) {

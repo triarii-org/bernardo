@@ -203,7 +203,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::unpack_or`
   --> src/io/over_output.rs:12:5
    |
-12 | use crate::unpack_or;
+12 | 
    |     ^^^^^^^^^^^^^^^^
 
 warning: unused import: `debug`
@@ -353,7 +353,7 @@ warning: unused import: `crate::primitives::rect::Rect`
 warning: unused import: `crate::unpack_or`
  --> src/widgets/no_editor.rs:9:5
   |
-9 | use crate::unpack_or;
+9 | 
   |     ^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`
@@ -1097,7 +1097,7 @@ warning: unused import: `Metadata`
 warning: unused import: `crate::unpack_or`
   --> src/io/over_output.rs:12:5
    |
-12 | use crate::unpack_or;
+12 | 
    |     ^^^^^^^^^^^^^^^^
 
 warning: unused import: `debug`
@@ -1247,7 +1247,7 @@ warning: unused import: `crate::primitives::rect::Rect`
 warning: unused import: `crate::unpack_or`
  --> src/widgets/no_editor.rs:9:5
   |
-9 | use crate::unpack_or;
+9 | 
   |     ^^^^^^^^^^^^^^^^
 
 warning: unused import: `Metadata`

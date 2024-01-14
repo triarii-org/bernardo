@@ -1,5 +1,4 @@
 use crate::*;
-use crate::unpack_or;
 
 pub struct BorderStyle {
     pub upper_left: &'static str,

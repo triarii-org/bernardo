@@ -5,10 +5,10 @@ of key components like EditorView or CodeResultsView
 
 use std::sync::{Arc, RwLock};
 
-use crate::*;
-use crate::*;
 use crate::fs::fsf_ref::FsfRef;
 use crate::gladius::navcomp_loader::NavCompLoader;
+use crate::*;
+use crate::*;
 use crate::*;
 use crate::*;
 use crate::*;

@@ -1,8 +1,6 @@
 use log::warn;
 use unicode_width::UnicodeWidthStr;
 
-use crate::unpack_or;
-
 use crate::*;
 
 // TODO add fixed size and tests

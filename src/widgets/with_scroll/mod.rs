@@ -3,8 +3,6 @@ use std::cmp::{max, min};
 use log::{debug, error, warn};
 use unicode_width::UnicodeWidthStr;
 
-use crate::unpack_or;
-
 use crate::*;
 
 // const DEFAULT_MARGIN_WIDTH: u16 = 4;
