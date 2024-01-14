@@ -1,4 +1,6 @@
-pub mod app;
+mod app;
+pub use app::App;
+
 pub mod config;
 pub mod cursor;
 pub mod experiments;
